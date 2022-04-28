@@ -13,9 +13,9 @@
               {%- endif -%}
   
               {%- if section.settings.content != blank -%}
-                <div class="SectionHeader__Description Rte">
+                
                   {{ section.settings.content }}
-                </div>
+                
               {%- endif -%}
   
               {%- if section.settings.link_text != blank -%}
@@ -122,8 +122,34 @@
   {% endschema %}
   <style>
       #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper {
-        background: url("https://cdn.shopify.com/s/files/1/0006/7230/1119/files/flowers.png?v=1651175404");
-        background-repeat: no-repeat;
+        background: url("https://cdn.shopify.com/s/files/1/0006/7230/1119/files/flowers2.png?v=1651177852");
+        background-repeat:no-repeat;
+        background-size: 100%;
+        background-position:center;
         
+      }
+      #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div > header > h2{
+          font-family: 'Spring';
+          font-size: 7vw;
+          color: #f0ec6b;
+          font-weight: 100;
+      }
+      #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div {
+        text-align: right;
+        position: absolute;
+        left: 67%;
+        bottom: 24%;
+      }
+      #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div > header > p{        text-align: center;
+        color: white;
+        font-size: 3vw;
+        position: absolute;
+        font-weight: 800;
+        left: 18%;
+        width: 100%;
+        bottom: 31%;
+      }
+      #shopify-section-fitnesskit-section1 > section {
+          border-bottom: 4px solid #f0ec6b;
       }
   </style>
