@@ -1,0 +1,22 @@
+<div id="cartModal" class="cart-announcement-modal HideContent">
+    <div class="cart-announcement-content">
+        <div class="cart-announcement-inner">
+            <h2 class="u-h1 centered-divider-after-sm">Patient Dropshipping Has Changed</h2>
+            <p class="page-content_large">
+                We have made some updates to our Patient Dropship program, allowing you to include multiple Patient Dropship items alongside items ordered for your practice.
+                <br><br>
+                To complete a Patient Dropship order, simply click the box that says "This order contains Patient Dropship Items."
+                <br><br>
+                For additional information on how this program works, <a href="/pages/patient-dropshipping" target="_blank" style="color: #4b858e; text-decoration: underline;">click here</a>.
+            </p>
+            <button class="Button Button--primary" onclick="modalClose()">Got It</button>
+        </div>
+    </div>
+    <div class="cart-announcement-close" onclick="modalClose()">+</div>
+</div>
+
+<script>
+    function modalClose() {
+        document.getElementById("cartModal").classList.add("HideContent");
+    }
+</script>

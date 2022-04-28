@@ -1,0 +1,271 @@
+<style>
+
+  
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  display: table;
+  transition: opacity .3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+ .Form__Item{
+   text-align: center;
+       padding: 20px;
+ }
+ .Form__Item .checkbox{
+   height:20px;
+   width:50px;
+    margin-left: -55px;
+ }
+  
+.Form__Item .form_firstname{
+   height:45px;
+   width:55%;
+  }
+.PageContent {
+    margin-bottom: 0px; 
+    margin-top: 0px;
+}   
+/* Modal Content */
+ .modal-content{
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  width: 80%;
+  max-width:700px;
+  height: 600px;
+   max-height:95%;
+  overflow-y: scroll;
+  padding:25px;
+ }
+  
+ .modal-content_text {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  font-size : 15px;
+  color: black;
+  text-align: center;
+  font-weight: bold;
+}
+.modal-content_text a{
+  background-color: #fefefe;
+  margin: auto;
+/*   padding: 150px; */
+  font-size : 15px;
+  color: #4b858e;
+  text-align: center;
+  font-weight: bold;
+  
+} 
+  .modal-header h2{
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+    margin-bottom: 20px;
+  }
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+  .modal-footer{
+    text-align: center;
+    margin-top:30px;
+    margin-bottom:20px;
+  }
+  #acceptTermsSubmit{
+  	background-color: #4b858e;
+  }
+  input[type="button"]:disabled {
+    opacity:0.5;
+  }
+</style>
+
+<div id="providerAgreementPopup">
+  <div v-if="showModal">
+    <transition name="modal">
+      <div class="modal-mask">
+        <div class="modal-wrapper">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2>Please Review and Approve our Provider Agreement Before Continuing.</h2>
+              </div>
+              <div class="modal-body">
+                <div class="PageContent PageContent--narrow Rte">
+                	<p>This agreement is applicable to any business or individual involved in the resale or administration of AnteAGE®, AnteAGE MD®, Overnight®, AnteAGE MDX®, and all other products or treatments from Cellese®. From here forth, all references to AnteAGE® refer to all brands listed above. “Seller” refers to AnteAGE®. “Provider”, "Account" and/or "Buyer" refers to all companies selling AnteAGE® products or utilizing AnteAGE® treatment products in their practice.</p>
+                    <p>All Accounts have been advised to carefully review the Terms & Conditions in this Agreement before entering into or continuing with a transactional agreement with AnteAGE®</p>
+                    <h3>Ordering Information</h3>
+                    <p>Orders may be placed online 24/7 through your online AnteAGE® Provider Account. Only one ordering Account will be available per location. Completed online orders once submitted will be shipped in order of receipt Monday – Friday 8:00am – 5:00pm PST, excluding holidays. We require 24 hours to process orders prior to shipping. Processing time does not include weekends or holidays.</p>
+                    <p>If you choose to place your orders directly with a Sales Representative, we require a minimum order of $500. If your order is less than $500 you may place your order directly using your online Provider Account access.</p>
+                    <p>There are minimum opening order requirements for all new accounts. An opening order of $1,000 or more is required for all qualified AnteAGE MD® Accounts. An opening order of $500 or more is required for all qualified AnteAGE® Professional Accounts.</p>
+                    <p>Backbar product purchased shall not exceed 30% of total order purchase per quarter. Backbar products are available for use only by providers and may not be resold.</p>
+                    <p>Buyer has the right to examine the goods purchased upon receipt. If Buyer should believe that it has received defective Products, Buyer must contact Seller immediately and without any undue delay for any claim for damages based on the shipped condition or quality of the goods received. Such notice must specify in detail the particulars of the claim. Failure to provide such notice within the requisite time period constitutes irrevocable acceptance of the goods. Seller’s total liability to Buyer, if any, whether in contract or tort or otherwise, arising out of its sale of any Products, shall not exceed the price paid by the Buyer for the Products giving rise to the liability.</p>
+                    <p>Returns or exchanges are accepted on qualified, unopened, and unused retail products which may be returned within 30 days of purchase for a full refund or credit on the account.
+                    There is a 20% Restocking Fee on product returns. All returns must be made within 30 days of Order.</p>
+                    <p>Defective items will be exchanged for new products once your sales representative is notified, and the defective items are returned to AnteAGE® for inspection. We may require photos and/or lot code references to start exchange process. Returned items must be deposited at shipping office before action will be taken by AnteAGE®.</p>
+                    <h3>Non-Diversion Outside of Territory</h3>
+                    <p>You do not have permission to sell AnteAGE® products purchased domestically outside of the United States and Canada. Any shipping outside of the United States and Canada is prohibited. Our Customers outside of the United States and Canada must order directly from indicated distributors. Product cannot be brought in from other countries and sold in these areas without advanced, written permission.</p>
+                    <h3>Dispensing and Selling Integrity</h3>
+                    <p>When you become a Provider of AnteAGE® you agree to comply with indicated dispensing and usage directions. All Accounts agree to adhere to labeled expiration dates noted on packaging. In the case of any adverse events witnessed in office or reported by user, you agree to notify AnteAGE® directly through our customer service phone number, online form, and/or by contacting your sales representative immediately. Providers shall use best efforts to market all AnteAGE® products in compliance with the provisions of applicable law and regulations. Providers shall use for marketing purposes only marketing materials (such as banners, rack cards, tent cards, fliers, digital assets, and the like) provided by Seller. Providers shall not use any materials for marketing purposes that are designated by AnteAGE® for educational purposes, such as clinical white papers, etc.</p>
+                    <h3>Payment Information</h3>
+                    <p>Payment for all products shall be made in full upon ordering. AnteAGE® accepts payments by Credit Card, Debit Card, or Paypal.</p>
+                    <h3>Online Selling</h3>
+                    <p>A Minimum Advertised Price “MAP” is indicated for each product. It is in violation of this agreement to discount any AnteAGE® product beyond the MAP. MAP has two tiers- in-office pricing and e-commerce pricing. Please refer to pricing guides in your Provider Portal.</p>
+                    <p>Only AnteAGE® Homecare is available to sell online. Under no circumstances can AnteAGE® professional treatment solutions be sold online to consumers. These products are meant for in-office use only.</p>
+                    <p>All AnteAGE® products require the oversight of a dispensing physician or licensed professional for safe and optimal results. By entering into this agreement with AnteAGE®, you agree to NOT resell any AnteAGE® products on any online platforms, such as Amazon, eBay, or other e-commerce websites. If it is found that AnteAGE® product is sold without our explicit permission, the account will immediately be suspended. AnteAGE® will pursue legal action if it is determined that unlawful reselling of AnteAGE® products occurs on any online marketplace.</p>
+                    <p>Providers may request to add AnteAGE® products to their e-commerce store. Once approved, providers may onlysell to their own patients, with password protection, and no pricing visible to the public.</p>
+                    <p>Promotional Retail Online Pricing may be approved no more than two times per calendar year. All online promotional discounts must be approved up to 36 hours in advance by AnteAGE® and discount must not exceed 10%. If online promotion is combined with multiple products or other brands, the discount must not exceed 10%. Cellese Customer Agreement Updated January 2022 Pricing may be adjusted in shopping cart only. We do not allow advertised strike throughs or discounted pricing posted on ecommerce site without approval.</p>
+                    <p>Providers may utilize our Drop Shipping services for Homecare only. Drop shipping must not be sold internationally.</p>
+                    <p>Buyer shall comply with all laws and regulations governing, or otherwise applicable to, the import, sale, or marketing of the Products, including, without limitation, all laws and regulations governing competition, restrictive practices, and sales of the Products. In addition, Buyer certifies that it is in compliance with all applicable laws relating to: (1) its status as a physician or a medical practice; (2) sale of over-the-counter products to patients; and, (3) any appearance before governmental agencies and instrumentalities.</p>
+                    <h3>Shipping Standards</h3>
+                    <p>AnteAGE® product orders are processed Monday – Friday from 8:00am – 5:00pm, PST, excluding holidays. Allow 24 hours for order processing prior to shipment.</p>
+                    <p>Standard International shipping rates will apply for international orders outside of the USA and Canada.</p>
+                    <p>USA Shipping Rates (Movement on shipments M-F).
+                    There will be a charge of $10 for standard ground shipping on orders under $1000 within the United States. Free standard shipping on orders $1000 or more.</p>
+                    <p>Canada Shipping Rates (Movement on shipments M-F, time includes processing). There will be a charge of $15 for 8-Day Shipping on all orders under $1000. Free standard shipping on orders $1000 or more.</p>
+                    <p>Express shipping will be billed to Account at actual cost.
+                    Overnight shipping costs will vary, and this service may not always be available. Please contact your Sales Representative for details. AnteAGE does not take responsibility for delays with shipping company.</p>
+                    <p>Orders to Hawaii & Alaska will take one additional day to arrive.</p>
+                    <p>All purchases valued over $500 or shipping internationally will require signature confirmation upon delivery. If someone is unavailable to sign for the package at the destination, the package will be held at the nearest FedEx office for pickup. The addressee will need to pick up with photo ID.</p>
+                    <p>You can email your sales representative if you prefer not to require signature confirmation for deliveries valued over $500. In such cases, AnteAGE® is not responsible for any missing packages as we cannot guarantee delivery.</p>
+                    <p>Any product damaged in transit must be noted within 24 hours of delivery.</p>
+                    <h3>Consent Forms</h3>
+                    <p>Consent Forms received from AnteAGE® are intended to be utilized as templates only. Please consult with your legal team for any legal advice regarding these forms.</p>
+                    <h3>Regulatory Actions</h3>
+                    <p>Providers agree that you will not attempt to register products with any government agency nor to initiate any other process with foreign or domestic regulatory authority without the prior expressed consent of AnteAGE®. Providers further agree to direct any inquiry or communication from any regulatory authority to AnteAGE®.</p>
+                    <h3>Data Sharing</h3>
+                    <p>We would like to send you leads from time to time. If you would not like to receive leads from us, please let your Sales Representative know.</p>
+                    <p>We encourage sharing images, videos and testimonials from your patients. Please tag #AnteAGE® or @AnteAGESkin when posting success stories to your social media sites. Be sure all patients have given proper, signed consent.</p>
+                    <h3>Relationship of Parties</h3>
+                    <p>Seller and the Buyer are independent parties. These Terms & Conditions shall not constitute or be construed as creating a partnership or joint venture between the parties, nor shall it make either party an agent or legal representative of the other for any purpose whatsoever. Nothing in these Terms & Conditions will obligate Seller to continue to sell Products to Buyer.</p>
+                    <h3>Attorneys' Fees</h3>
+                    <p>If either party commences an action against the other to interpret or enforce any obligation based upon these Terms & Conditions, or as a result of a breach by the other party of any obligation based upon these Terms & Conditions, the party prevailing in such matter shall be entitled to recover from the non-prevailing party reasonable attorneys’ fees, costs, and expenses, incurred by the prevailing party in connection with said action.</p>
+                    <h3>Dispute resolution</h3>
+                    <p>This Agreement outlines that if a dispute occurs, a mutually acceptable arbitrator will be tasked with assisting to resolve the dispute. It also states that both parties will continue to fulfill their part of the original agreement until a decision is made.</p>
+                    <h3>Indemnification</h3>
+                    <p>To the fullest extent permitted by applicable law, Buyer will indemnify, release, defend and hold harmless Seller, its subsidiaries, affiliates, licensees and assigns, and their respective officers, directors, agents, representatives, subcontractors and employees, whether acting in the course of their employment or otherwise (each, an “Indemnified Party”), from all claims, demands, losses, damages, liabilities, judgments, costs (including reasonable
+                    attorneys’ fees), expenses, liens or actions (collectively, “Claims”) incurred by or asserted against an Indemnified Party, in any manner arising out of or relating to Buyer’s performance or failure to perform its obligations, Buyer’s breach of any of the representations, certifications or covenants contained in these Terms and Conditions, including without limitation, claims relating to death, personal injury, or damage to property.</p>
+                    <h3>Applicable Law</h3>
+                    <p>By their execution, the parties hereto have agreed to all of the Terms & Conditions of this Agreement effective as of the last date of signature or digital acceptance, and each signatory represents that it has the full authority to enter into this Agreement and to bind her/his respective party to all of the Terms & Conditions herein.</p>
+                    <h3>Provider Agreement Amendments</h3>
+                    <p>AnteAGE® may make amendments to this Agreement at any time. The most current agreement will always be available to reference at AnteAGE.com. The most current Agreement supersedes any other previous Agreement, including oral agreements.</p>
+                </div>
+                
+              </div>
+              <div class="modal-footer text-center">
+                <input type="button" value="Accept Terms"  id="acceptTermsSubmit" class="Button Button--primary" @click="acceptTerms()" />
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.12/vue.min.js" integrity="sha512-BKbSR+cfyxLdMAsE0naLReFSLg8/pjbgfxHh/k/kUC82Hy7r6HtR5hLhobaln2gcTvzkyyehrdREdjpsQwy2Jw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  new Vue({
+  el: '#providerAgreementPopup',
+  data: {
+    showModal: false,
+    email: '{{customer.email}}',
+    id: '{{customer.id}}',
+    tags: '{% for tag in customer.tags %}{{ tag }},{% endfor %}Agreement2022',
+  },
+  methods: {
+    getTerms: function (e){
+      that = this;
+      const url = "https://orders-anteage.com/api/customers/get/terms?id="+this.id+"&email="+this.email;
+        axios.get(url)
+        .then(function (response) {
+          if(response.data.accepted_at == null || response.data.accepted_at == ""){
+           
+            that.showModal = true;
+          }else{
+            document.cookie = "anteage_terms_accepted_"+that.id+"=1; expires=Thu, 18 Dec 2083 12:00:00 UTC";
+          }
+          console.log(response.data);
+          
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    },
+  	acceptTerms: function (e){
+      that = this;
+      const btn = document.getElementById("acceptTermsSubmit");
+      btn.disabled = true;
+      btn.value = "Please wait...";
+      const url = "https://orders-anteage.com/api/customers/accept/terms?id="+this.id+"&email="+this.email+"&tags="+this.tags;
+        axios.get(url)
+        .then(function (response) {
+          document.cookie = "anteage_terms_accepted_"+that.id+"=1; expires=Thu, 18 Dec 2083 12:00:00 UTC";
+          that.showModal = false;
+          console.log(response.data);
+          
+        })
+        .catch(function (error) {
+          btn.disabled = false;
+      	  btn.value = "Accept Terms";
+          console.log(error);
+        });
+    },
+    getCookie: function(cName) {
+      const name = cName + "=";
+      const cDecoded = decodeURIComponent(document.cookie); //to be careful
+      const cArr = cDecoded.split('; ');
+      let res;
+      cArr.forEach(val => {
+        if (val.indexOf(name) === 0) res = val.substring(name.length);
+      })
+      return res
+    }
+  },
+  beforeMount: function() {
+  	const cookie = this.getCookie('anteage_terms_accepted_'+this.id);
+    if(cookie != '1'){
+      	this.getTerms();
+    	//this.showModal = true;
+    }
+    
+  }
+})
+</script>

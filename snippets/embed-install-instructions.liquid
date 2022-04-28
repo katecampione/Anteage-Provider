@@ -1,0 +1,43 @@
+<h3 class="page-header_large">Step 1</h3>
+<p class="page-content_large">
+    Locate the <span style="background-color: #454545; color: #ffffff;"><code>&lt;head&gt;</code></span> tag in your website and paste the code below at the very bottom before the closing <span style="background-color: #454545; color: #ffffff;"><code>&lt;/head&gt;</code></span> tag.
+</p>
+<div style="display: block; padding: 30px; background-color: #454545; color: #ffffff;">
+    {% if customer.tags contains 'MD Wholesale' %}
+        <code>
+            &lt;link href="{{ section.settings.css_url_md }}" rel="stylesheet"&gt;<br>
+            &lt;script src="{{ section.settings.js_url_md }}" type="text/javascript"&gt;&lt;/script&gt;
+        </code>
+    {% elsif customer.tags contains 'Pro Wholesale' %}
+        <code>
+            &lt;link href="{{ section.settings.css_url_pro }}" rel="stylesheet"&gt;<br>
+            &lt;script src="{{ section.settings.js_url_pro }}" type="text/javascript"&gt;&lt;/script&gt;
+        </code>
+    {% endif %}
+</div>
+<h3 class="page-header_large">Step 2</h3>
+<p class="page-content_large">
+    Paste the domain-specific embed code included below into the desired section inside your page. Please make sure that this snippet of code is placed between the <span style="background-color: #454545; color: #ffffff;"><code>&lt;body&gt;</code></span> and <span style="background-color: #454545; color: #ffffff;"><code>&lt;/body&gt;</code></span> tags.
+</p>
+<div v-for="embed in embeds" key="embed" class="row">
+    <h4 style="font-weight: 400;">For <span style="font-weight: 700;">${ embed.name }</span> at <span style="font-weight: 700;">${ embed.domain }</span>:</h4>
+    <div style="display: block; padding: 30px; background-color: #454545; color: #ffffff;">
+        <code>
+            &lt;anteage-widget class="anteage-embed" token="${ embed.token }"&gt;&lt;/anteage-widget&gt;
+        </code>
+    </div>
+</div>
+<h3 class="page-header_large">Step 3</h3>
+<p class="page-content_large">Test to see if the styles are correct. You can manually override styles or contact <a href="mailto:marketing@anteage.com">marketing@anteage.com</a> for customizations.</p>
+<p class="page-content_large">If the cart drawer does not accept overlay properly, check to see if the parent container has a css property with <span style="background-color: #454545; color: #ffffff;"><code>transform: translate3d</code></span> applied and then remove this property.</p>
+<p class="page-content_large">If there are other styling issues, CSS overrides can be added to your site’s stylesheet.</p>
+<p class="page-content_large">This embed uses Bootstrap 4 classes for styling. If you have modified these classes, you will see those modifications reflected within the AnteAGE® store embed.</p>
+<p class="page-content_large"><span style="font-size: .85em; opacity: .8; text-transform: uppercase; letter-spacing: .2em;">For example:</span><br> If your site's stylesheet already contains:</p>
+<div style="display: block; padding: 30px; background-color: #454545; color: #ffffff;">
+    <code>
+        .row {
+            margin-top: 100px
+        }
+    </code>
+</div>
+<p class="page-content_large fw-divider-after"><br>These CSS properties will be applied to the AnteAGE MD® shopping embed's class of <span style="background-color: #454545; color: #ffffff;"><code>.row</code></span> and override default styling. If the widget is having display issues, please rename classes or remove properties that conflict with the embedded widget.</p>

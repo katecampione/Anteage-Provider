@@ -1,0 +1,15 @@
+<div class="Container">
+  <header class="PageHeader">
+    <div class="SectionHeader SectionHeader--center">
+      <h1 class="SectionHeader__Heading Heading u-h1">{{ page.title }}</h1>
+    </div>
+  </header>
+
+  <div class="PageContent PageContent--narrow Rte">
+    {% if customer.tags contains 'MD Wholesale' %}
+    	{{ page.content }}
+    {% else %}
+    	The content on this page is restricted to AnteAGE MD® Providers only at this time.
+    {% endif %}
+  </div>
+</div>

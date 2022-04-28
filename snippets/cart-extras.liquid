@@ -1,0 +1,146 @@
+{% comment %}
+
+// Removed from top of cart-template.liquid //
+
+<script type="text/javascript">
+  
+    function expand() {
+      $('#patient-dropship-form').removeClass('hidden');
+    }
+
+    function hideAndClear() {
+      $('#patient-dropship-form').addClass('hidden');
+      $('#patient-dropship-form :input').each(function () { 
+        console.log($(this)); 
+        $(this).val(' ');
+      });
+
+    }
+</script>
+
+{% endcomment%}
+
+<a class="button-begin_checkout" href="#start-checkout">Begin Checkout</a>
+
+<div class="c-att_wrapper" id="start-checkout">
+
+  <div class="c-att_header--wrap">
+    <h3 class="u-h1 c-att_header">Order Details:</h3>
+  </div>
+
+  <div class="c-att_row">
+    <p class="c-att_label centerContents">Order Type:</p>
+    <div class="c-att_type">
+      <div class="radio-toolbar">
+
+        <div class="form-group">
+          <input id="practice-order" required class="special-radio required" type="radio" name="attributes[Order Type]"
+            value="Practice Order" {% unless cart.attributes["Order Type"] == "Patient Dropship" %}
+            checked{% endunless %}>
+          <label onclick="hideAndClear()" for="practice-order" class="special-radio-label practice-bg">
+            <span>Practice Order</span>
+          </label>
+        </div>
+
+        <div class="form-group">
+          <input id="patient-dropship" required class="special-radio required" type="radio"
+            name="attributes[Order Type]" value="Patient Dropship"
+            {% if cart.attributes["Order Type"] == "Patient Dropship" %} checked{% endif %}>
+          <label onclick="expand()" id="patient-dropship-button" for="patient-dropship"
+            class="special-radio-label dropship-bg">
+            <span>Patient Dropship</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <div id="patient-dropship-form" class="c-att_row hidden">
+      <div class="c-att_header--wrap">
+        <h3 class="u-h1 c-att_header">Patient Dropship Details:</h3>
+      </div>
+
+      <div class="c-att_row">
+        <div class="c-att_item--2">
+          <p class="cart-attribute__field">
+            <label class="c-att_label" for="patient-first-name">Patient First Name:</label>
+            <input required placeholder="" class="c-att_input required" id="patient-first-name" type="text"
+              name="attributes[Patient First Name]" value="{{ cart.attributes["Patient First Name"] }}">
+          </p>
+        </div>
+        <div class="c-att_item--2">
+          <p class="cart-attribute__field">
+            <label class="c-att_label" for="patient-last-name">Patient Last Name:</label>
+            <input required placeholder="" class="c-att_input required" id="patient-last-name" type="text"
+              name="attributes[Patient Last Name]" value="{{ cart.attributes["Patient Last Name"] }}">
+          </p>
+        </div>
+      </div>
+
+      <div class="c-att_row">
+        <div class="c-att_item--3">
+          <p class="cart-attribute__field">
+            <label class="c-att_label" for="patient-address-1">Patient Address 1:</label>
+            <input required placeholder="" class="c-att_input required" id="patient-address-1" type="text"
+              name="attributes[Patient Address 1]" value="{{ cart.attributes["Patient Address 1"] }}">
+          </p>
+        </div>
+        <div class="c-att_item--3">
+          <p class="cart-attribute__field">
+            <label class="c-att_label" for="patient-address-2">Patient Address 2:</label>
+            <input placeholder="" class="c-att_input" id="patient-address-2" type="text"
+              name="attributes[Patient Address 2]" value="{{ cart.attributes["Patient Address 2"] }}">
+          </p>
+        </div>
+        <div class="c-att_item--3">
+          <p class="cart-attribute__field">
+            <label class="c-att_label" for="patient-city">Patient City:</label>
+            <input required placeholder="" class="c-att_input required" id="patient-city" type="text"
+              name="attributes[Patient City]" value="{{ cart.attributes["Patient City"] }}">
+          </p>
+        </div>
+      </div>
+
+      <div class="c-att_row">
+        <div class="c-att_item--3">
+          <p class="cart-attribute__field">
+            <label class="c-att_label" for="patient-stateprovince">Patient State:</label>
+            <input required placeholder="" class="c-att_input required" id="patient-stateprovince" type="text"
+              name="attributes[Patient State/Province]" value="{{ cart.attributes["Patient State/Province"] }}">
+          </p>
+        </div>
+        <div class="c-att_item--3">
+          <p class="cart-attribute__field">
+            <label class="c-att_label" for="patient-zip-code">Patient Zip Code:</label>
+            <input required placeholder="" class="c-att_input required" id="patient-zip-code" type="text"
+              name="attributes[Patient Zip Code]" value="{{ cart.attributes["Patient Zip Code"] }}">
+          </p>
+        </div>
+        <div class="c-att_item--3">
+          <p class="cart-attribute__field">
+            <label class="c-att_label">Patient Country:</label>
+            <select required class="c-att_input required" id="patient-countryregion"
+              name="attributes[Patient Country/Region]">
+              <option value="United States" {% if cart.attributes["Patient Country/Region"] == "United States" %}
+                selected{% endif %}>United States</option>
+              <option value="Canada" {% if cart.attributes["Patient Country/Region"] == "Canada" %} selected{% endif %}>
+                Canada</option>
+            </select>
+          </p>
+        </div>
+      </div>
+      <div class="c-att_notice--wrap">
+        <div class="c-att_dropship--notice">
+          <h3 class="u-h1 c-att_header mb1">Important Notice</h3>
+          <p class="mb1">Patient Shipping information entered here will be applied to this Patient Dropship order after
+            checkout. No invoice/pricing will be included in the shipment. Please verify that you have included the
+            correct customer details here prior to moving to the next step.<br><br>On the next checkout screen, you will
+            see and select your normal Practice Address in the "Shipping Information" field. You do not need enter
+            patient details on next screen, as it will be applied after checkout.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="centerItem">
+    <button type="submit" name="checkout" class="Cart__Checkout Button Button--primary Button--full">{{ 'cart.general.checkout' | t }}</button>
+  </div>
+</div>

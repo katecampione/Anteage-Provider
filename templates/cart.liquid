@@ -1,0 +1,28 @@
+{% section 'cart-template' %}
+{% comment %}
+{% section 'cart-announcement-modal' %}
+{% endcomment %}
+{% section 'recently-viewed-products' %}
+
+{% comment %}
+<script type="text/javascript">
+    if (sessionStorage.getItem('AnnouncementOnce') !== 'true') {
+    window.setTimeout(announcementShow,1000);
+        function announcementShow() {
+            document.getElementById("cartModal").classList.remove("HideContent");
+            sessionStorage.setItem('AnnouncementOnce','true');
+        }
+    }
+</script>
+{% endcomment %}
+
+{% unless customer.tags contains 'No Minimum' %}
+    {% if customer.total_spent <= 100 %}
+        <script type="text/javascript">
+            setTimeout(function() {
+                document.getElementById("gs__toggle-shipping").disabled = true;
+                document.getElementById("gs__toggle-box").classList.add("disabledState");
+            }, 1000);
+        </script>
+    {% endif %}
+{% endunless %}

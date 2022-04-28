@@ -1,0 +1,13 @@
+{% comment %}
+  DO NOT MODIFY THIS FILE DIRECTLY. THIS FILE WILL BE OVERWRITTEN.
+  YOU CAN MODIFY THE LIQUID CODE FOR THIS CUSTOM FIELD HERE:
+  https://customfields.bonify.io/dashboard/anteage-test1.myshopify.com/products/configure/37503/edit
+{% endcomment %}
+{% if product.metafields.custom_fields["science_1"] != blank %}
+  <div class="custom-field custom-field__science-1 custom-field__type--text">
+    <h3 class="custom-field--title">science_1</h3>
+    <div class="custom-field--value">
+      {{ product.metafields.custom_fields["science_1"] }}
+    </div>
+  </div>
+{% endif %}

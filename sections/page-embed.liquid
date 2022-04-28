@@ -1,0 +1,184 @@
+<div class="Container">
+    <header class="PageHeader">
+      <div class="SectionHeader SectionHeader--center">
+        <h1 class="SectionHeader__Heading Heading u-h1">{{ page.title }}</h1>
+      </div>
+    </header>
+  
+    <div class="PageContent Rte">
+      {{ page.content }}
+
+        <div id="app">
+            <div v-if="embeds.length > 0">
+                <p class="page-content_large centerContents mb0">
+                    You have successfully registered your domain and embed. See installation details below or <a href="#register">click here</a> to register another domain.
+                </p>
+                <p class="page-content_large centerContents mt1 fw-divider-after">
+                    To deploy the embed on your site, please follow the instructions below.
+                </p>
+                {% include 'embed-install-instructions' %}
+            </div>
+            <div id="register" style="height: 0px; position: relative; top: -150px;"></div>
+            <div class="generate">
+                <p v-if="embeds.length > 0" class="page-content_large centerContents mb0">
+                  Want to register another domain?
+                </p>
+                <h2 class="centerContents">Register A New Embed</h2>
+                <div class="Form__Item">
+                    <label class="headUp" for="domain">Practice Name</label>
+                    <input class="Form__Input mb-4" v-model="embed_name" type="text" name="embed_name" id="" placeholder="{{ customer.address.company }}">
+                    <label class="headUp" for="domain">Website URL</label>
+                    <input class="Form__Input mb-4" v-model="domain" type="text" name="domain" id="">
+                </div>
+                <button class="Form__Submit Button Button--primary centerItem" @click="registerEmbed">Register & Generate</button>
+                <h5 v-if="registering && !success">Registering your embed...</h5>
+                <div v-if="success" class="centerContents">
+                  <h3>Congratulations– you've Registered your AnteAGE{% if customer.tags contains 'MD Wholesale' %} MD{% endif %}® embed.</h3>
+                  <a href="/pages/embed" class="Button">View Installation Instructions</a>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+    
+  </div>
+  
+  
+  <script type="text/javascript">
+    window.addEventListener("load", function(event) {
+      // Instantiate VUE App
+      var app = new Vue({
+        el: '#app', 
+        data: {
+          customer_id: "{{ customer.id }}",
+          email: "{{ customer.email }}",
+          first_name: "{{ customer.first_name }}",
+          last_name: "{{ customer.last_name }}",
+          token: null,
+          embed_name: null,
+          domain: "",
+          success: false,
+          registering: false,
+          embeds: {}
+        },
+        delimiters: ['${', '}'],
+        mounted() {
+          this.getEmbeds();
+          this.createToken();
+        },
+        methods: {
+          getEmbeds() {
+            const vm = this;
+            let config = {
+              headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "Access-Control-Allow-Origin" : "*",
+                "Access-Control-Allow-Methods" : "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+              }
+            }
+            console.log('vm emails', vm.email);
+            axios.get('https://anteage-cors.herokuapp.com/https://external.anteage.com/api/embed/'+ vm.customer_id +'', config)
+            .then(function (response) {
+              // handle success
+              console.log('get embed', response);
+              vm.embeds = response.data;
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+          },
+          registerEmbed() {
+            const vm = this;
+            let config = {
+              headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "Access-Control-Allow-Origin" : "*",
+                "Access-Control-Allow-Methods" : "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+              }
+            }
+            let payload = {
+              customer_id: vm.customer_id,
+              email: vm.email,
+              first_name: vm.first_name,
+              last_name: vm.last_name,
+              embed_name: vm.embed_name,
+              token: vm.token,
+              domain: vm.domain,
+            }
+            console.log('vm emails', vm.email);
+            axios.post('https://anteage-cors.herokuapp.com/https://external.anteage.com/api/embed/register', payload, config)
+            .then(function (response) {
+              // handle success
+              console.log('register embed', response);
+              vm.success = response.data;
+              vm.registering = true;
+              this.getEmbeds();
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+          },
+          createToken() {
+            const vm = this;
+            let config = {
+              headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "Access-Control-Allow-Origin" : "*",
+                "Access-Control-Allow-Methods" : "GET,PUT,POST,DELETE,PATCH,OPTIONS",
+              }
+            }
+            axios.get('https://anteage-cors.herokuapp.com/https://external.anteage.com/api/embed/new/token', config)
+            .then(function (response) {
+              // handle success
+              vm.token = response.data;
+            })
+            .catch(function (error) {
+              // handle error
+              console.log(error);
+            })
+          }
+        }
+      });
+  
+      Vue.config.ignoredElements = [
+        'anteage-widget'
+      ]
+  
+    });
+  
+  </script>
+  
+  {% schema %}
+  {
+    "name": "Embed Registration Page",
+    "settings": [
+      {
+        "type": "text",
+        "id": "js_url_md",
+        "label": "MD Javascript URL",
+        "default": "https://anteage-embed.s3-us-west-1.amazonaws.com/app.76b98ec6.js"
+      },
+      {
+        "type": "text",
+        "id": "js_url_pro",
+        "label": "Pro Javascript URL",
+        "default": "https://anteage-embed.s3-us-west-1.amazonaws.com/app.8c6cef65.js"
+      },
+      {
+        "type": "text",
+        "id": "css_url_md",
+        "label": "MD CSS URL",
+        "default": "https://anteage-embed.s3-us-west-1.amazonaws.com/app.7e4a6382.css"
+      },
+      {
+        "type": "text",
+        "id": "css_url_pro",
+        "label": "PRO CSS URL",
+        "default": "https://anteage-embed.s3-us-west-1.amazonaws.com/app.7e4a6382.css"
+      }
+    ]
+  }
+  
+  {% endschema %}

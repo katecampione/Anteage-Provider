@@ -1,0 +1,12 @@
+<style>select {padding: 0;}</style>
+{% assign attribute = 'Sales Representative' %}
+<p id="sales_representative_title"><label for="sales_representative_id">Who helped you?</label></p>
+
+<select id="sales_representative_id" name="attributes[{{ attribute }}]" required="required">
+  {% for i in (1..25) %}
+    {% capture option %}{% cycle "", "No Sales Rep.", "Amanda Butler", "Brie-Anne Roberts", "Connie Coggin", "Debora Masten", "Heidi Espey", "Janelle Thomlinson", "Janine Cheng", "Joe Pimentel", "Kelly Caffee", "Kimberly Stutzman", "Lisa Ferris", "Martin Kun", "Maura Pajonk", "Meg McPherson Padilla", "Megan Rohde", "Michelle Noyola", "Monica Mackover", "Monika Brooks-Duncan", "Natalie Ruelle", "Nathalie Poulin", "Saif Mehdi", "Sarah Tracy", "Terri Welty" %}{% endcapture %}
+    <option value="{{ option }}"{% if cart.attributes[attribute] == option %} selected="selected"{% endif %}>{{ option }}</option>
+  {% endfor %}
+</select>
+
+<p id="sales_representative_hint">Please select an item in the list.</p>

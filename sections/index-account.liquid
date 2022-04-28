@@ -1,0 +1,113 @@
+<section class="Section Section--spacingNormal {% if customer.orders == 0 %} HideContent{% endif %}" data-section-id="{{ section.id }}" data-section-type="featured-product" data-section-settings='{{ section_settings }}'>
+<div class="Container Container--narrow">
+  {%- if section.settings.subheading != blank or section.settings.title != blank -%}
+      <header class="SectionHeader SectionHeader--center {% unless section.settings.show_headings_on_mobile %}hidden-phone{% endunless %}">
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+        {%- endif -%}
+
+        {%- if section.settings.title != blank -%}
+          <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
+      </header>
+    {%- endif -%}
+
+  <div class="PageLayout PageLayout--breakLap">
+    {%- comment -%}
+    --------------------------------------------------------------------------------------------------------------------
+    ORDER HISTORY
+    --------------------------------------------------------------------------------------------------------------------
+    {%- endcomment -%}
+
+    <div class="PageLayout__Section">
+      {%- if customer.orders.size == 0 -%}
+        <div class="Segment">
+          <h2 class="Segment__Title Heading u-h7">{{ 'customer.account.no_orders_title' | t }}</h2>
+
+          <div class="Segment__Content">
+            <p>{{ 'customer.account.no_orders_content' | t }}</p>
+          </div>
+        </div>
+      {%- else -%}
+        {%- paginate customer.orders by 5 -%}
+          <div class="TableWrapper">
+            <table class="AccountTable Table Table--large">
+              <thead class="Text--subdued">
+                <tr>
+                  <th class="lightWeight">{{ 'customer.orders.order_number' | t }}</th>
+                  <th class="lightWeight">{{ 'customer.orders.date' | t }}</th>
+                  <th class="lightWeight">{{ 'customer.orders.payment_status' | t }}</th>
+                  <th class="lightWeight">{{ 'customer.orders.fulfillment_status' | t }}</th>
+                  <th class="Text--alignRight lightWeight">{{ 'customer.orders.total' | t }}</th>
+                </tr>
+              </thead>
+
+              <tbody class="Heading u-h7">
+                {%- for order in customer.orders -%}
+                  {% assign dropship_fulfillment = false %}
+                  {% for tag in order.tags %}
+                    {% if tag contains 'created_from' %}
+                      {% assign dropship_fulfillment = true %}
+                    {% endif %}
+                  {% endfor %}
+                  <tr>
+                    <td><a href="{{ order.customer_url }}" class="Link Link--underline">{{ order.name }}</a></td>
+                    <td>{{ order.created_at | date: format: 'month_day_year' }}</td>
+                    <td>{{ order.financial_status_label }}</td>
+                    {% unless order.cancelled and order.tags contains 'ms_order' %}
+                      <td>{{ order.fulfillment_status_label }}{% if dropship_fulfillment %} (Dropship Order){% endif %}</td>
+                    {% else %}
+                      <td>Replaced by Dropship Fulfillment Orders</td>
+                    {% endunless %}
+                    <td class="Text--alignRight">
+                      {% if dropship_fulfillment %}
+                        N/A
+                      {% else %}
+                        {{ order.total_price | money_without_trailing_zeros }}
+                      {% endif %}
+                    </td>
+                  </tr>
+                {%- endfor -%}
+              </tbody>
+            </table>
+          </div>
+
+          {%- include 'pagination' -%}
+        {%- endpaginate -%}
+      {%- endif -%}
+    </div>
+    
+  </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Order History",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Sub-heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Order History"
+      }
+    ],
+    "presets": [
+      {
+        "category": "Customer",
+        "name": "Order History"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

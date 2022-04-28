@@ -1,0 +1,8 @@
+{% if customer.metafields.custom_fields["hubspot_contact_owner"] != blank %}
+  <div class="custom-field custom-field__hubspot-contact-owner custom-field__type--text">
+    <h3 class="custom-field--title">hubspot_contact_owner</h3>
+    <div class="custom-field--value">
+      {{ customer.metafields.custom_fields["hubspot_contact_owner"] }}
+    </div>
+  </div>
+{% endif %}

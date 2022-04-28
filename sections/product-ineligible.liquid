@@ -1,0 +1,49 @@
+<div class="Container">
+  <header class="PageHeader">
+    <div class="SectionHeader SectionHeader--center">
+      <h1 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title }}</h1>
+    </div>
+  </header>
+
+  <div class="PageContent PageContent--narrow Rte" style="text-align: center;">
+    {% if customer.tags contains 'MD Staff' %}
+    <p class="page-content_large">{{ section.settings.staff_message }}</p>
+    {% else %}
+    <p class="page-content_large">{{ section.settings.pro_message }}</p>
+    {% endif %}
+    <p class="page-content_large"></p>
+    <p class="page-content_large">If you believe you are receiving this message in error, please reach out to your AnteAGE® Sales Representative or contact <a href="mailto:support@anteage.com">Provider Support</a>.
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Ineligible to Purchase",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Your Account Does Not Have Access to Purchase this Product"
+      },
+      {
+        "type": "text",
+        "id": "pro_message",
+        "label": "Pro Message",
+        "default": "This product is only available to purchase to AnteAGE MD® Providers."
+      },
+      {
+        "type": "text",
+        "id": "staff_message",
+        "label": "MD Staff Message",
+        "default": "Your Account does not have permissions to purchase product at Provider rates."
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

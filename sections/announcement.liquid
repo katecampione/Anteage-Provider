@@ -1,0 +1,103 @@
+{%- if section.settings.enable_bar -%}
+  {%- unless section.settings.home_page_only and template != 'index' -%}
+    <section id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="announcement-bar">
+      <div class="AnnouncementBar">
+        <div class="AnnouncementBar__Wrapper">
+          <div class="AnnouncementContent__Wrap">
+          <p class="AnnouncementBar__Content Heading">
+            {%- if customer.tags contains 'MD Wholesale'  -%}
+              <p class="AnnouncementBar__Content Heading nav-link_main"><a href="{{ section.settings.md_link }}">{{ section.settings.md_content | escape }}</a></p> 
+            {%- elsif customer.tags contains 'Pro Wholesale' -%}
+              <p class="AnnouncementBar__Content Heading nav-link_main"><a href="{{ section.settings.pro_link }}">{{ section.settings.pro_content | escape }}</a></p>
+            {%- else -%}  
+              <p class="AnnouncementBar__Content Heading nav-link_main"><a href="{{ section.settings.link }}">{{ section.settings.content | escape }}</a></p>
+            {%- endif -%}
+          </div>
+          <div class="AnnouncementContent__Wrap">
+            {%- unless customer -%}
+            <p class="AnnouncementBar__Content Heading nav-link_main"><a href="https://provider.anteage.com/account/login">Provider Login</a></p>
+            {%- else -%}
+            <p class="AnnouncementBar__Content Heading nav-link_main"><a href="https://academy.anteage.com">AnteAGE® Academy</a></p>
+            {%- endunless -%}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      #section-{{ section.id }} {
+        background: {{ section.settings.background }};
+        color: {{ section.settings.text_color }};
+      }
+    </style>
+
+    <script>
+      document.documentElement.style.setProperty('--announcement-bar-height', document.getElementById('shopify-section-announcement').offsetHeight + 'px');
+    </script>
+  {%- endunless -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_bar",
+      "label": "Enable bar",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "home_page_only",
+      "label": "Home page only",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "md_content",
+      "label": "MD Provider Message",
+      "default": "Hello MD Provider!"
+    },
+    {
+      "type": "url",
+      "id": "md_link",
+      "label": "MD Provider Link"
+    },
+    {
+      "type": "text",
+      "id": "pro_content",
+      "label": "Pro Provider Message",
+      "default": "Hello Provider!"
+    },
+    {
+      "type": "url",
+      "id": "pro_link",
+      "label": "Pro Provider Link"
+    },
+    {
+      "type": "text",
+      "id": "content",
+      "label": "Pre-Login Text",
+      "default": "Announce something here"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Pre-Login Link"
+    }
+  ]
+}
+{% endschema %}

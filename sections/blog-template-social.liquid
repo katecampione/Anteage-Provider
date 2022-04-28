@@ -1,0 +1,83 @@
+<div id="section-{{ section.id }}" class="Section" data-section-id="{{ section.id }}" data-section-type="article-list">
+  {%- if blog.articles_count == 0 -%}
+    <div class="EmptyState">
+      <div class="Container">
+        <h1 class="EmptyState__Title Heading u-h5">{{ 'blog.general.no_articles' | t: blog_title: blog.title }}</h1>
+        <a href="/" class="EmptyState__Action Button Button--primary">{{ 'blog.general.empty_button' | t }}</a>
+      </div>
+    </div>
+  {%- else -%}
+    <div class="Blog">
+      <div class="Container">
+        <header class="PageHeader">
+          <div class="SectionHeader SectionHeader--center">
+            <h1 class="SectionHeader__Heading Heading u-h1">
+              {{- blog.title -}}
+            </h1>
+          </div>
+        </header>
+
+        {%- assign articles_per_page = 24 -%}
+
+        {%- paginate blog.articles by articles_per_page -%}
+
+          <div class="ArticleListWrapper">
+            <div class="ArticleList Grid Grid--m">
+              {% if customer.tags contains 'MD Wholesale' or customer.tags contains 'MD Staff' %}
+                {%- for article in blog.articles -%}
+                  {% if article.tags contains 'MD Wholesale' %}
+                    <div class="Grid__Cell 1/2--tablet 1/3--lap-and-up">
+                      {%- include 'article-item-social', article: article -%}
+                    </div>
+                  {% endif %}
+                {%- endfor -%}
+              
+              {% else %}
+
+                {%- for article in blog.articles -%}
+                  {% if article.tags contains 'Pro Wholesale' %}
+                    <div class="Grid__Cell 1/2--tablet 1/3--lap-and-up">
+                      {%- include 'article-item-social', article: article -%}
+                    </div>
+                  {% endif %}
+                {%- endfor -%}
+              
+              {% endif %}
+            </div>
+          </div>
+
+          {%- include 'pagination' -%}
+        {%- endpaginate -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+<style>
+  #section-{{ section.id }} .ImageHero,
+  #section-{{ section.id }} .ImageHero .Heading {
+    color: #ffffff;
+  }
+
+  #section-{{ section.id }} .ImageHero .Button {
+    color: #1c1c1c;
+    border-color: #ffffff;
+  }
+
+  #section-{{ section.id }} .ImageHero .Button::before {
+    background-color: #ffffff;
+  }
+
+  @media (-moz-touch-enabled: 0), (hover: hover) {
+    #section-{{ section.id }} .ImageHero .Button:hover {
+      color: #ffffff;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Social Media Assets",
+  "settings": []
+}
+{% endschema %}
