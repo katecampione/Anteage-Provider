@@ -6,86 +6,121 @@
 
 /* Colors */
 
-$background      : {{settings.background}};
-$light-background: {{settings.light_background}};
-$heading-color   : {{settings.heading_color}};
-$text-color      : {{settings.text_color}};
-$text-color-light: {{settings.text_light_color}};
-$link-color      : {{settings.link_color}};
-$border-color    : {{settings.background | color_mix: settings.text_color, 85}};
+$background      : #ffffff;
+$light-background: #f5f5f5;
+$heading-color   : #454545;
+$text-color      : #454545;
+$text-color-light: #9d9d9d;
+$link-color      : #4b858e;
+$border-color    : #e3e3e3;
 
-$button-background: {{settings.button_background}};
-$button-text-color: {{settings.button_text_color}};
+$button-background: #4b858e;
+$button-text-color: #ffffff;
 
-$header-background       : {{settings.header_background}};
-$header-heading-color    : {{settings.header_heading_color}};
-$header-light-text-color : {{settings.header_light_color}};
-$header-border-color     : {{settings.header_background | color_mix: settings.header_heading_color, 85}};
+$header-background       : #ffffff;
+$header-heading-color    : #454545;
+$header-light-text-color : #9d9d9d;
+$header-border-color     : #e3e3e3;
 
-$footer-background    : {{settings.footer_background}};
-$footer-text-color    : {{settings.footer_text_color}};
-$footer-heading-color : {{settings.footer_heading_color}};
-$footer-border-color  : {{settings.footer_background | color_mix: settings.footer_text_color, 85}};
+$footer-background    : #454545;
+$footer-text-color    : #9d9d9d;
+$footer-heading-color : #ffffff;
+$footer-border-color  : #525252;
 
-$navigation-background      : {{settings.navigation_background}};
-$navigation-text-color      : {{settings.navigation_text_color}};
+$navigation-background      : #454545;
+$navigation-text-color      : #ffffff;
 $navigation-text-color-light: rgba($navigation-text-color, 0.5);
 $navigation-border-color    : rgba($navigation-text-color, 0.25);
 
-$newsletter-popup-background : {{settings.newsletter_popup_background}};
-$newsletter-popup-text-color : {{settings.newsletter_popup_text_color}};
+$newsletter-popup-background : #454545;
+$newsletter-popup-text-color : #ffffff;
 
-$secondary-elements-background       : {{settings.secondary_elements_background}};
-$secondary-elements-text-color       : {{settings.secondary_elements_text_color}};
+$secondary-elements-background       : #454545;
+$secondary-elements-text-color       : #ffffff;
 $secondary-elements-text-color-light : rgba($secondary-elements-text-color, 0.5);
 $secondary-elements-border-color     : rgba($secondary-elements-text-color, 0.25);
 
-$product-sale-price-color: {{settings.product_on_sale_color}};
+$product-sale-price-color: #4b858e;
 
 /* Typography */
 
-{{ settings.heading_font | font_face: font_display: 'fallback' }}
-{{ settings.text_font | font_face: font_display: 'fallback' }}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.8cfc646eab1e39e2d81a26284624600ccae49d55.woff2?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=6799f362107cfda0fb52aff4e31a85092da81698e86feb185df0e834d31c9c9d") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.25b10f8089bc87dfd8e50a7c68b433da7a04bc87.woff?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=ffea65d209560124f3ceac8060e26f8ce99d5a566f427d612776fafc91c24593") format("woff");
+}
 
-{%- assign text_font_bold = settings.text_font | font_modify: 'weight', 'bolder' -%}
-{%- assign text_font_italic = settings.text_font | font_modify: 'style', 'italic' -%}
-{%- assign text_font_bold_italic = text_font_bold | font_modify: 'style', 'italic' -%}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n4.7fd0287595be20cd5a683102bf49d073b6abf144.woff2?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=97163babd27acf9463548aecb79698da99e3ff7dc4a0051c0b5f7c5fc29b404d") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n4.a26a334a0852627a5f36b195112385b0cd700077.woff?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=4d8eb2cc130ad73023fdea96e2af4e45151a9017670b04583952cf9c7c8e48e8") format("woff");
+}
 
-{{ text_font_bold | font_face: font_display: 'fallback' }}
-{{ text_font_italic | font_face: font_display: 'fallback' }}
-{{ text_font_bold_italic | font_face: font_display: 'fallback' }}
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.8cfc646eab1e39e2d81a26284624600ccae49d55.woff2?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=6799f362107cfda0fb52aff4e31a85092da81698e86feb185df0e834d31c9c9d") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_n7.25b10f8089bc87dfd8e50a7c68b433da7a04bc87.woff?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=ffea65d209560124f3ceac8060e26f8ce99d5a566f427d612776fafc91c24593") format("woff");
+}
 
-$heading-font-family : {{settings.heading_font.family}}, {{ settings.heading_font.fallback_families }};
-$heading-font-weight : {{settings.heading_font.weight}};
-$heading-font-style  : {{settings.heading_font.style}};
-$heading-font-size   : {{settings.heading_size}};
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i4.f1583d9f457b68e44fbda187a48b4096d547d7f4.woff2?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=843b89040fce2b0038b2bbf909ec2d16fd8d09ea829e33aae8b4b1a2daf0be0c") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i4.67fb53a3e0351125941146246183577ae8d8bf23.woff?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=2f4ea05589a11a299fd1e2c4a166591ef0396ff3e23a1f79401946d314156b7c") format("woff");
+}
 
-$text-font-family : {{settings.text_font.family}}, {{ settings.text_font.fallback_families }};
-$text-font-weight : {{settings.text_font.weight}};
-$text-font-style  : {{settings.text_font.style}};
+@font-face {
+  font-family: "Avenir Next";
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+  src: url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i7.3a67996166b5b7f1b7cc3b35490ebd6824908dc5.woff2?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=86a1b734b9b3943da5767032b0a8134a4ed049965f4377fdf7d6d7f4bb127ba9") format("woff2"),
+       url("https://fonts.shopifycdn.com/avenir_next/avenirnext_i7.b872875ff437f0efb4c2321d0016eaa726b649ae.woff?h1=cHJvdmlkZXIuYW50ZWFnZS5jb20&h2=d3d3LnByb3ZpZGVyLmFudGVhZ2UuY29t&hmac=a21316f07f8e887d99dcdb222dbb04ea971bf7572a58d497ea702dfe0aabae25") format("woff");
+}
 
-$uppercase-heading: {% if settings.uppercase_heading %}true{% else %}false{% endif %};
 
-$base-text-font-size   : {{settings.base_text_font_size}}px;
+$heading-font-family : "Avenir Next", sans-serif;
+$heading-font-weight : 700;
+$heading-font-style  : normal;
+$heading-font-size   : small;
+
+$text-font-family : "Avenir Next", sans-serif;
+$text-font-weight : 400;
+$text-font-style  : normal;
+
+$uppercase-heading: false;
+
+$base-text-font-size   : 14px;
 $default-text-font-size: 14px;
 
 /* Products */
 
-$product-info-alignment         : {{settings.product_info_alignment}};
-$product-show-price-on-hover    : {{settings.product_show_price_on_hover}};
-$product-list-horizontal-spacing: {{settings.product_list_horizontal_spacing}};
-$product-list-vertical-spacing  : {{settings.product_list_vertical_spacing}};
+$product-info-alignment         : center;
+$product-show-price-on-hover    : false;
+$product-list-horizontal-spacing: extra_small;
+$product-list-vertical-spacing  : small;
 
-$cursor-zoom-in-svg    : "{{ 'cursor-zoom-in.svg' | asset_url }}";
-$cursor-zoom-in-2x-svg : "{{ 'cursor-zoom-in-2x.svg' | asset_url }}";
+$cursor-zoom-in-svg    : "//cdn.shopify.com/s/files/1/0006/7230/1119/t/42/assets/cursor-zoom-in.svg?v=18366180657133787707";
+$cursor-zoom-in-2x-svg : "//cdn.shopify.com/s/files/1/0006/7230/1119/t/42/assets/cursor-zoom-in-2x.svg?v=12103363009041649021";
 
 /* Animation */
 
 $drawer-transition-timing: cubic-bezier(0.645, 0.045, 0.355, 1);
-$show-page-transition: {% if settings.show_page_transition %}true{% else %}false{% endif %};
-$show-button-transition: {% if settings.show_button_transition %}true{% else %}false{% endif %};
-$show-image-zooming: {% if settings.show_image_zooming %}true{% else %}false{% endif %};
-$show-element-staggering: {% if settings.show_element_staggering %}true{% else %}false{% endif %};
+$show-page-transition: true;
+$show-button-transition: false;
+$show-image-zooming: false;
+$show-element-staggering: false;
 
 /* Other */
 
