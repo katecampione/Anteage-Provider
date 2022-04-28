@@ -577,8 +577,8 @@
             "type": "image",
             "settings": {
               "content_type": "all",
-              "image": "shopify:\/\/shop_images\/Mother_s_Day_Banners2-01.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/Mother_s_Day_Banners2-02.jpg",
+              "image": "shopify:\/\/shop_images\/mothersday.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/mothers_day.jpg",
               "apply_overlay": false,
               "add_padding": false,
               "add_bg": false,
