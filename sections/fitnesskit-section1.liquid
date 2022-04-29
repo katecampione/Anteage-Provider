@@ -121,6 +121,7 @@
   }
   {% endschema %}
   <style>
+      @media screen and (min-width: 641px){
       #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper {
         background: url("https://cdn.shopify.com/s/files/1/0006/7230/1119/files/fitness_flowers.png?v=1651180080");
         background-repeat:no-repeat;
@@ -151,5 +152,57 @@
       }
       #shopify-section-fitnesskit-section1 > section {
           border-bottom: 4px solid #f0ec6b;
+      }  
+    }
+    #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper {
+        background: url("https://cdn.shopify.com/s/files/1/0006/7230/1119/files/fitness_flowers.png?v=1651180080");
+        background-repeat:no-repeat;
+        background-size: 100%;
+        background-position:center;
+        
+        
+      }
+      #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div > header > h2{
+          font-family: 'Spring';
+          font-size: 7vw;
+          color: #f0ec6b;
+          font-weight: 100;
+      }
+      #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div {
+        text-align: right;
+        position: absolute;
+        
+        
+      }
+      #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div > header > p{        text-align: center;
+        color: white;
+        font-size: 3vw;
+        position: absolute;
+        font-weight: 800;
+        left: 18%;
+        width: 100%;
+        bottom: 31%;
+      }
+      #shopify-section-fitnesskit-section1 > section {
+          border-bottom: 4px solid #f0ec6b;
+      }
+      @media screen and (max-width: 640px){
+        #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper{
+          background-position: top;
+          height: 400px;
+          
+        }
+        #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div > header > h2{
+          font-size: 5em;
+        }
+        #shopify-section-fitnesskit-section1 > section > div > div.FeatureText__ContentWrapper > div > header > p{
+          font-size: 2em;
+        }
+       
+      }
+      @media screen and (max-width: 640px){ 
+        #shopify-section-fitnesskit-section1 > section {
+          display: none;
+        }
       }
   </style>
