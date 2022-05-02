@@ -33,13 +33,14 @@
           {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image -%}{%- endcapture -%}
   
           <div class="AspectRatio" style="max-width: {{ section.settings.image.width }}px; --aspect-ratio: {{ section.settings.image.aspect_ratio }}">
-            {%- assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-            <img class="Image--lazyLoad Image--slide{{ section.settings.image_position | capitalize }}" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ section.settings.image.alt | escape }}">
-  
-            <noscript>
-                
-              <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt | escape }}">
-            </noscript>
+            <video width="auto" 
+            height="550" 
+            controls poster=
+ "https://cdn.shopify.com/s/files/1/0006/7230/1119/files/Webp.net-resizeimage_138d70d0-a14c-465c-a56b-51d6364b6922.jpg?v=1651515384">
+         <source src=
+ "https://cdn.shopify.com/s/files/1/0006/7230/1119/files/Skin_Fitness_Music_Compressed.mp4?v=1651514617"
+                 type="video/mp4">
+     </video>
           </div>
         </div>
       {%- endif -%}
@@ -55,6 +56,11 @@
       {%- endif -%}
     </div>
   </section>
+  <style>
+      #shopify-section-fitness-section3 > section > div > div.FeatureText__ImageWrapper > div > video {
+          text-align: center;
+      }
+  </style>
   
   {% schema %}
   {
@@ -74,7 +80,7 @@
         "default": "Title"
       },
       {
-        "type": "url",
+        "type": "image-picker",
         "id": "image",
         "label": "Image",
         "info": "1200 x 1200px .png recommended"
@@ -124,6 +130,21 @@
   <style>
     #shopify-section-fitness-section3{
         background-color: #f0e6d0;
+    }
+    #shopify-section-fitness-section3 > section > div > div.FeatureText__ContentWrapper > div > header > h2 {
+        font-family: 'Spring';
+        color: #353670 !important;
+        font-size: 4em;
+    }
+    @media screen and (max-width: 640px){ 
+        #shopify-section-fitness-section3 > section > div > div.FeatureText__ImageWrapper > div > video {
+            width: 300px;
+        }
+    }
+    #shopify-section-fitness-section3 > section > div > div.FeatureText__ImageWrapper > div > video {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
     }
     
   </style>
