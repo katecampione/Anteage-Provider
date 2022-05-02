@@ -11,9 +11,6 @@
     <ul>
       {%- for block in section.blocks -%}
         <li class="logo-bar__item" {{ block.shopify_attributes }}>
-          {%- if block.settings.link != blank -%}
-            <p>{{ block.settings.link }}</p>
-          {%- endif -%}
   
             {%- if block.settings.image != blank -%}
               {{ block.settings.image | img_url: '160x160', scale: 2 | img_tag: block.settings.image.alt }}
@@ -21,9 +18,11 @@
               {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
   
+          
           {%- if block.settings.link != blank -%}
-            </a>
-          {%- endif -%}
+          <p>{{ block.settings.link }}</p>
+        {%- endif -%}
+          
         </li>
       {%- endfor -%}
     </ul>
@@ -37,6 +36,10 @@
         color: white;
         font-size: 2em;
        
+      }
+      #shopify-section-fitness-icons > ul > li{
+        text-align: center;
+        color: white;
       }
   </style>
   {% schema %}
