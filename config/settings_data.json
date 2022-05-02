@@ -1103,6 +1103,18 @@
           "title": "",
           "html": ""
         }
+      },
+      "fitness-section4": {
+        "type": "fitness-section4",
+        "settings": {
+          "subheading": "",
+          "title": "",
+          "image": "shopify:\/\/shop_images\/anteage1.jpg",
+          "image_position": "left",
+          "content": "",
+          "link_text": "",
+          "link_url": ""
+        }
       }
     },
     "content_for_index": [
