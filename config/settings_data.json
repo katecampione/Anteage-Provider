@@ -1163,6 +1163,41 @@
           "link_text": "",
           "link_url": ""
         }
+      },
+      "fitness-banner-end": {
+        "type": "fitness-banner-end",
+        "blocks": {
+          "fcd6c562-0068-4479-b7df-015492ee8ebb": {
+            "type": "image",
+            "settings": {
+              "content_type": "all",
+              "image": "shopify:\/\/shop_images\/Webp.net-resizeimage_1.jpg",
+              "apply_overlay": false,
+              "add_padding": false,
+              "add_bg": false,
+              "content_position": "middleRight",
+              "subheading": "Slide title",
+              "title": "Tell your story",
+              "content": "Tell your story",
+              "button_1_text": "",
+              "button_1_link": "",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "fcd6c562-0068-4479-b7df-015492ee8ebb"
+        ],
+        "settings": {
+          "show_fullscreen": true,
+          "show_arrow": false,
+          "autoplay": true,
+          "cycle_speed": 5,
+          "text_color": "#ffffff",
+          "button_color": "#363636",
+          "button_background": "#ffffff"
+        }
       }
     },
     "content_for_index": [
