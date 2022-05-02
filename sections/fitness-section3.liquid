@@ -121,8 +121,33 @@
   }
   {% endschema %}
   <style>
-    #shopify-section-fitness-section3{
+      #shopify-section-fitness-section3{
         background-color: #f0e6d0;
+        
     }
-    
+    #shopify-section-fitness-section3 > section > div > div.FeatureText__ContentWrapper > div > header > h2 {
+        font-family: 'Spring';
+        color: #353670 !important;
+        font-size: 4em;
+    }
+    @media screen and (max-width: 640px){ 
+        #shopify-section-fitness-section3 > section > div > div.FeatureText__ImageWrapper > div > video {
+            width: 300px;
+        }
+    }
+    #shopify-section-fitness-section3 > section > div > div.FeatureText__ImageWrapper > div > video {
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        
+    }
+    @media screen and (min-width: 641px){ 
+   
+    #shopify-section-fitness-section3 {
+      padding: 2em;
+    }
+  }
+    #shopify-section-fitness-section3 > section > div > div.FeatureText__ImageWrapper > div > video {
+          text-align: center;
+      }
   </style>
