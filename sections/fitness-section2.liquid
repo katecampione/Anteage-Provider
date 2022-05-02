@@ -4,9 +4,7 @@
         <div class="FeatureText__Content">
           {%- if section.settings.subheading != blank or section.settings.title != blank -%}
             <header class="SectionHeader">
-              {%- if section.settings.subheading != blank -%}
-                <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
-              {%- endif -%}
+             
   
               {%- if section.settings.title != blank -%}
                 <h2 class="SectionHeader__Heading Heading u-h1">{{ section.settings.title | escape }}</h2>
@@ -17,6 +15,9 @@
                   {{ section.settings.content }}
                 
               {%- endif -%}
+              {%- if section.settings.subheading != blank -%}
+              <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
+            {%- endif -%}
   
               {%- if section.settings.link_text != blank -%}
                 <a href="{{ section.settings.link_url }}" class="Link Link--underline">{{ section.settings.link_text | escape }}</a>
@@ -54,7 +55,27 @@
       {%- endif -%}
     </div>
   </section>
-  
+  <style>
+    #shopify-section-fitness-section2 > section > div > div.FeatureText__ContentWrapper > div > header > h2 {
+      font-family: 'Spring';
+      font-size: 5em;
+      color: #f0ec6b;
+      font-weight: 100;
+
+    }
+    #shopify-section-fitness-section2 > section > div > div.FeatureText__ContentWrapper > div > header > p {
+      color: white;
+    }
+    #shopify-section-fitness-section2 > section > div > div.FeatureText__ContentWrapper > div > header > h3 {
+      color: white;
+      text-transform: none;
+      font-weight: 800;
+      font-size: 1.2em;
+    }
+    #shopify-section-fitness-section2 > section {
+      background-color: #353670;
+    }
+  </style>
   {% schema %}
   {
     "name": "Rich text with image",
