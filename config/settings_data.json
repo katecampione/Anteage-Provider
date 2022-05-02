@@ -1083,6 +1083,17 @@
           "title": "What's Included?",
           "logo_width": "200px"
         }
+      },
+      "fitness-section3": {
+        "type": "fitness-section3",
+        "settings": {
+          "subheading": "Sub-heading",
+          "title": "How to Use It",
+          "image_position": "right",
+          "content": "<p>The most effective fitness routines area the ones that give you results.<br\/><br\/>The Skin Fitness kit gives you the tools you need for a workout that cna be customized to whatever works for you.<br\/><br\/>Mix and match and find your favorite moves.<\/p><p><\/p><p>The end result will be worth it.<\/p>",
+          "link_text": "",
+          "link_url": ""
+        }
       }
     },
     "content_for_index": [
