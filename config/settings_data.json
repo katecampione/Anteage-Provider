@@ -1095,6 +1095,14 @@
           "link_text": "",
           "link_url": ""
         }
+      },
+      "fitness-html": {
+        "type": "fitness-html",
+        "settings": {
+          "subheading": "Step By Step",
+          "title": "",
+          "html": ""
+        }
       }
     },
     "content_for_index": [
