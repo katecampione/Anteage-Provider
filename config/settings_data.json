@@ -1020,6 +1020,18 @@
           "button_color": "#363636",
           "button_background": "#ffffff"
         }
+      },
+      "fitness-section2": {
+        "type": "fitness-section2",
+        "settings": {
+          "subheading": "Let's get to work.",
+          "title": "Better than face yoga.",
+          "image": "shopify:\/\/shop_images\/Skin_Fitness_Assets-11.png",
+          "image_position": "left",
+          "content": "<p>Did you know training takes place deep in your skin as well as in the gym? AnteAGE® Skin Fitness is all about taking your training to the cellular level. Our growth factor solutions will coach your sleepy cells and get them moving again.<\/p>",
+          "link_text": "",
+          "link_url": ""
+        }
       }
     },
     "content_for_index": [
