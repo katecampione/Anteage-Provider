@@ -5,10 +5,12 @@
     }
   </style>
   
-  <h2>{{ section.settings.title | escape }}</h2>
+ 
   
   {%- if section.blocks.size > 0 -%}
+  <h2>{{ section.settings.title | escape }}</h2>
     <ul>
+        
       {%- for block in section.blocks -%}
         <li class="logo-bar__item" {{ block.shopify_attributes }}>
   
@@ -30,17 +32,33 @@
   <style>
       #shopify-section-fitness-icons {
          background-color: #353670;
-         text-align
+         
       }
       #shopify-section-fitness-icons > h2 {
         color: white;
         font-size: 2em;
+        text-align: center;
+        font-weight: 800;
        
       }
       #shopify-section-fitness-icons > ul > li{
         text-align: center;
         color: white;
       }
+      #shopify-section-fitness-icons > ul {
+          text-align: center;
+          
+      }
+      @media screen and (min-width: 641px){
+        #shopify-section-fitness-icons > h2 {
+            width: 50%;
+        
+        }
+        #shopify-section-fitness-icons > ul {
+            text-align: right;
+            padding: 0px 30px;
+        }
+    }
   </style>
   {% schema %}
   {
