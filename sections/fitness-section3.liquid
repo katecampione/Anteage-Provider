@@ -31,17 +31,25 @@
       {%- if section.settings.image != blank -%}
         <div class="FeatureText__ImageWrapper">
           {%- capture supported_sizes -%}{%- render 'image-size', sizes: '400,600,700,800,900,1000,1200', image: section.settings.image -%}{%- endcapture -%}
-  
-          <div class="AspectRatio" style="max-width: {{ section.settings.image.width }}px; --aspect-ratio: {{ section.settings.image.aspect_ratio }}">
-            {%- assign image_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-            <img class="Image--lazyLoad Image--slide{{ section.settings.image_position | capitalize }}" data-src="{{ image_url }}" data-expand="-200" data-widths="[{{ supported_sizes }}]" data-sizes="auto" alt="{{ section.settings.image.alt | escape }}">
-  
+           
+            <video width="auto" 
+            height="500px" 
+            controls poster=
+ "https://cdn.shopify.com/s/files/1/0006/7230/1119/files/Webp.net-resizeimage_138d70d0-a14c-465c-a56b-51d6364b6922.jpg?v=1651515384">
+         <source src=
+ "https://cdn.shopify.com/s/files/1/0006/7230/1119/files/Skin_Fitness_Music_Compressed.mp4?v=1651514617"
+                 type="video/mp4">
+     </video>
+          </div>
+        </div>
+      
             <noscript>
               <img src="{{ section.settings.image | img_url: '800x' }}" alt="{{ section.settings.image.alt | escape }}">
             </noscript>
           </div>
         </div>
       {%- endif -%}
+
     {%- endcapture -%}
   
     <div class="FeatureText {% if section.settings.image != blank %}FeatureText--withImage FeatureText--image{{ section.settings.image_position | capitalize }}{% endif %}">
@@ -144,7 +152,7 @@
     @media screen and (min-width: 641px){ 
    
     #shopify-section-fitness-section3 {
-      padding: 2em;
+      padding: 100px;
     }
   }
     #shopify-section-fitness-section3 > section > div > div.FeatureText__ImageWrapper > div > video {
