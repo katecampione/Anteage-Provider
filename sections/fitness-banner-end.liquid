@@ -74,8 +74,8 @@
               {%- endif -%}
 
               {%- if block.settings.title != blank -%}
-              <span style="display: inline-flex; color:#f0ec6b">
-               <img src="https://cdn.shopify.com/s/files/1/0006/7230/1119/files/Webp.net-resizeimage.png?v=1651539625" height="30" width="40" style="margin-right: 20px;"> <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 slideshow-header">{{ block.settings.title | escape }}</h2>
+              <span style="display: inline-flex;">
+               <img src="https://cdn.shopify.com/s/files/1/0006/7230/1119/files/Webp.net-resizeimage.png?v=1651539625" height="30" width="40" style="margin-right: 20px;"> <h2 style="color:#f0ec6b" class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 slideshow-header">{{ block.settings.title | escape }}</h2>
             </span>
               {%- endif -%}
       
@@ -500,5 +500,12 @@
     }
     #Slidefcd6c562-0068-4479-b7df-015492ee8ebb > div.Slideshow__Content.ss-justify--right.div_bottom-fix{
         top: 40%;
+    }
+    @media screen and (max-width: 640px){
+    #Slidefcd6c562-0068-4479-b7df-015492ee8ebb > div.Slideshow__Content.ss-justify--right.div_bottom-fix {
+    top: 0%;
+    width: 60%;
+    left: 70%;
+}
     }
 </style>
