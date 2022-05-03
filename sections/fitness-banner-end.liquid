@@ -89,7 +89,7 @@
 
               {%- if block.settings.button_1_text != blank or block.settings.button_2_text != blank -%}
                 <div class="SectionHeader__ButtonWrapper">
-                  <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}">
+                  <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %} ss-buttons--{{ block.settings.text_align }}">
                     {%- if block.settings.button_1_text != blank -%}
                       <a href="{{ block.settings.button_1_link }}" class="ButtonGroup__Item Button">{{ block.settings.button_1_text | escape }}</a>
                     {%- endif -%}
@@ -103,8 +103,8 @@
             {%- endcapture -%}
 
             {%- if slideshow_content != blank -%}
-              <div class="Slideshow__Content Slideshow__Content--{{ block.settings.content_position }} div_bottom-fix">
-                <header class="SectionHeader slideshow_width--fix{% if block.settings.add_padding != false %} slideshow_inner--padding{% endif %}{% if block.settings.add_bg %} content_bg{% endif %}">
+              <div class="Slideshow__Content ss-justify--{{ block.settings.h_position }} div_bottom-fix">
+                <header class="SectionHeader slideshow_width--fix{% if block.settings.add_padding != false %} slideshow_inner--padding{% endif %} {{ block.settings.text_align }}Contents centerPhone{% if block.settings.add_bg %} content_bg{% endif %}">
                   {{ slideshow_content }}
                 </header>
               </div>
@@ -197,7 +197,7 @@
 
               {%- if block.settings.button_1_text != blank or block.settings.button_2_text != blank -%}
                 <div class="SectionHeader__ButtonWrapper">
-                  <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}">
+                  <div class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %} ss-buttons--{{ block.settings.text_align }}">
                     {%- if block.settings.button_1_text != blank -%}
                       <a href="{{ block.settings.button_1_link }}" class="ButtonGroup__Item Button">{{ block.settings.button_1_text | escape }}</a>
                     {%- endif -%}
@@ -211,8 +211,8 @@
             {%- endcapture -%}
 
             {%- if slideshow_content != blank -%}
-              <div class="Slideshow__Content Slideshow__Content--{{ block.settings.content_position }} div_bottom-fix">
-                <header class="SectionHeader slideshow_width--fix{% if block.settings.add_padding != false %} slideshow_inner--padding{% endif %}{% if block.settings.add_bg %} content_bg{% endif %}">
+              <div class="Slideshow__Content ss-justify--{{ block.settings.h_position }} div_bottom-fix">
+                <header class="SectionHeader slideshow_width--fix{% if block.settings.add_padding != false %} slideshow_inner--padding{% endif %} {{ block.settings.text_align }}Contents centerPhone{% if block.settings.add_bg %} content_bg{% endif %}">
                   {{ slideshow_content }}
                 </header>
               </div>
@@ -268,12 +268,11 @@
       }
     }
   {%- endif -%}
-  
 </style>
 
 {% schema %}
 {
-  "name": "Slideshow",
+  "name": "Slideshow (Fixed 5.1.20)",
   "class": "shopify-section--slideshow",
   "max_blocks": 5,
   "settings": [
@@ -387,35 +386,43 @@
         },
         {
           "type": "select",
-          "id": "content_position",
-          "label": "Content position",
+          "id": "h_position",
+          "label": "Horizontal position",
           "options": [
             {
-              "value": "middleLeft",
-              "label": "Middle left"
+              "value": "left",
+              "label": "Left"
             },
             {
-              "value": "middleCenter",
-              "label": "Middle center"
+              "value": "center",
+              "label": "Center"
             },
             {
-              "value": "middleRight",
-              "label": "Middle right"
-            },
-            {
-              "value": "bottomLeft",
-              "label": "Bottom left"
-            },
-            {
-              "value": "bottomCenter",
-              "label": "Bottom center"
-            },
-            {
-              "value": "bottomRight",
-              "label": "Bottom right"
+              "value": "right",
+              "label": "Right"
             }
           ],
-          "default": "bottomLeft"
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
         },
         {
           "type": "text",
@@ -469,7 +476,7 @@
   "presets": [
     {
       "category": "Image",
-      "name": "Slideshow",
+      "name": "Slideshow - New",
       "settings": {},
       "blocks": [
         {
