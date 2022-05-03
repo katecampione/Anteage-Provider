@@ -74,7 +74,9 @@
               {%- endif -%}
 
               {%- if block.settings.title != blank -%}
-                <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 slideshow-header">{{ block.settings.title | escape }}</h2>
+              <span style="display: inline-flex; color:#f0ec6b">
+               <img src="https://cdn.shopify.com/s/files/1/0006/7230/1119/files/Webp.net-resizeimage.png?v=1651539625" height="30" width="40" style="margin-right: 20px;"> <h2 class="SectionHeader__Heading SectionHeader__Heading--emphasize Heading u-h1 slideshow-header">{{ block.settings.title | escape }}</h2>
+            </span>
               {%- endif -%}
       
               {%- if block.settings.content != blank -%}
@@ -149,7 +151,8 @@
 
                   <noscript>
                     <img class="Slideshow__Image" src="{{ mobile_image | img_url: 'x800' }}" alt="{{ mobile_image.alt | escape }}">
-                  </noscript>
+                  
+                </noscript>
               </div>
             {%- endif -%}
 
@@ -166,7 +169,8 @@
                      alt="{{ block.settings.image.alt | escape }}">
 
                 <noscript>
-                  <img class="Slideshow__Image" src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt | escape }}">
+                 
+                    <img class="Slideshow__Image" src="{{ block.settings.image | img_url: '1000x' }}" alt="{{ block.settings.image.alt | escape }}">
                 </noscript>
               </div>
             {%- else -%}
@@ -491,6 +495,10 @@
 }
 {% endschema %}
 <style>
-    
+    #Slidefcd6c562-0068-4479-b7df-015492ee8ebb > div.Slideshow__Content.ss-justify--right.div_bottom-fix > header > h2{
     color: #f0ec6b;
+    }
+    #Slidefcd6c562-0068-4479-b7df-015492ee8ebb > div.Slideshow__Content.ss-justify--right.div_bottom-fix{
+        top: 40%;
+    }
 </style>
