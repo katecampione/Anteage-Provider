@@ -22,7 +22,7 @@
               {%- endif -%}
   
               {%- if section.settings.link_text != blank -%}
-                <a href="{{ section.settings.link_url }}" class="ButtonGroup ButtonGroup--spacingSmall--left {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}" style="justify-content: left;">{{ section.settings.link_text | escape }}</a>
+                <a href="{{ section.settings.link_url }}" class="ButtonGroup ButtonGroup--spacingSmall--left {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}" style="justify-content: left !important;">{{ section.settings.link_text | escape }}</a>
               {%- endif -%}
             </header>
           {%- endif -%}
