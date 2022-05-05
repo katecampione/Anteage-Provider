@@ -981,8 +981,8 @@
           "image": "shopify:\/\/shop_images\/fitness_kit.jpg",
           "image_position": "left",
           "content": "<p>Skin Fitness<\/p>",
-          "link_text": "Shop Now",
-          "link_url": "shopify:\/\/products\/anteage-skin-fitness-kit"
+          "link_text": "",
+          "link_url": ""
         }
       },
       "fitness-banner": {
