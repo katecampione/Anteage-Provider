@@ -17,7 +17,7 @@
               {%- endif -%}
               {%- if section.settings.subheading != blank -%}
               <h3 class="SectionHeader__SubHeading Heading u-h6">{{ section.settings.subheading | escape }}</h3>
-<div class="ButtonGroup ButtonGroup--spacingSmall--left "><a href="https://anteage.com/products/anteage-skin-fitness-kit-1?_pos=1&_sid=3ef7363d6&_ss=r" id="fitness-btn"class="ButtonGroup__Item Button" >Learn More</a></div>
+<div class="ButtonGroup ButtonGroup--spacingSmall--left "><a href="https://anteage.com/products/anteage-skin-fitness-kit-1?_pos=1&_sid=3ef7363d6&_ss=r" id="fitness-btn2" class="ButtonGroup__Item Button" >Learn More</a></div>
             {%- endif -%}
   
               {%- if section.settings.link_text != blank -%}
@@ -85,6 +85,11 @@
     height: 50%;
     width: 50%;
 }
+    }
+    #fitness-btn {
+    	border: 2px solid white;
+     	color: white;
+      justify-content: left;
     }
   </style>
   {% schema %}
