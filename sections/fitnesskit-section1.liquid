@@ -15,11 +15,13 @@
               {%- if section.settings.content != blank -%}
                 
                   {{ section.settings.content }}
+                    <div class="ButtonGroup ButtonGroup--spacingSmall  ss-buttons--left"><a href="/products/anteage-skin-fitness-kit" class="ButtonGroup__Item Button" data-live-text-setting="section.1588375533249.block.c364fe6c-1337-4cfc-867c-1450622e7f4f.button_1_text/escape">Learn More</a></div>
+
                 
               {%- endif -%}
   
               {%- if section.settings.link_text != blank -%}
-                <a href="{{ section.settings.link_url }}" class="Link Link--underline">{{ section.settings.link_text | escape }}</a>
+                <a href="{{ section.settings.link_url }}" class="class="ButtonGroup ButtonGroup--spacingSmall {% if has_two_buttons %}ButtonGroup--sameSize{% endif %}">{{ section.settings.link_text | escape }}</a>
               {%- endif -%}
             </header>
           {%- endif -%}
@@ -148,7 +150,7 @@
         font-weight: 800;
         left: 18%;
         width: 100%;
-        bottom: 31%;
+        bottom: 20%;
       }
       #shopify-section-fitnesskit-section1 > section {
           border-bottom: 4px solid #f0ec6b;
@@ -205,16 +207,16 @@
           display: none;
         }
       }
+     
+      #section-fitness-banner .Heading{
+        color: #353670 !important;
+        }
+        #Slidea71bff04-467d-4821-952f-54eba1ea56b9 > div.Slideshow__Content.Slideshow__Content--bottomCenter.div_bottom-fix > header > p{        
+        color: #353670 !important;
+      }
       @media screen and (min-width: 641px){
         #section-fitness-banner{
           display: none;
         }
-      }
-        #Slidea71bff04-467d-4821-952f-54eba1ea56b9 > div.Slideshow__Content.Slideshow__Content--bottomLeft.div_bottom-fix > header > h2 {        
-          color: #353670 !important;
-        }
-        #Slidea71bff04-467d-4821-952f-54eba1ea56b9 > div.Slideshow__Content.Slideshow__Content--bottomLeft.div_bottom-fix > header > p {       
-        
-        color: #353670 !important;
       }
   </style>
