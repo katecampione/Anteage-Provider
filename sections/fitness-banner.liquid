@@ -258,9 +258,12 @@
   }
 
   #section-{{ section.id }} .Button::before {
-    background-color: {{ section.settings.button_background }};
+    background-color: #f0e6d0;
+    color: white;
   }
-
+  #section-fitness-banner .Button::before {
+  	
+  }
   {%- if settings.show_button_transition -%}
     @media (-moz-touch-enabled: 0), (hover: hover) {
       #section-{{ section.id }} .Button:hover {
