@@ -572,31 +572,10 @@
               "button_2_text": "",
               "button_2_link": ""
             }
-          },
-          "c364fe6c-1337-4cfc-867c-1450622e7f4f": {
-            "type": "image",
-            "settings": {
-              "content_type": "all",
-              "image": "shopify:\/\/shop_images\/mothersday.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/mothers_day.jpg",
-              "apply_overlay": false,
-              "add_padding": false,
-              "add_bg": false,
-              "h_position": "right",
-              "text_align": "left",
-              "subheading": "",
-              "title": "Spring Fitness",
-              "content": "Get your skin in shape with the Ultimate Springtime Skin Fitness Kit",
-              "button_1_text": "Learn More",
-              "button_1_link": "shopify:\/\/products\/anteage-skin-fitness-kit",
-              "button_2_text": "",
-              "button_2_link": ""
-            }
           }
         },
         "block_order": [
-          "16b47faa-6ed3-494e-8a45-332c9161376a",
-          "c364fe6c-1337-4cfc-867c-1450622e7f4f"
+          "16b47faa-6ed3-494e-8a45-332c9161376a"
         ],
         "settings": {
           "show_fullscreen": false,
