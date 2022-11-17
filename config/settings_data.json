@@ -572,10 +572,32 @@
               "button_2_text": "",
               "button_2_link": ""
             }
+          },
+          "04c302a4-94d5-402f-b439-74ba903e5a57": {
+            "type": "image",
+            "disabled": true,
+            "settings": {
+              "content_type": "all",
+              "image": "shopify:\/\/shop_images\/MD_Web_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/MD_Mobile_Banner.jpg",
+              "apply_overlay": false,
+              "add_padding": true,
+              "add_bg": false,
+              "h_position": "left",
+              "text_align": "left",
+              "subheading": "",
+              "title": "Bring that Holiday Glow",
+              "content": "The AnteAGE Holiday Box has everything. you need for both the perfect gift and a complete home skincare regimen.",
+              "button_1_text": "Learn More",
+              "button_1_link": "https:\/\/provider.anteage.com\/account\/login?checkout_url=\/",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
           }
         },
         "block_order": [
-          "16b47faa-6ed3-494e-8a45-332c9161376a"
+          "16b47faa-6ed3-494e-8a45-332c9161376a",
+          "04c302a4-94d5-402f-b439-74ba903e5a57"
         ],
         "settings": {
           "show_fullscreen": false,
