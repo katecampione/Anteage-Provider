@@ -557,7 +557,7 @@
             "type": "image",
             "settings": {
               "content_type": "all",
-              "image": "shopify:\/\/shop_images\/2023_01_VDAY_VRS.jpg",
+              "image": "shopify:\/\/shop_images\/2023_01_VDAY_VRS-2.jpg",
               "mobile_image": "shopify:\/\/shop_images\/2023_01_VDAY_VRS-Mobile.jpg",
               "apply_overlay": false,
               "add_padding": true,
@@ -568,7 +568,7 @@
               "title": "Enjoy VDAY with VRS",
               "content": "Special edition Valentine's Day VRS three packs are available now.",
               "button_1_text": "Learn More",
-              "button_1_link": "https:\/\/provider.anteage.com\/products\/md-holiday-kit",
+              "button_1_link": "shopify:\/\/products\/valentines-vrs-special",
               "button_2_text": "",
               "button_2_link": ""
             }
@@ -606,7 +606,7 @@
           "cycle_speed": 8,
           "text_color": "#ffffff",
           "button_color": "#ffffff",
-          "button_background": "#4b858e"
+          "button_background": "#971818"
         }
       },
       "1592422385052": {
