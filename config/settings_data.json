@@ -578,16 +578,16 @@
             "type": "image",
             "settings": {
               "content_type": "all",
-              "image": "shopify:\/\/shop_images\/Eye_Launch_Banner_Feb_2022_Desktop.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/anteage_eye.jpg",
+              "image": "shopify:\/\/shop_images\/2023_02_Eye_Hero_Desktop.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/2023_02_Eye_Hero_Mobile.jpg",
               "apply_overlay": false,
               "add_padding": false,
               "add_bg": false,
               "h_position": "left",
               "text_align": "left",
               "subheading": "",
-              "title": "Lift and Brighten Your Eyes Like Never Before",
-              "content": "It's finally here. Add AnteAGE Eye to your skincare collection today.",
+              "title": "Introducing AnteAGE® Eye",
+              "content": "Lift and brighten like never before.",
               "button_1_text": "Shop Now",
               "button_1_link": "shopify:\/\/collections\/anteage®-eye",
               "button_2_text": "",
@@ -604,9 +604,9 @@
           "show_arrow": false,
           "autoplay": true,
           "cycle_speed": 8,
-          "text_color": "#454545",
-          "button_color": "#ffffff",
-          "button_background": "#4b858e"
+          "text_color": "#ffffff",
+          "button_color": "#454545",
+          "button_background": "#ffffff"
         }
       },
       "1592422385052": {
