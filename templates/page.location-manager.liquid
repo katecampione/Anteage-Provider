@@ -104,3 +104,26 @@
         </form>
     </div>
 </div> 
+
+<script>
+  getRequiredFields(formItem) {
+    let requiredFields = [];
+    let requiredInputs = formItem.querySelectorAll('input');
+    requiredInputs.forEach(input => {
+      requiredFields.push(input)
+    })
+    let requiredAreas = formItem.querySelectorAll('textarea');
+    requiredAreas.forEach(textarea => {
+      requiredFields.push(textarea)
+    })
+    let requiredSelects = formItem.querySelectorAll('select');
+    requiredSelects.forEach(select => {
+      requiredFields.push(select)
+    })
+  }
+
+  let forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    let requiredFields = getRequiredFields(form);
+  })
+</script>
