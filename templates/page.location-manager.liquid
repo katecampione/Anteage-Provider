@@ -123,8 +123,10 @@
     return requiredFields
   }
 
-  function validateInputs(formItem) {
-    let requiredCount = formItem.querySelectorAll(':required').length;
+  function validateInputs() {
+    let form = this.closest('form');
+    let requiredFields = getRequiredFields(form);
+    let requiredCount = requiredFields.length;
     console.log(requiredCount);
   }
 
@@ -133,9 +135,7 @@
     forms.forEach(form => {
       let requiredFields = getRequiredFields(form);
       requiredFields.forEach(field => {
-        field.addEventListener('change', function() {
-          console.log('changed value')
-        })
+        field.addEventListener('change', validateInputs)
       })
     })
   }
