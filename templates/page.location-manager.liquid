@@ -17,13 +17,13 @@
         <form id="locator-practice">
           <div class="form-group--line">
             <div class="form-item">
-              <label class="headUp" for="company-name">Practice Name</label>
-              <input name="company-name" id="company-name" type="text" class="Form__Input">
+              <label class="headUp" for="company-name">Practice Name*</label>
+              <input name="company-name" id="company-name" type="text" class="Form__Input" required>
             </div>
             
             <div class="form-item">
               <label class="headUp" for="type-of-provider">Practice Type</label>
-              <select id="type-of-provider" name="type-of-provider" class="Form__Input">
+              <select id="type-of-provider" name="type-of-provider" class="Form__Input" required>
                 <option value="" selected disabled>Select one...</option>
                 <option value="Acupuncturist">Acupuncturist</option>
                 <option value="Chiropractor">Chiropractor</option>
@@ -46,18 +46,18 @@
       
           <div class="form-item">
             <label class="headUp" for="short-description">Short Description</label>
-            <textarea class="Form__Input" name="short-description" id="short-description" max="320"></textarea>
+            <textarea class="Form__Input" name="short-description" id="short-description" max="320" required></textarea>
           </div>
           
           <div class="form-item">
             <label class="headUp" for="description">Full Description</label>
-            <textarea class="Form__Input" name="description" id="description"></textarea>
+            <textarea class="Form__Input" name="description" id="description" required></textarea>
           </div>
           
           <div class="form-group--line">
             <div class="form-item">
               <label class="headUp" for="website">Website</label>
-              <input name="website" id="website" type="text" class="Form__Input">
+              <input name="website" id="website" type="text" class="Form__Input" required>
             </div>
 
             <div class="form-item">
