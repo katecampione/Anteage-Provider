@@ -106,7 +106,7 @@
 </div> 
 
 <script>
-  getRequiredFields(formItem) {
+  function getRequiredFields(formItem) {
     let requiredFields = [];
     let requiredInputs = formItem.querySelectorAll('input');
     requiredInputs.forEach(input => {
@@ -120,10 +120,19 @@
     requiredSelects.forEach(select => {
       requiredFields.push(select)
     })
+    return requiredFields
+  }
+
+  function validateInputs(formItem) {
+    let requiredCount = formItem.querySelectorAll(':required').length;
+    console.log(requiredCount);
   }
 
   let forms = document.querySelectorAll('form');
   forms.forEach(form => {
     let requiredFields = getRequiredFields(form);
+    requiredFields.forEach(field => {
+      field.addEventListener('change', validateInputs(form))
+    })
   })
 </script>
