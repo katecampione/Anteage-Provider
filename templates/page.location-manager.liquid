@@ -106,7 +106,6 @@
 </div> 
 
 <script>
-  console.log('rybb')
   function getRequiredFields(formItem) {
     let requiredFields = [];
     let requiredInputs = formItem.querySelectorAll('input');
@@ -129,11 +128,15 @@
     console.log(requiredCount);
   }
 
-  let forms = document.querySelectorAll('form');
-  forms.forEach(form => {
-    let requiredFields = getRequiredFields(form);
-    requiredFields.forEach(field => {
-      field.addEventListener('change', validateInputs(form))
+  function initFormValidation() {
+    let forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+      let requiredFields = getRequiredFields(form);
+      requiredFields.forEach(field => {
+        field.addEventListener('change', validateInputs(form))
+      })
     })
-  })
+  }
+
+  document.addEventListener('DOMContentLoaded', initFormValidation)
 </script>
