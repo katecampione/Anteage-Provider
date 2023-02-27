@@ -100,7 +100,7 @@
             </div>
           </div>
           
-          <button type="submit" class="Button Button--primary">Save</button>
+          <button type="submit" class="Button Button--primary" disabled>Save</button>
         </form>
     </div>
 </div> 
@@ -126,8 +126,14 @@
   function validateInputs() {
     let form = this.closest('form');
     let requiredFields = getRequiredFields(form);
-    let requiredCount = requiredFields.length;
-    console.log(requiredCount);
+    let submitButton = form.querySelector('button[type="submit"]');
+    requiredFields.forEach(required => {
+      if (!required.value) {
+        submitButton.disabled = true
+        break
+      }
+    })
+    submitButton.disabled = false
   }
 
   function initFormValidation() {
