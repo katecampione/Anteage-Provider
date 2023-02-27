@@ -13264,7 +13264,11 @@ margin-bottom: 0px !important;
   display: block;
 }
 
-.locator-details input:focus, .locator-details textarea:focus, .locator-details select:focus {
+.locator-details input, .locator-details textarea, .locator-details textarea {
+  transition: all 0.15s ease-in-out;
+}
+
+.locator-details input:focus, .locator-details textarea:focus, .locator-details textarea:focus {
   background-color: white;
 }
 
