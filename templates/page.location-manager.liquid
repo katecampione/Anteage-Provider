@@ -127,13 +127,19 @@
     let form = this.closest('form');
     let requiredFields = getRequiredFields(form);
     let submitButton = form.querySelector('button[type="submit"]');
+    let validCount = 0;
     for (let i = 0; i < requiredFields.length; i++) {
       if (!requiredFields[i].value) {
-        submitButton.disabled = true
         break
+      } else {
+        validCount += 1
       }
     }
-    submitButton.disabled = false
+    if (validCount === requiredFields.length) {
+      submitButton.disabled = false
+    } else {
+      submitButton.disabled = true
+    }
   }
 
   function initFormValidation() {
