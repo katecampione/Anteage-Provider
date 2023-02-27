@@ -14,7 +14,7 @@
         <h2 class="SectionHeader__Heading Heading u-h1">Practice Information</h2>
         <hr class="mt2 mb2">
 
-        <form id="locator-practice">
+        <form id="locator-practice" data-form-validate="true">
           <div class="form-group--line">
             <div class="form-item">
               <label class="headUp" for="company-name">Practice Name*</label>
@@ -129,7 +129,7 @@
   }
 
   function initFormValidation() {
-    let forms = document.querySelectorAll('form');
+    let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
       let requiredFields = getRequiredFields(form);
       requiredFields.forEach(field => {
