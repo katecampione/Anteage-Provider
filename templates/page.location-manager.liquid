@@ -124,7 +124,6 @@
   }
 
   function validateInputs(formItem) {
-    console.log('changed')
     let requiredCount = formItem.querySelectorAll(':required').length;
     console.log(requiredCount);
   }
@@ -133,6 +132,7 @@
     let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
       let requiredFields = getRequiredFields(form);
+      console.log(requiredFields)
       requiredFields.forEach(field => {
         field.addEventListener('change', validateInputs(form))
       })
