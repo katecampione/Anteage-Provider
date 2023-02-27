@@ -132,9 +132,10 @@
     let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
       let requiredFields = getRequiredFields(form);
-      console.log(requiredFields)
       requiredFields.forEach(field => {
-        field.addEventListener('change', validateInputs(form))
+        field.addEventListener('change', function() {
+          console.log('changed value')
+        })
       })
     })
   }
