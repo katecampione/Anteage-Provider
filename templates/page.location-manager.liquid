@@ -108,15 +108,15 @@
 <script>
   function getRequiredFields(formItem) {
     let requiredFields = [];
-    let requiredInputs = formItem.querySelectorAll('input');
+    let requiredInputs = formItem.querySelectorAll('input:required');
     requiredInputs.forEach(input => {
       requiredFields.push(input)
     })
-    let requiredAreas = formItem.querySelectorAll('textarea');
+    let requiredAreas = formItem.querySelectorAll('textarea:required');
     requiredAreas.forEach(textarea => {
       requiredFields.push(textarea)
     })
-    let requiredSelects = formItem.querySelectorAll('select');
+    let requiredSelects = formItem.querySelectorAll('select:required');
     requiredSelects.forEach(select => {
       requiredFields.push(select)
     })
