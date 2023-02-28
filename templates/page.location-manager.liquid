@@ -996,10 +996,7 @@
   function getCloseButtons() {
     return document.querySelectorAll('[data-action="close-parent-modal"]');
   }
-  
-  function initLocationEdit() {
-    editLocationForm.classList.add('visible');
-  }
+
   
   function closeFormModal() {
     let parent = this.closest('.modal-container')
@@ -1012,8 +1009,11 @@
     let editLocationForm = document.querySelector('.edit-location-modal');
     let locationItems = getLocations();
     let modalCloseTriggers = getCloseButtons();
+
     locationItems.forEach(item => {
-      item.addEventListener('click', initLocationEdit)
+      item.addEventListener('click', function() {
+        editLocationForm.classList.add('visible');
+      })
     })
     
     triggerAddLocation.addEventListener('click', function() {
