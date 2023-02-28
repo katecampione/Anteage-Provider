@@ -11,101 +11,126 @@
     <hr class="mt1 mb1">
 
     <div class="details-panel">
-        <h2 class="SectionHeader__Heading Heading u-h1">Practice Information</h2>
-        <hr class="mt2 mb2">
+      <h2 class="SectionHeader__Heading Heading u-h1">Practice Information</h2>
+      <hr class="mt2 mb2">
 
-        <form id="locator-practice" data-form-validate="true">
-          <div class="form-group--line">
-            <div class="form-item">
-              <label class="headUp" for="company-name">Practice Name*</label>
-              <input name="company-name" id="company-name" type="text" class="Form__Input" placeholder="Practice Name" required>
-            </div>
-            
-            <div class="form-item">
-              <label class="headUp" for="type-of-provider">Practice Type*</label>
-              <select id="type-of-provider" name="type-of-provider" class="Form__Input" required>
-                <option value="" selected disabled>Select one...</option>
-                <option value="Acupuncturist">Acupuncturist</option>
-                <option value="Chiropractor">Chiropractor</option>
-                <option value="Dentist">Dentist</option>
-                <option value="Dermatologist">Dermatologist</option>
-                <option value="Esthetician">Esthetician</option>
-                <option value="General Medical Practice">General Medical Practice</option>
-                <option value="Massage Therapist">Massage Therapist</option>
-                <option value="Med Spa">Med Spa</option>
-                <option value="Plastic Surgeon">Plastic Surgeon</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
+      <form id="locator-practice" data-form-validate="true">
+        <div class="form-group--line">
+          <div class="form-item">
+            <label class="headUp" for="company-name">Practice Name*</label>
+            <input name="company-name" id="company-name" type="text" class="Form__Input" placeholder="Practice Name" required>
           </div>
           
           <div class="form-item">
-            <label class="headUp" for="logo">Practice Logo</label>
-            <input type="file" name="logo" id="logo" accept="*/image">
+            <label class="headUp" for="type-of-provider">Practice Type*</label>
+            <select id="type-of-provider" name="type-of-provider" class="Form__Input" required>
+              <option value="" selected disabled>Select one...</option>
+              <option value="Acupuncturist">Acupuncturist</option>
+              <option value="Chiropractor">Chiropractor</option>
+              <option value="Dentist">Dentist</option>
+              <option value="Dermatologist">Dermatologist</option>
+              <option value="Esthetician">Esthetician</option>
+              <option value="General Medical Practice">General Medical Practice</option>
+              <option value="Massage Therapist">Massage Therapist</option>
+              <option value="Med Spa">Med Spa</option>
+              <option value="Plastic Surgeon">Plastic Surgeon</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
-      
-          <div class="form-item">
-            <label class="headUp" for="short-description">Short Description*</label>
-            <textarea class="Form__Input" name="short-description" id="short-description" max="320" placeholder="Enter short description here (max. 320 characters)..."required></textarea>
-          </div>
-          
-          <div class="form-item">
-            <label class="headUp" for="description">Full Description*</label>
-            <textarea class="Form__Input" name="description" id="description" placeholder="Enter full description here..." required></textarea>
-          </div>
-          
-          <div class="form-group--line">
-            <div class="form-item">
-              <label class="headUp" for="website" data-validation-type="url">Website*</label>
-              <input name="website" id="website" type="text" class="Form__Input" placeholder="https://website.com" required>
-            </div>
-
-            <div class="form-item">
-              <label class="headUp" for="online=sales-link" data-validation-type="url">Link To Online Store</label>
-              <input name="online=sales-link" id="online=sales-link" type="text" class="Form__Input" placeholder="https://website.com/shop">
-            </div>
-          </div>
+        </div>
         
-          <div class="form-group--line">
-            <div class="form-item">
-              <label class="headUp" for="instagram">Instagram URL</label>
-              <input name="instagram" id="instagram" type="text" class="Form__Input" placeholder="https://instagram.com/yourprofile">
-            </div>
-            
-                <div class="form-item">
-              <label class="headUp" for="facebook">Facebook URL</label>
-              <input name="facebook" id="facebook" type="text" class="Form__Input" placeholder="https://facebook.com/yourprofile">
-            </div>
-            
-            <div class="form-item">
-              <label class="headUp" for="tiktok">TikTok URL</label>
-              <input name="tiktok" id="tiktok" type="text" class="Form__Input" placeholder="https://tiktok.com/@yourprofile">
-            </div>
+        <div class="form-item">
+          <label class="headUp" for="logo">Practice Logo</label>
+          <input type="file" name="logo" id="logo" accept="*/image">
+        </div>
+    
+        <div class="form-item">
+          <label class="headUp" for="short-description">Short Description*</label>
+          <textarea class="Form__Input" name="short-description" id="short-description" max="320" placeholder="Enter short description here (max. 320 characters)..."required></textarea>
+        </div>
+        
+        <div class="form-item">
+          <label class="headUp" for="description">Full Description*</label>
+          <textarea class="Form__Input" name="description" id="description" placeholder="Enter full description here..." required></textarea>
+        </div>
+        
+        <div class="form-group--line">
+          <div class="form-item">
+            <label class="headUp" for="website" data-validation-type="url">Website*</label>
+            <input name="website" id="website" type="text" class="Form__Input" placeholder="https://website.com" required>
+          </div>
+
+          <div class="form-item">
+            <label class="headUp" for="online=sales-link" data-validation-type="url">Link To Online Store</label>
+            <input name="online=sales-link" id="online=sales-link" type="text" class="Form__Input" placeholder="https://website.com/shop">
+          </div>
+        </div>
+      
+        <div class="form-group--line">
+          <div class="form-item">
+            <label class="headUp" for="instagram">Instagram URL</label>
+            <input name="instagram" id="instagram" type="text" class="Form__Input" placeholder="https://instagram.com/yourprofile">
           </div>
           
-          <div class="form-group--line">
-            <div class="form-item">
-              <label class="headUp" for="twitter">Twitter URL</label>
-              <input name="twitter" id="twitter" type="text" class="Form__Input" placeholder="https://twitter.com/yourprofile">
-            </div>
-            
-            <div class="form-item">
-              <label class="headUp" for="realself">Realself URL</label>
-              <input name="realself" id="realself" type="text" class="Form__Input" placeholder="https://realself.com/dr/yourprofile">
-            </div>
-            
-            <div class="form-item">
-              <label class="headUp" for="yelp">Yelp URL</label>
-              <input name="yelp" id="yelp" type="text" class="Form__Input" placeholder="https://yelp.com/biz/yourprofile">
-            </div>
+              <div class="form-item">
+            <label class="headUp" for="facebook">Facebook URL</label>
+            <input name="facebook" id="facebook" type="text" class="Form__Input" placeholder="https://facebook.com/yourprofile">
           </div>
           
-          <button type="submit" class="Button Button--primary" disabled>Save</button>
-        </form>
+          <div class="form-item">
+            <label class="headUp" for="tiktok">TikTok URL</label>
+            <input name="tiktok" id="tiktok" type="text" class="Form__Input" placeholder="https://tiktok.com/@yourprofile">
+          </div>
+        </div>
+        
+        <div class="form-group--line">
+          <div class="form-item">
+            <label class="headUp" for="twitter">Twitter URL</label>
+            <input name="twitter" id="twitter" type="text" class="Form__Input" placeholder="https://twitter.com/yourprofile">
+          </div>
+          
+          <div class="form-item">
+            <label class="headUp" for="realself">Realself URL</label>
+            <input name="realself" id="realself" type="text" class="Form__Input" placeholder="https://realself.com/dr/yourprofile">
+          </div>
+          
+          <div class="form-item">
+            <label class="headUp" for="yelp">Yelp URL</label>
+            <input name="yelp" id="yelp" type="text" class="Form__Input" placeholder="https://yelp.com/biz/yourprofile">
+          </div>
+        </div>
+        
+        <button type="submit" class="Button Button--primary" disabled>Save</button>
+      </form>
     </div>
+
+    <div class="details-panel">
+      <h2 class="SectionHeader__Heading Heading u-h1">Locations</h2>
+      <hr class="mt2 mb2">
+      <div class="locations-wrapper">
+        <div class="location-item">
+          <div class="location-image--outer">
+            <div class="location-image--wrap">
+              <img src="https://7051882.fs1.hubspotusercontent-na1.net/hubfs/7051882/Provider%20Locator%20-%20Provider%20Assets/Salt-Lake-City-900x730-1.png">
+            </div>
+            <div class="mt1">
+              <h3>Location Title</h3>
+              <div class="location-address--details">123 Main Street</div>
+              <div class="location-address--details">City, State 10110</div>
+              <div class="location-address--details">Country</div>
+              <button class="location-edit mt1">
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
 </div> 
 
 <script>
+  // Form Validation
   function getRequiredFields(formItem) {
     let requiredFields = [];
     let requiredInputs = formItem.querySelectorAll('input:required');
@@ -152,5 +177,43 @@
     })
   }
 
-  document.addEventListener('DOMContentLoaded', initFormValidation)
+  document.addEventListener('DOMContentLoaded', initFormValidation);
+
+  function getLocations() {
+    return document.querySelectorAll('.location-edit');
+  }
+  
+  function getCloseButtons() {
+    return document.querySelectorAll('[data-action="close-parent-modal"]');
+  }
+  
+  function initLocationEdit() {
+    editLocationForm.classList.add('visible');
+  }
+  
+  function closeFormModal() {
+    let parent = this.closest('.modal-container')
+    parent.classList.remove('visible')
+  }
+
+  function initEditModals() {
+    let triggerAddLocation = document.querySelector('.new-location');
+    let addLocationForm = document.querySelector('.add-location-modal');
+    let editLocationForm = document.querySelector('.edit-location-modal');
+    let locationItems = getLocations();
+    let modalCloseTriggers = getCloseButtons();
+    locationItems.forEach(item => {
+      item.addEventListener('click', initLocationEdit)
+    })
+    
+    triggerAddLocation.addEventListener('click', function() {
+      addLocationForm.classList.add('visible')
+    })
+    
+    modalCloseTriggers.forEach(button => {
+      button.addEventListener('click', closeFormModal);
+    })
+  }
+
+  document.addEventListener('DOMContentLoaded', initEditModals)
 </script>
