@@ -576,6 +576,7 @@
           },
           "16b47faa-6ed3-494e-8a45-332c9161376a": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "content_type": "all",
               "image": "shopify:\/\/shop_images\/2023_02_Eye_Hero_Desktop.jpg",
@@ -593,18 +594,42 @@
               "button_2_text": "",
               "button_2_link": ""
             }
+          },
+          "8414ea57-5ef2-4dea-9ab6-177b1f24c84a": {
+            "type": "image",
+            "settings": {
+              "content_type": "all",
+              "image": "shopify:\/\/shop_images\/Moisturizer_Water01_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Moisturizer_Water01_Mobile.jpg",
+              "apply_overlay": false,
+              "add_padding": false,
+              "add_bg": false,
+              "h_position": "left",
+              "text_align": "left",
+              "subheading": "",
+              "title": "Dive Into Hydration",
+              "content": "Introducing our full-size moisturizer– provide deep hydration and assist in skin repair.",
+              "button_1_text": "Order Now",
+              "button_1_link": "shopify:\/\/products\/moisturizer",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
           }
         },
         "block_order": [
           "04c302a4-94d5-402f-b439-74ba903e5a57",
-          "16b47faa-6ed3-494e-8a45-332c9161376a"
+          "16b47faa-6ed3-494e-8a45-332c9161376a",
+          "8414ea57-5ef2-4dea-9ab6-177b1f24c84a"
+        ],
+        "custom_css": [
+
         ],
         "settings": {
           "show_fullscreen": false,
           "show_arrow": false,
           "autoplay": true,
           "cycle_speed": 8,
-          "text_color": "#ffffff",
+          "text_color": "#454545",
           "button_color": "#454545",
           "button_background": "#ffffff"
         }
