@@ -247,6 +247,8 @@
                 {%include 'product-info-sheet-download' %}
               {% endif %}
 
+              {% include 'related-collateral' %}
+
               {%- if section.settings.show_share_buttons -%}
                 <div class="ProductMeta__ShareButtons hidden-pocket">
                   <span class="ProductMeta__ShareTitle Heading Text--subdued u-h7">{{ 'product.form.share' | t }}</span>
