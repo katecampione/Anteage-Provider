@@ -1,7 +1,21 @@
 {% if product.metafields.related.collateral %}
     {% if customer.email == 'joel@twopointoh.io' %}
     <div class="mt1">
-        <h3 class="Heading u-h3 related-collateral--title">Sales Tools:</h3>
+        <h3 class="Heading u-h4 related-collateral--title">Sales Collateral:</h3>
+        {% assign col_products = product.metafields.related.collateral %}
+        {% for item in col_products %}
+            <a class="related-collateral--item">
+                <div class="related-collateral--image-wrap">
+                    <img src="{{ item.featured_image | img_url: '150x' }}" alt="{{ item.title }}">
+                </div>
+                <div class="related-collateral--content-wrap">
+                    <h4 class="Heading u-h5">{{ item.title }}</h4>
+                    <div class="ProductMeta__PriceList Heading">
+                        <span class="ProductMeta__Price Price Text--subdued u-h2 lightWeight" data-money-convertible="">{{ item.price | money_without_trailing_zeros }}</span>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
     </div>
     {% endif %}
 {% endif %} 
