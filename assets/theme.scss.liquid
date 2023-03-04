@@ -13392,5 +13392,31 @@ margin-bottom: 0px !important;
 
 .related-collateral--title {
   padding-bottom: 5px;
-  border-bottom: 1px solid whitesmoke;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.related-collateral--item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 10px;
+  flex-wrap: wrap;
+  transition: all 0.15s ease-in-out;
+  padding: 5px 0;
+  width: 100%;
+}
+
+.related-collateral--item:hover {
+  background: whitesmoke;
+}
+
+.related-collateral--image-wrap {
+  width: 70px;
+  max-height: 87.5px;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.related-collateral--content-wrap {
+  width: calc(100% - 80px);
 }
