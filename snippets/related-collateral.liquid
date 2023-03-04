@@ -4,7 +4,7 @@
         <h3 class="Heading u-h4 related-collateral--title">Sales Collateral:</h3>
         {% assign col_products = product.metafields.related.collateral %}
         {% for item in col_products %}
-            <a class="related-collateral--item">
+            <a class="related-collateral--item" href="{{ item.url }}">
                 <div class="related-collateral--image-wrap">
                     <img src="{{ item.featured_image | img_url: '150x' }}" alt="{{ item.title }}">
                 </div>
