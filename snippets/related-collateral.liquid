@@ -2,7 +2,8 @@
     {% if customer.email == 'joel@twopointoh.io' %}
     <div class="mt1">
         <h3 class="Heading u-h4 related-collateral--title">Sales Collateral:</h3>
-        {{ product.metafields.related.collateral }}
+        {{ product.metafields.related.collateral.size }}
+        {{ product.metafields.related.collateral.products.size }}
         {% assign col_products = product.metafields.related.collateral %}
         {% for item in product.metafields.related.collateral.products %}
             z
