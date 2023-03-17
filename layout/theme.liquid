@@ -155,7 +155,7 @@
       {% section 'header' %}
 
       <main id="main" role="main">
-        {% unless customer.tags contains 'Account Disabled' %}
+        {% unless customer.tags contains 'Account Disabled' or customer.tags contains '2023_03_PA_Testing' %}
           {{ content_for_layout }}
         {% elsif customer.tags contains '2023_03_PA_Testing' %}
           Hey
