@@ -109,7 +109,6 @@
                             <p>The terms of our Provider Agreement have changed. You are required to review and accept the updates to this agreement prior to proceeding.</p>
                         </div>
                     </div>
-                    <div class="LoadingBar is-visible"></div>
                     <div class="SectionHeader SectionHeader--center">
                         <h1 class="SectionHeader__Heading Heading u-h1 mb0">Provider Agreement</h1>
                         <h2 class="SectionHeader__Subheading SubHeading u-h5"><em>Last Updated: March 17, 2023</em></h2>
@@ -128,11 +127,16 @@
                 </div>
             </div>
             <div class="Container Container--narrow centerContents" data-content="waiting">
-
+                <div class="mb2">
+                    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    <div class="SectionHeader__Heading Heading u-h1 mb0">
+                        Just a second while we update your account.
+                    </div>
+                </div>
             </div>
 
             <div class="Container Container--narrow centerContents" data-content="success">
-                <div class="SectionHeader__Heading Heading u-h1 mb0" style="color: red">
+                <div class="SectionHeader__Heading Heading u-h1 mb0">
                     Thank you– your profile has been updated. 
                 </div>
                 <div><em>This window will refresh in one second.</em></div>
@@ -169,7 +173,10 @@
                 'tags': '{{ customer.tags }}'
             }
 
-            const response = await fetch("https://enow0i3pr6cbpea.m.pipedream.net", {
+            document.querySelector('[data-content="agreement-form"]').classList.add('hidden');
+            document.querySelector('[data-content="agreement-form"]').classList.add('waiting');
+
+            {% comment %} const response = await fetch("https://enow0i3pr6cbpea.m.pipedream.net", {
                 method: "POST",
                 body: data
             }).then(function(response) {
@@ -178,7 +185,7 @@
               } else {
                 window.alert('Something went wrong, please try again.')
               }
-            })
+            }) {% endcomment %}
         });
     })
 </script>
