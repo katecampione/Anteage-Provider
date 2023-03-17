@@ -186,7 +186,7 @@
 
             const response = await fetch("https://enow0i3pr6cbpea.m.pipedream.net", {
                 method: "POST",
-                body: data
+                body: JSON.stringify(data)
             }).then(function(response) {
               if (response.status === 200) {
                 hideContent('waiting');
