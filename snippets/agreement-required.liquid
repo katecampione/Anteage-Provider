@@ -29,14 +29,13 @@
                 {% assign content_for_page = pages['anteage®-provider-agreement'].content %}
                 <div class="PageContent PageContent--narrow Rte">
                     {{ content_for_page }}
-                </div>
-                <div>
-                    <div>
-                        <input type="checkbox" name="accepts_terms" id="accepts_terms" />
-                        <label for="accepts_terms">By accepting these terms, I accept the binding nature of this agreement and consent to the terms and conditions outlined within this agreement.</label>
+                    <div class="mt2">
+                        <div>
+                            <input type="checkbox" name="accepts_terms" id="accepts_terms" />
+                            <label for="accepts_terms">By accepting these terms, I accept the binding nature of this agreement and consent to the terms and conditions outlined within this agreement.</label>
+                        </div>
+                        <button class="Button Button--primary" data-action="accept-terms" id="terms_accepted" disabled> Accept Terms</button>
                     </div>
-                    <button class="Button Button--primary" data-action="accept-terms" id="terms_accepted" disabled>
-                    
                 </div>
             </div>
         </section>
