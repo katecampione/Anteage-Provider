@@ -188,7 +188,7 @@
                 body: JSON.stringify(data)
             }).then(async function(response) {
               if (response.status === 200) {
-                const cartAttribute = await fetch(window.Shopify.routes.root + 'cart/update.js', "attributes[Accepted Terms]=Yes")
+                const cartAttribute = await fetch('/cart/update.js', "attributes[Accepted Terms]=Yes")
                   .then(function(response) {
                     setTimeout(function() {
                       hideContent('waiting');
