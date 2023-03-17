@@ -143,7 +143,7 @@
     <div class="PageOverlay"></div>
     <div class="PageTransition"></div>
 
-    {% unless customer.tags contains '2023_03_PA_Testing' %}
+    {% unless customer.tags contains '2023_03_PA_Testing2' %}
       {% section 'popup' %}
       {% section 'sidebar-menu' %}
 
@@ -156,7 +156,7 @@
         {% section 'header' %}
 
         <main id="main" role="main">
-          {% unless customer.tags contains 'Account Disabled' or customer.tags %}
+          {% unless customer.tags contains 'Account Disabled' %}
             {{ content_for_layout }}
           {% else %}
             <div id="account-disabled" class="shopify-section">
