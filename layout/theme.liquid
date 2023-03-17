@@ -190,6 +190,7 @@
 
         {% if cart.attributes[Accepted Terms] == 'Yes' and customer.tags contains 'PA-TermsAccepted' %}
           <script>
+            console.log('running')
             const cartAttribute = fetch('/cart/update.js', {
               body: JSON.stringify({
                 attributes: {
