@@ -153,7 +153,6 @@
     {% endif %}
 
     {% unless require_terms %}
-      <script>console.log('{{ cart.attributes }}')</script>
       {% section 'popup' %}
       {% section 'sidebar-menu' %}
 
@@ -185,6 +184,26 @@
         </main>
 
         {% section 'footer' %}
+
+        <script>console.log({{ cart.attributes }})</script>
+
+        {% if cart.attributes[Accepted Terms] == 'Yes' and customer.tags contains 'PA-TermsAccepted' %}
+          <script>
+            const cartAttribute = fetch('/cart/update.js', {
+              body: JSON.stringify({
+                attributes: {
+                  'Accepted Terms': null
+                }
+              }),
+              credentials: 'same-origin',
+              headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With':'xmlhttprequest' /* XMLHttpRequest is ok too, it's case insensitive */
+              },
+              method: 'post'
+            })
+          </script>
+        {% endif %}
       </div>
       <!-- Start of HubSpot Embed Code -->
         <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7051882.js"></script>
