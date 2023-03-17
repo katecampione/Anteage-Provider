@@ -143,16 +143,11 @@
     <div class="PageOverlay"></div>
     <div class="PageTransition"></div>
 
-    <script>console.log('{{ cart.attributes }}')</script>
-    <script>console.log('{{ customer.tags }}')</script>
-
     {% assign require_terms = false %}
     {% if customer %}
-      {% if customer.email == 'joel.stanton@me.com' %}
-        {% unless customer.tags contains 'PA-TermsAccepted' or cart.attributes['Accepted Terms'] == 'Yes' %}
-          {% assign require_terms = true %}
-        {% endunless %}
-      {% endif %}
+      {% unless customer.tags contains 'PA-TermsAccepted' or cart.attributes['Accepted Terms'] == 'Yes' %}
+        {% assign require_terms = true %}
+      {% endunless %}
     {% endif %}
 
     {% unless require_terms %}
