@@ -188,11 +188,13 @@
                 body: JSON.stringify(data)
             }).then(function(response) {
               if (response.status === 200) {
-                hideContent('waiting');
-                showContent('success');
                 setTimeout(function() {
-                    window.location.reload();
-                }, 2000)
+                  hideContent('waiting');
+                  showContent('success');
+                  setTimeout(function() {
+                      window.location.reload();
+                  }, 2000)
+                }, 3000)
               } else {
                 hideContent('waiting');
                 showContent('error');
