@@ -62,7 +62,7 @@
         }
 
         checkbox.addEventListener("change", toggleButtonState);
-        button.addEventListener('click', async => {
+        button.addEventListener('click', async (event) => {
             let data = {
                 'email': '{{ customer.email }}',
                 'id': '{{ customer.id }}',
