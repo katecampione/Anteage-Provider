@@ -126,7 +126,7 @@
                     </div>
                 </div>
             </div>
-            <div class="Container Container--narrow centerContents" data-content="waiting">
+            <div class="Container Container--narrow centerContents hidden" data-content="waiting">
                 <div class="mb2">
                     <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
                     <div class="SectionHeader__Heading Heading u-h1 mb0">
@@ -135,14 +135,14 @@
                 </div>
             </div>
 
-            <div class="Container Container--narrow centerContents" data-content="success">
+            <div class="Container Container--narrow centerContents hidden" data-content="success">
                 <div class="SectionHeader__Heading Heading u-h1 mb0">
                     Thank you– your profile has been updated. 
                 </div>
                 <div><em>This window will refresh in one second.</em></div>
             </div>
 
-            <div class="Container Container--narrow centerContents" data-content="error">
+            <div class="Container Container--narrow centerContents hidden" data-content="error">
                 <div class="SectionHeader__Heading Heading u-h1 mb0" style="color: red">
                     Something seems to have gone wrong– please refresh this page and try again.
                 </div>
@@ -174,7 +174,7 @@
             }
 
             document.querySelector('[data-content="agreement-form"]').classList.add('hidden');
-            document.querySelector('[data-content="agreement-form"]').classList.add('waiting');
+            document.querySelector('[data-content="waiting"]').classList.remove('hidden');
 
             {% comment %} const response = await fetch("https://enow0i3pr6cbpea.m.pipedream.net", {
                 method: "POST",
