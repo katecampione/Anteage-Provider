@@ -22,15 +22,41 @@
                         </div>
                     </div>
                     <div class="SectionHeader SectionHeader--center">
-                        <h1 class="SectionHeader__Heading Heading u-h1">Provider Agreement</h1>
-                        <h2 class="SectionHeader__Subheading SubHeading u-h3"><em>Last Updated: March 17, 2023</em></h2>
+                        <h1 class="SectionHeader__Heading Heading u-h1 mb0">Provider Agreement</h1>
+                        <h2 class="SectionHeader__Subheading SubHeading u-h5"><em>Last Updated: March 17, 2023</em></h2>
                     </div>
                 </header>
                 {% assign content_for_page = pages['anteage®-provider-agreement'].content %}
                 <div class="PageContent PageContent--narrow Rte">
                     {{ content_for_page }}
                 </div>
+                <div>
+                    <div>
+                        <input type="checkbox" name="accepts_terms" id="accepts_terms" />
+                        <label for="accepts_terms">By accepting these terms, I accept the binding nature of this agreement and consent to the terms and conditions outlined within this agreement.</label>
+                    </div>
+                    <button class="Button Button--primary" data-action="accept-terms" id="terms_accepted" disabled>
+                    
+                </div>
             </div>
         </section>
     </main>
 </div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function() {
+        let checkbox = document.getElementById('accepts_terms');
+        let button = document.getElementById('terms_accepted');
+
+        function toggleButtonState() {
+            if (this.value == true) {
+                button.disabled = false
+            } else {
+                button.disabled = true
+            }
+        }
+
+        checkbox.addEventListener("input", toggleButtonState);
+    })
+</script>
