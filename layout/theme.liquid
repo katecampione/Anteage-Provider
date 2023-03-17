@@ -186,11 +186,9 @@
           {% endunless %}
         </main>
 
-        {% section 'footer' %}
-
         {% if cart.attributes[Accepted Terms] == 'Yes' and customer.tags contains 'PA-TermsAccepted' %}
           <script>
-            console.log('running')
+            console.log('running');
             const cartAttribute = fetch('/cart/update.js', {
               body: JSON.stringify({
                 attributes: {
@@ -206,6 +204,7 @@
             })
           </script>
         {% endif %}
+        {% section 'footer' %}
       </div>
       <!-- Start of HubSpot Embed Code -->
         <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7051882.js"></script>
