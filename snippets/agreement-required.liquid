@@ -139,7 +139,7 @@
                 <div class="SectionHeader__Heading Heading u-h1 mb0">
                     Thank you– your profile has been updated. 
                 </div>
-                <div><em>This window will refresh in one second.</em></div>
+                <div><em>This window will refresh in 3 seconds...</em></div>
             </div>
 
             <div class="Container Container--narrow centerContents pt4 hidden" data-content="error">
@@ -193,7 +193,7 @@
                 showContent('success');
                 setTimeout(function() {
                     window.location.reload();
-                }, 1000)
+                }, 3000)
               } else {
                 hideContent('waiting');
                 showContent('error');
