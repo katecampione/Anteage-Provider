@@ -133,7 +133,6 @@
                 <div class="SectionHeader__Heading Heading u-h1 mb0">
                     Please while we update your account.
                 </div>
-                <div><em>This should only take 5 to 10 seconds.</em></div>
             </div>
 
             <div class="Container Container--narrow centerContents pt4 hidden" data-content="success">
@@ -189,13 +188,16 @@
                 body: JSON.stringify(data)
             }).then(function(response) {
               if (response.status === 200) {
-                setTimeout(function() {
-                  hideContent('waiting');
-                  showContent('success');
-                  setTimeout(function() {
-                      window.location.reload();
-                  }, 2000)
-                }, 3000)
+                const cartAttribute = await fetch(window.Shopify.routes.root + 'cart/update.js', "attributes[Accepted Terms]=Yes")
+                  .then(function(response) {
+                    setTimeout(function() {
+                      hideContent('waiting');
+                      showContent('success');
+                      setTimeout(function() {
+                          window.location.reload();
+                      }, 2000)
+                    }, 3000)
+                  })
               } else {
                 hideContent('waiting');
                 showContent('error');
