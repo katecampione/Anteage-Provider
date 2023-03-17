@@ -17,7 +17,8 @@
 <div class="PageContainer">
     <main id="main" role="main">
         <section class="shopify-section">
-            <div class="Container Container--narrow">
+            <div class="LoadingBar"></div>
+            <div class="Container Container--narrow" data-content="agreement-form">
                 <header class="PageHeader">
                     <div class="PageContent PageContent--narrow Rte mb2">
                         <div class="notification-box">
@@ -39,6 +40,22 @@
                         </div>
                         <button class="Button Button--primary mt1" data-action="accept-terms" id="terms_accepted" disabled> Accept Terms</button>
                     </div>
+                </div>
+            </div>
+            <div class="Container Container--narrow centerContents" data-content="waiting">
+
+            </div>
+
+            <div class="Container Container--narrow centerContents" data-content="success">
+                <div class="SectionHeader__Heading Heading u-h1 mb0" style="color: red">
+                    Thank you– your profile has been updated. 
+                </div>
+                <div><em>This window will refresh in one second.</em></div>
+            </div>
+
+            <div class="Container Container--narrow centerContents" data-content="error">
+                <div class="SectionHeader__Heading Heading u-h1 mb0" style="color: red">
+                    Something seems to have gone wrong– please refresh this page and try again.
                 </div>
             </div>
         </section>
