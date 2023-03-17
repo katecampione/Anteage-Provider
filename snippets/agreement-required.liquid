@@ -186,7 +186,7 @@
             const response = await fetch("https://enow0i3pr6cbpea.m.pipedream.net", {
                 method: "POST",
                 body: JSON.stringify(data)
-            }).then(function(response) {
+            }).then(async function(response) {
               if (response.status === 200) {
                 const cartAttribute = await fetch(window.Shopify.routes.root + 'cart/update.js', "attributes[Accepted Terms]=Yes")
                   .then(function(response) {
