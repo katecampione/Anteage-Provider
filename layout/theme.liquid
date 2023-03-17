@@ -143,6 +143,8 @@
     <div class="PageOverlay"></div>
     <div class="PageTransition"></div>
 
+    <script>console.log('{{ cart.attributes }}')</script>
+
     {% assign require_terms = false %}
     {% if customer %}
       {% if customer.email == 'joel.stanton@me.com' %}
@@ -184,8 +186,6 @@
         </main>
 
         {% section 'footer' %}
-
-        <script>console.log({{ cart.attributes }})</script>
 
         {% if cart.attributes[Accepted Terms] == 'Yes' and customer.tags contains 'PA-TermsAccepted' %}
           <script>
