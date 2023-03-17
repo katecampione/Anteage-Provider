@@ -189,7 +189,11 @@
             }).then(async function(response) {
               if (response.status === 200) {
                 const cartAttribute = await fetch('/cart/update.js', {
-                  body: "attributes[Accepted Terms]=Yes",
+                  body: JSON.stringify({
+                    attributes: {
+                      'Accepted Terms': 'Yes'
+                    }
+                  }),
                   credentials: 'same-origin',
                   headers: {
                     'Content-Type': 'application/json',
