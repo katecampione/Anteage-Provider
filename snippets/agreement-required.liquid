@@ -64,7 +64,7 @@
         checkbox.addEventListener("change", toggleButtonState);
         button.addEventListener('click', submitUpdate)
 
-        function submitUpdate() {
+        async function submitUpdate() {
             let data = {
                 'email': '{{ customer.email }}',
                 'id': '{{ customer.id }}',
