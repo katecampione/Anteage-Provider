@@ -50,6 +50,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         let checkbox = document.getElementById('accepts_terms');
         let button = document.getElementById('terms_accepted');
+        let email = customer.email;
+        let tags = customer.tags;
 
         function toggleButtonState() {
             if (this.checked == true) {
@@ -60,5 +62,25 @@
         }
 
         checkbox.addEventListener("change", toggleButtonState);
+        button.addEventListener('click', submitUpdate)
+
+        function submitUpdate() {
+            let data = {
+                'email': '{{ customer.email }}',
+                'id': '{{ customer.id }}',
+                'tags': '{{ customer.tags }}'
+            }
+
+            const response = await fetch("https://enow0i3pr6cbpea.m.pipedream.net", {
+                method: "POST",
+                body: data
+            }).then(function(response) {
+              if (response.status === 200) {
+                window.location.reload();
+              } else {
+                window.alert('Something went wrong, please try again.')
+              }
+            })
+        }
     })
 </script>
