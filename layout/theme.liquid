@@ -153,6 +153,7 @@
     {% endif %}
 
     {% unless require_terms %}
+      <script>console.log('{{ cart.attributes }}')</script>
       {% section 'popup' %}
       {% section 'sidebar-menu' %}
 
