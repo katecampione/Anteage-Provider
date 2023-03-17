@@ -145,11 +145,11 @@
 
     {% assign require_terms = false %}
     {% if customer %}
-      {% unless customer.email == 'joel.stanton@me.com' %}
+      {% if customer.email == 'joel.stanton@me.com' %}
         {% unless customer.tags contains 'PA-TermsAccepted' and cart.attributes[Accepted Terms] != 'Yes' %}
           {% assign require_terms = true %}
         {% endunless %}
-      {% endunless %}
+      {% endif %}
     {% endif %}
 
     {% unless require_terms %}
