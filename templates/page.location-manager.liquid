@@ -1046,4 +1046,31 @@
   }
 
   document.addEventListener('DOMContentLoaded', initEditModals)
+
+  function submitPracticeForm(evt) {
+    evt.preventDefault();
+    let submitButton = this.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.textContent = 'Please Wait';
+
+    let formData = new FormData(this);
+    let params = {
+      method: 'POST',
+      body: formData
+    }
+
+    let endpoint = 'https://en4jhrdwzz30916.m.pipedream.net';
+
+    await fetch(endpoint, params)
+      .then(response => formSuccess(response))
+      .catch(error => formFail(error));
+
+  }
+
+  function initPracticeListener() {
+    let form = document.getElementById('locator-practice');
+    form.addEventListener('submit', async submitPracticeForm(event))
+  }
+
+  document.addEventListener('DOMContentLoaded', initPracticeListener)
 </script>
