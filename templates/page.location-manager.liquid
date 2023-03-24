@@ -1054,6 +1054,8 @@
     submitButton.textContent = 'Please Wait';
 
     let formData = new FormData(this);
+    formData.append('customer_id', '{{ customer.id }}')
+    formData.append('customer_email', '{{ customer.email }}')
     let params = {
       method: 'POST',
       body: formData
