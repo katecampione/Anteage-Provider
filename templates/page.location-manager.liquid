@@ -1061,7 +1061,7 @@
     submitButton.disabled = true;
     submitButton.textContent = 'Please Wait';
 
-    let formData = new FormData(this);
+    let formData = new FormData(evt.target);
     formData.append('customer_id', '{{ customer.id }}')
     formData.append('customer_email', '{{ customer.email }}')
     let params = {
