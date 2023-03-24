@@ -1055,7 +1055,7 @@
     console.log(data)
   }
 
-  function submitPracticeForm(evt) {
+  async function submitPracticeForm(evt) {
     evt.preventDefault();
     let submitButton = this.querySelector('button[type="submit"]');
     submitButton.disabled = true;
@@ -1079,7 +1079,7 @@
 
   function initPracticeListener() {
     let form = document.getElementById('locator-practice');
-    form.addEventListener('submit', async submitPracticeForm(event))
+    form.addEventListener('submit', submitPracticeForm(event))
   }
 
   document.addEventListener('DOMContentLoaded', initPracticeListener)
