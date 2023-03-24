@@ -598,7 +598,7 @@
           "8414ea57-5ef2-4dea-9ab6-177b1f24c84a": {
             "type": "image",
             "settings": {
-              "content_type": "all",
+              "content_type": "pro_wholesale",
               "image": "shopify:\/\/shop_images\/Moisturizer_Water01_Banner.jpg",
               "mobile_image": "shopify:\/\/shop_images\/Moisturizer_Water01_Mobile.jpg",
               "apply_overlay": false,
@@ -636,7 +636,6 @@
       },
       "1592422385052": {
         "type": "slideshow-fixed",
-        "disabled": true,
         "blocks": {
           "1fe6fe1c-1f5e-4cb8-8793-0f109fa8a35b": {
             "type": "image",
@@ -679,11 +678,32 @@
               "button_2_text": "",
               "button_2_link": ""
             }
+          },
+          "c6a67528-2df9-44e5-b82f-4413f8caafdb": {
+            "type": "image",
+            "settings": {
+              "content_type": "md_wholesale",
+              "image": "shopify:\/\/shop_images\/Exosome_Treatment_Angle_Lineup-Added_Exosomes.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Exosome_Treatment_Angle_Lineup_Mobile-Added_Exosomes.jpg",
+              "apply_overlay": false,
+              "add_padding": false,
+              "add_bg": false,
+              "h_position": "right",
+              "text_align": "left",
+              "subheading": "Exosomes coming soon",
+              "title": "The Laws of Aging Needed a Rewrite.",
+              "content": "Get on the interest list and be the first to hear about availability, launch dates, and more.",
+              "button_1_text": "Join Waitlist",
+              "button_1_link": "https:\/\/anteage.com\/pages\/exosomes-coming-soon",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
           }
         },
         "block_order": [
           "1fe6fe1c-1f5e-4cb8-8793-0f109fa8a35b",
-          "9196a0c1-f257-4260-b380-5e7e9c22aaf2"
+          "9196a0c1-f257-4260-b380-5e7e9c22aaf2",
+          "c6a67528-2df9-44e5-b82f-4413f8caafdb"
         ],
         "settings": {
           "show_fullscreen": false,
