@@ -1047,6 +1047,14 @@
 
   document.addEventListener('DOMContentLoaded', initEditModals)
 
+  function formSuccess(data) {
+    console.log(data)
+  }
+
+  function formError(data) {
+    console.log(data)
+  }
+
   function submitPracticeForm(evt) {
     evt.preventDefault();
     let submitButton = this.querySelector('button[type="submit"]');
