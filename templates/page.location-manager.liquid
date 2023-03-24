@@ -1055,13 +1055,12 @@
     console.log(data)
   }
 
-  async function submitPracticeForm(evt) {
-    evt.preventDefault();
-    let submitButton = evt.target.querySelector('button[type="submit"]');
+  async function submitPracticeForm(form) {
+    let submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
     submitButton.textContent = 'Please Wait';
 
-    let formData = new FormData(evt.target);
+    let formData = new FormData(form);
     formData.append('customer_id', '{{ customer.id }}')
     formData.append('customer_email', '{{ customer.email }}')
     let params = {
@@ -1079,7 +1078,10 @@
 
   function initPracticeListener() {
     let form = document.getElementById('locator-practice');
-    form.addEventListener('submit', submitPracticeForm(event))
+    form.addEventListener('submit', function() {
+      event.preventDefault();
+      submitPracticeForm(this)
+    })
   }
 
   document.addEventListener('DOMContentLoaded', initPracticeListener)
