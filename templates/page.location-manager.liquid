@@ -1017,6 +1017,7 @@
 
   function matchContentValue(evt) {
     let parent = evt.target.closest('div');
+    console.log(parent)
     let contentId = evt.target.getAttribute('data-input-controller');
     console.log(contentId)
     let hiddenInput = parent.querySelector(`[name=${contentId}]`);
