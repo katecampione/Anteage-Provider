@@ -53,8 +53,15 @@
         </div>
         
         <div class="form-item">
+          {% assign description_rte = nil %}
+          {% if customer.metafields.practice.full_description %}
+            {% capture description_cap %}
+              {{ customer.metafields.practice.full_description | metafield_tag }}
+            {% endcapture %}
+            {% assign description_rte = description_cap %}
+          {% endif %}
           <label class="headUp" for="description">Full Description*</label>
-          <textarea class="Form__Input" name="description" id="description" placeholder="Enter your description here..." required {% if customer.metafields.practice.full_description != blank %} value='{{ customer.metafields.practice.full_description | metafield_tag }}'{% endif %}></textarea>
+          <textarea class="Form__Input" name="description" id="description" placeholder="Enter your description here..." required {% if description_rte %} value="{{ description_rte }}"{% endif %}></textarea>
         </div>
         
         <div class="form-group--line">
