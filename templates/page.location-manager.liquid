@@ -1011,9 +1011,15 @@
     return requiredFields
   }
 
-  function validateInputs() {
+  function validateInputs(input) {
     console.log('checking validation')
-    let form = this.closest('form');
+    let target;
+    if (this) {
+      target = this
+    } else {
+      target = input
+    }
+    let form = target.closest('form');
     let requiredFields = getRequiredFields(form);
     let submitButton = form.querySelector('button[type="submit"]');
     let validCount = 0;
@@ -1041,7 +1047,7 @@
     newValue = newValue.replace('<span class="metafield-multi_line_text_field">', '');
     newValue = newValue.replace('</span>', '');
     hiddenInput.value = newValue
-    validateInputs()
+    validateInputs(hiddenInput)
   }
 
   function initRichTextInputs() {
