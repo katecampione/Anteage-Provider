@@ -62,7 +62,14 @@
           {% endif %}
           {{ description_rte }}
           <label class="headUp" for="description">Full Description*</label>
-          <textarea class="Form__Input" name="description" id="description" placeholder="Enter your description here..." required {% if description_rte %} value="{{ description_rte }}"{% endif %}></textarea>
+          <textarea class="Form__Input hidden" name="description" id="description" placeholder="Enter your description here..." required {% if description_rte %} value="{{ description_rte }}"{% endif %}></textarea>          <textarea class="Form__Input hidden" name="description" id="description" placeholder="Enter your description here..." required {% if description_rte %} value="{{ description_rte }}"{% endif %}></textarea>
+          <div class="Form__Input" name="description-editor" id="description-editor">
+            {% if description_rte %}
+              {{ description_rte }}
+            {% else %}
+              Enter your description here...
+            {% endif %}
+          </div>
         </div>
         
         <div class="form-group--line">
