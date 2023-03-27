@@ -1019,6 +1019,7 @@
     let parent = evt.target.closest('.form-item');
     let contentId = evt.target.getAttribute('data-input-controller');
     let hiddenInput = parent.querySelector(`[name=${contentId}]`);
+    console.log(hiddenInput)
     hiddenInput.value = evt.target.innerHTML
   }
 
