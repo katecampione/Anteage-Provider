@@ -16,7 +16,7 @@
         <div class="form-group--line">
           <div class="form-item">
             <label class="headUp" for="company-name">Practice Name*</label>
-            <input name="company-name" id="company-name" type="text" class="Form__Input" placeholder="Practice Name" required>
+            <input name="company-name" id="company-name" type="text" class="Form__Input" placeholder="Practice Name"{% if customer.metafields.practice.name != blank %} value="{{ customer.metafields.practice.name }}"{% endif %}required>
           </div>
           
           <div class="form-item">
