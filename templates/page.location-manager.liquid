@@ -57,7 +57,7 @@
           {% endif %}
 
           <label class="headUp" for="short_description">Short Description*</label>
-          <textarea class="Form__Input hidden" name="short_description" id="short_description" placeholder="Enter your short description here..." required {% if customer.metafields.practice.short_description %} value="{{ short_description_rte | strip | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}"{% endif %}></textarea>
+          <textarea class="Form__Input hidden" name="short_description" id="short_description" placeholder="Enter your short description here..." required {% if customer.metafields.practice.short_description %} value="{{ short_description_rte | strip | replace: '<span class="metafield-multi_line_text_field">', '' | replace: '</span>', '' }}"{% endif %}></textarea>
           <div contenteditable="true" class="Form__Input" data-input-controller="short_description" name="short-description-editor" id="short-description-editor">
             {% if short_description_rte %}
               {{ short_description_rte }}
@@ -1036,7 +1036,9 @@
     let hiddenInput = parent.querySelector(`[name=${contentId}]`);
     let newValue = evt.target.innerHTML.trim();
     newValue = newValue.replace('<div class="metafield-rich_text_field">', '');
-    newValue = newValue.substring(0, newValue.length - 6);
+    newValue = newValue.replace('</div>', '');
+    newValue = newValue.replace('<span class="metafield-multi_line_text_field">', '');
+    newValue = newValue.replace('</span>', '');
     hiddenInput.value = newValue
     console.log(hiddenInput.value)
   }
