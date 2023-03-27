@@ -1015,17 +1015,17 @@
     }
   }
 
-  function matchContentValue(evt) {
-    let parent = evt.target.closest('div');
-    let contentId = evt.target.name.replace('-editor', '');
+  function matchContentValue() {
+    let parent = this.closest('div');
+    let contentId = this.name.replace('-editor', '');
     let hiddenInput = parent.querySelector(`[name=${contentId}]`);
-    hiddenInput.value = evt.target.innerHTML
+    hiddenInput.value = this.innerHTML
   }
 
   function initRichTextInputs() {
     let editableInputs = document.querySelectorAll('[contenteditable="true"]');
     editableInputs.forEach(field => {
-      field.addEventListener('input', matchContentValue(event))
+      field.addEventListener('input', matchContentValue())
     })
   }
 
