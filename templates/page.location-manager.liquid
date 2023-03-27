@@ -995,6 +995,7 @@
 <script>
   // Form Validation
   function getRequiredFields(formItem) {
+    console.log(formItem)
     let requiredFields = [];
     let requiredInputs = formItem.querySelectorAll('input:required');
     requiredInputs.forEach(input => {
