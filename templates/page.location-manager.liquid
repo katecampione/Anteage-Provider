@@ -56,7 +56,7 @@
           {% assign description_rte = nil %}
           {% if customer.metafields.practice.full_description %}
             {% capture description_cap %}
-              {{ customer.metafields.practice.full_description | metafield_tag }}
+              {{ customer.metafields.practice.full_description | metafield_text }}
             {% endcapture %}
             {% assign description_rte = description_cap %}
           {% endif %}
