@@ -54,7 +54,7 @@
         
         <div class="form-item">
           <label class="headUp" for="description">Full Description*</label>
-          <textarea class="Form__Input" name="description" id="description" placeholder="Enter your description here..."{% if customer.metafields.practice.full_description != blank %} value="{{ customer.metafields.practice.full_description | metafield_tag }}"{% endif %} required></textarea>
+          <textarea class="Form__Input" name="description" id="description" placeholder="Enter your description here..." required {% if customer.metafields.practice.full_description != blank %} value='{{ customer.metafields.practice.full_description | metafield_tag }}'{% endif %}></textarea>
         </div>
         
         <div class="form-group--line">
