@@ -54,7 +54,7 @@
 
         <div class="form-item">
           <label class="headUp" for="short-description">Short Description*</label>
-          <div class="Form__Input" contenteditable="true" name="full-description" id="full-description">{% if customer.metafields.practice.full_description != blank %}{{ customer.metafields.practice.full_description | json }}{% else %}Enter your description here...{% endif %}</div>
+          <div class="Form__Input" contenteditable="true" name="full-description" id="full-description">{% if customer.metafields.practice.full_description != blank %}{{ customer.metafields.practice.full_description | newline_to_br }}{% else %}Enter your description here...{% endif %}</div>
         </div>
         
         {% comment %} <div class="form-item">
