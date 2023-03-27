@@ -51,11 +51,16 @@
           <label class="headUp" for="short-description">Short Description*</label>
           <textarea class="Form__Input" name="short-description" id="short-description" max="320" placeholder="Enter short description here (max. 320 characters)..."{% if customer.metafields.practice.short_description != blank %} value="{{ customer.metafields.practice.short_description | newline_to_br }}"{% endif %} required></textarea>
         </div>
-        
+
         <div class="form-item">
-          <label class="headUp" for="description">Full Description*</label>
-          <input type="html" class="Form__Input" name="description" id="description" placeholder="Enter full description here..."{% if customer.metafields.practice.full_description != blank %} value="{{ customer.metafields.practice.full_description | newline_to_br }}"{% endif %} required>
+          <label class="headUp" for="short-description">Short Description*</label>
+          <div class="Form__Input" contenteditable="true" name="full-description" id="full-description">{% if customer.metafields.practice.full_description != blank %}{{ customer.metafields.practice.full_description | newline_to_br }}{% else %}Enter your description here...{% endif %}</div>
         </div>
+        
+        {% comment %} <div class="form-item">
+          <label class="headUp" for="description">Full Description*</label>
+          <textarea class="Form__Input" name="description" id="description" placeholder="{{ customer.metafields.practice.full_description }}"{% if customer.metafields.practice.full_description != blank %} value="{{ customer.metafields.practice.full_description | newline_to_br }}"{% endif %} required></textarea>
+        </div> {% endcomment %}
         
         <div class="form-group--line">
           <div class="form-item">
