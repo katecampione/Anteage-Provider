@@ -59,7 +59,7 @@
               {% for child in customer.metafields.practice.full_description %}
                 {{ child.value }}
               {% endfor %}
-              {{ customer.metafields.practice.full_description | metafield_tag }}
+
             {% else %}
               Enter your description here...
             {% endif %}
