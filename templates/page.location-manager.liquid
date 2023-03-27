@@ -1012,13 +1012,7 @@
     return requiredFields
   }
 
-  function validateInputs(formElement) {
-    let form;
-    if (formElement) {
-      form = formElement
-    } else {
-      form = this.closest('form');
-    }
+  function validateInputs(form) {
     let requiredFields = getRequiredFields(form);
     let submitButton = form.querySelector('button[type="submit"]');
     let validCount = 0;
