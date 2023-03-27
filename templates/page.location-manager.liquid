@@ -1022,7 +1022,7 @@
     hiddenInput.value = evt.target.innerHTML
   }
 
-  function initRichTextInput() {
+  function initRichTextInputs() {
     let editableInputs = document.querySelectorAll('[contenteditable="true"]');
     editableInputs.forEach(field => {
       field.addEventListener('input', matchContentValue(event))
@@ -1030,6 +1030,7 @@
   }
 
   function initFormValidation() {
+    initRichTextInputs()
     let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
       let requiredFields = getRequiredFields(form);
