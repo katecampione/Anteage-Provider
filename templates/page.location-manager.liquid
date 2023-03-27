@@ -51,17 +51,6 @@
           <label class="headUp" for="short-description">Short Description*</label>
           <textarea class="Form__Input" name="short-description" id="short-description" max="320" placeholder="Enter short description here (max. 320 characters)..."{% if customer.metafields.practice.short_description != blank %} value="{{ customer.metafields.practice.short_description | newline_to_br }}"{% endif %} required></textarea>
         </div>
-
-        {% comment %} <div class="form-item">
-          <label class="headUp" for="description">Full Description*</label>
-          <div class="Form__Input" contenteditable="true" name="description" id="full-description">
-            {% if customer.metafields.practice.full_description != blank %}
-              {{ customer.metafields.practice.full_description | metafield_tag }}
-            {% else %}
-              Enter your description here...
-            {% endif %}
-          </div>
-        </div> {% endcomment %}
         
         <div class="form-item">
           <label class="headUp" for="description">Full Description*</label>
