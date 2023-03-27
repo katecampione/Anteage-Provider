@@ -62,8 +62,8 @@
           {% endif %}
 
           <label class="headUp" for="description">Full Description*</label>
-          <textarea class="Form__Input hidden" name="description" id="description" placeholder="Enter your description here..." required {% if customer.metafields.practice.full_description %} value="{{ customer.metafields.practice.full_description | metafield_text | newline_to_br }}"{% endif %}></textarea>
-          <div contenteditable="true" class="Form__Input" name="description-editor" id="description-editor">
+          <textarea class="Form__Input " name="description" id="description" placeholder="Enter your description here..." required {% if customer.metafields.practice.full_description %} value="{{ customer.metafields.practice.full_description | metafield_text | newline_to_br }}"{% endif %}></textarea>
+          <div contenteditable="true" class="Form__Input" data-input-controller="description" name="description-editor" id="description-editor">
             {% if description_rte %}
               {{ description_rte }}
             {% else %}
