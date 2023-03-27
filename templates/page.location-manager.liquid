@@ -1066,7 +1066,8 @@
     forms.forEach(form => {
       let requiredFields = getRequiredFields(form);
       requiredFields.forEach(field => {
-        field.addEventListener('change', validateInputs)
+        let parentForm = field.closest('form')
+        field.addEventListener('change', validateInputs(parentForm))
       })
     })
   }
