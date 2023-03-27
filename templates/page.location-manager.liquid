@@ -60,7 +60,7 @@
             {% endcapture %}
             {% assign description_rte = description_cap %}
           {% endif %}
-          {{ description_rte }}
+
           <label class="headUp" for="description">Full Description*</label>
           <textarea class="Form__Input hidden" name="description" id="description" placeholder="Enter your description here..." required {% if description_rte %} value="{{ description_rte }}"{% endif %}></textarea>          <textarea class="Form__Input hidden" name="description" id="description" placeholder="Enter your description here..." required {% if description_rte %} value="{{ description_rte }}"{% endif %}></textarea>
           <div contenteditable="true" class="Form__Input" name="description-editor" id="description-editor">
@@ -1013,6 +1013,20 @@
     } else {
       submitButton.disabled = true
     }
+  }
+
+  function matchContentValue() {
+    let parent = evt.target.closest('div');
+    let contentId = evt.target.name.replace('-editor', '');
+    let hiddenInput = parent.querySelector(`[name=${contentId}]`);
+    hiddenInput.value = evt.target.innerHTML
+  }
+
+  function initRichTextInput() {
+    let editableInputs = document.querySelectorAll('[contenteditable="true"]');
+    editableInputs.forEach(field => {
+      field.addEventListener('input', matchContentValue(event))
+    })
   }
 
   function initFormValidation() {
