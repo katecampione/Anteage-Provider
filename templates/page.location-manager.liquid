@@ -22,17 +22,17 @@
           <div class="form-item">
             <label class="headUp" for="type-of-provider">Practice Type*</label>
             <select id="type-of-provider" name="type-of-provider" class="Form__Input" required>
-              <option value="" selected disabled>Select one...</option>
-              <option value="Acupuncturist">Acupuncturist</option>
-              <option value="Chiropractor">Chiropractor</option>
-              <option value="Dentist">Dentist</option>
-              <option value="Dermatologist">Dermatologist</option>
-              <option value="Esthetician">Esthetician</option>
-              <option value="General Medical Practice">General Medical Practice</option>
-              <option value="Massage Therapist">Massage Therapist</option>
-              <option value="Med Spa">Med Spa</option>
-              <option value="Plastic Surgeon">Plastic Surgeon</option>
-              <option value="Other">Other</option>
+              <option value=""{% if customer.metafields.practice.type == blank %} selected{% endif %} disabled>Select one...</option>
+              <option value="Acupuncturist"{% if customer.metafields.practice.type == "Acupuncturist" %} selected{% endif %}>Acupuncturist</option>
+              <option value="Chiropractor"{% if customer.metafields.practice.type == "Chiropractor" %} selected{% endif %}>Chiropractor</option>
+              <option value="Dentist"{% if customer.metafields.practice.type == "Dentist" %} selected{% endif %}>Dentist</option>
+              <option value="Dermatologist"{% if customer.metafields.practice.type == "Dermatologist" %} selected{% endif %}>Dermatologist</option>
+              <option value="Esthetician"{% if customer.metafields.practice.type == "Esthetician" %} selected{% endif %}>Esthetician</option>
+              <option value="General Medical Practice"{% if customer.metafields.practice.type == "General Medical Practice" %} selected{% endif %}>General Medical Practice</option>
+              <option value="Massage Therapist"{% if customer.metafields.practice.type == "Massage Therapist" %} selected{% endif %}>Massage Therapist</option>
+              <option value="Med Spa"{% if customer.metafields.practice.type == "Med Spa" %} selected{% endif %}>Med Spa</option>
+              <option value="Plastic Surgeon"{% if customer.metafields.practice.type == "Plastic Surgeon" %} selected{% endif %}>Plastic Surgeon</option>
+              <option value="Other"{% if customer.metafields.practice.type == "Other" %} selected{% endif %}>Other</option>
             </select>
           </div>
         </div>
