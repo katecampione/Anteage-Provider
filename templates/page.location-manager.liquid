@@ -1019,8 +1019,10 @@
     let parent = evt.target.closest('.form-item');
     let contentId = evt.target.getAttribute('data-input-controller');
     let hiddenInput = parent.querySelector(`[name=${contentId}]`);
-    console.log(hiddenInput)
-    hiddenInput.value = evt.target.innerHTML
+    let newValue = evt.target.innerHTML.trim();
+    newValue = newValue.replace('<div class="metafield-rich_text_field">', '');
+    newValue = newValue.substring(0, newValue.length - 6);
+    hiddenInput.value = newValue
     console.log(hiddenInput.value)
   }
 
