@@ -1045,6 +1045,7 @@
     newValue = newValue.replace('<span class="metafield-multi_line_text_field">', '');
     newValue = newValue.replace('</span>', '');
     hiddenInput.value = newValue
+    hiddenInput.textContent = newValue
     let grandparent = parent.closest('form');
     validateInputs(grandparent)
   }
