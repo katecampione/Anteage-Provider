@@ -157,7 +157,7 @@
               <div class="location-address--details">{{ location.address_1 }}{% if location.address_2 %} {{ location.address_2 }}{% endif %}</div>
               <div class="location-address--details">{{ location.city }}, {{ location.state }} {{ location.zip }}</div>
               <div class="location-address--details">{{ location.country }}</div>
-              <button class="location-edit mt1">
+              <button class="location-edit mt1" data-edit-target="{{ location.id }}">
                 Edit
               </button>
             </div>
@@ -1016,6 +1016,8 @@
 </div>
 
 <script>
+  let locationsJson = {{ customer.metafields.practice.locations_json }};
+
   // Form Validation
   function getRequiredFields(formItem) {
     let requiredFields = [];
@@ -1119,11 +1121,32 @@
   function getCloseButtons() {
     return document.querySelectorAll('[data-action="close-parent-modal"]');
   }
-
   
   function closeFormModal() {
     let parent = this.closest('.modal-container')
     parent.classList.remove('visible')
+  }
+
+  function populateEditForm(content) {
+    let form = editLocationForm.querySelector('form');
+    let fields = form.querySelector('input[type="text"]');
+    fields.push(form.querySelector('input[type="file"]'));
+    fields.push(document.getElementById('edit-hours'));
+    for (let i = 0; i < fields.length; i++) {
+      let field = fields[i];
+      let fieldkey = field.name.replace('edit-', '');
+      if (content[fieldkey]) {
+        field.value = content[fieldkey]
+      }
+    }
+  }
+
+  function showEditModal() {
+    let editLocationForm = document.querySelector('.edit-location-modal');
+    let contentId = this.getAttribute('data-edit-target');
+    let json = locationsJson.find(location => location.id === contentId);
+    populateEditForm(json)
+    editLocationForm.classList.add('visible');
   }
 
   function initEditModals() {
@@ -1134,9 +1157,7 @@
     let modalCloseTriggers = getCloseButtons();
 
     locationItems.forEach(item => {
-      item.addEventListener('click', function() {
-        editLocationForm.classList.add('visible');
-      })
+      item.addEventListener('click', showEditModal)
     })
     
     triggerAddLocation.addEventListener('click', function() {
