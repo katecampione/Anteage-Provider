@@ -1127,6 +1127,15 @@
     parent.classList.remove('visible')
   }
 
+  function showEditModal() {
+    let editLocationModal = document.querySelector('.edit-location-modal');
+    let contentId = this.getAttribute('data-edit-target');
+    let json = locationsJson.find(location => location.location_id === contentId);
+    populateEditForm(json)
+    editLocationModal.classList.add('visible');
+  }
+
+  // Populate edit form on open
   function populateEditForm(content) {
     let editLocationModal = document.querySelector('.edit-location-modal');
     let form = editLocationModal.querySelector('form');
@@ -1135,6 +1144,7 @@
     fields.forEach(field => {
       allFields.push(field)
     })
+    // NEED SOLUTION FOR IMAGE / FILE HANDLING
     // allFields.push(form.querySelector('input[type="file"]'));
     allFields.push(document.getElementById('edit-hours'));
     for (let i = 0; i < allFields.length; i++) {
@@ -1151,14 +1161,6 @@
         option.checked = true
       }
     })
-  }
-
-  function showEditModal() {
-    let editLocationModal = document.querySelector('.edit-location-modal');
-    let contentId = this.getAttribute('data-edit-target');
-    let json = locationsJson.find(location => location.location_id === contentId);
-    populateEditForm(json)
-    editLocationModal.classList.add('visible');
   }
 
   function initEditModals() {
