@@ -1016,7 +1016,8 @@
 </div>
 
 <script>
-  let locationsJson = `{{ customer.metafields.practice.locations_json.value }}`;
+  let locationsJson = `{{ customer.metafields.practice.locations_json }}`;
+  console.log(locationsJson)
 
   // Form Validation
   function getRequiredFields(formItem) {
