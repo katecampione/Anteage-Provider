@@ -995,7 +995,6 @@
 <script>
   // Form Validation
   function getRequiredFields(formItem) {
-    console.log(formItem)
     let requiredFields = [];
     let requiredInputs = formItem.querySelectorAll('input:required');
     requiredInputs.forEach(input => {
@@ -1012,13 +1011,18 @@
     return requiredFields
   }
 
-  function validateInputs(form) {
+  function validateInputs(formElement) {
+    let form;
+    if (formElement) {
+      form = formElement
+    } else {
+      form = this.closest('form');
+    }
     let requiredFields = getRequiredFields(form);
     let submitButton = form.querySelector('button[type="submit"]');
     let validCount = 0;
     for (let i = 0; i < requiredFields.length; i++) {
       if (!requiredFields[i].value) {
-        console.log(requiredFields[i])
         break
       } else {
         validCount += 1
@@ -1042,8 +1046,8 @@
     newValue = newValue.replace('</span>', '');
     hiddenInput.value = newValue
     hiddenInput.textContent = newValue
-    let grandparent = parent.closest('form');
-    validateInputs(grandparent)
+    let changeEvent = new Event('change');
+    hiddenInput.dispatchEvent(changeEvent)
   }
 
   function initRichTextInputs() {
@@ -1061,8 +1065,7 @@
     forms.forEach(form => {
       let requiredFields = getRequiredFields(form);
       requiredFields.forEach(field => {
-        let parentForm = field.closest('form')
-        field.addEventListener('change', validateInputs(parentForm))
+        field.addEventListener('change', validateInputs)
       })
     })
   }
