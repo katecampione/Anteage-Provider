@@ -1130,7 +1130,7 @@
   function populateEditForm(content) {
     let editLocationModal = document.querySelector('.edit-location-modal');
     let form = editLocationModal.querySelector('form');
-    let fields = form.querySelector('input[type="text"]');
+    let fields = form.querySelectorAll('input[type="text"]');
     fields.push(form.querySelector('input[type="file"]'));
     fields.push(document.getElementById('edit-hours'));
     for (let i = 0; i < fields.length; i++) {
