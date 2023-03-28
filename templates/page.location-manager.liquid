@@ -1016,6 +1016,11 @@
 </div>
 
 <script>
+  // NOTES: Need to conditionally display preview image if file input exists. In this case, HIDE input. 
+  //        Otherwise, show input.
+  //        In formData compilation, remove image input if no value is set ??
+
+
   let locationsJson = JSON.parse(`{{ customer.metafields.practice.locations_json }}`);
 
   // Form Validation
