@@ -1051,6 +1051,9 @@
       field.addEventListener('input', (event) => {
         matchContentValue(event)
       })
+      field.addEventListener('focus', function() {
+        field.classList.remove('placeholder-shown')
+      })
     })
   }
 
