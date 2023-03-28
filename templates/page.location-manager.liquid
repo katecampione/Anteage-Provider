@@ -144,7 +144,7 @@
         {% for location in customer.metafields.practice.locations_json.value %}
           <div class="location-item">
             <div class="location-image--outer">
-              <div class="location-image--wrap">
+              <div class="location-image--wrap{% unless location.image != blank %} placeholder-image{% endunless %}">
                 {% if location.image != blank %}
                   <img src="{{ location.image }}">
                 {% else %}
