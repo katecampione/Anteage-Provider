@@ -1151,7 +1151,8 @@
   function showEditModal() {
     let editLocationModal = document.querySelector('.edit-location-modal');
     let contentId = this.getAttribute('data-edit-target');
-    let json = locationsJson.find(location => location.id === contentId);
+    let json = locationsJson.find(location => location.location_id === contentId);
+    console.log(json)
     populateEditForm(json)
     editLocationModal.classList.add('visible');
   }
