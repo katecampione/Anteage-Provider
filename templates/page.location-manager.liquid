@@ -1011,6 +1011,23 @@
     return requiredFields
   }
 
+  function getFormFields(formItem) {
+    let fields = [];
+    let inputs = formItem.querySelectorAll('input');
+    inputs.forEach(input => {
+      fields.push(input)
+    })
+    let areas = formItem.querySelectorAll('textarea');
+    areas.forEach(textarea => {
+      fields.push(textarea)
+    })
+    let selects = formItem.querySelectorAll('select');
+    selects.forEach(select => {
+      fields.push(select)
+    })
+    return fields
+  }
+
   function validateInputs() {
     let form = this.closest('form');
     let requiredFields = getRequiredFields(form);
@@ -1061,8 +1078,8 @@
     initRichTextInputs()
     let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
-      let requiredFields = getRequiredFields(form);
-      requiredFields.forEach(field => {
+      let fields = getFormFields(form);
+      fields.forEach(field => {
         field.addEventListener('change', validateInputs)
       })
     })
