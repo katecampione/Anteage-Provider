@@ -1140,6 +1140,7 @@
     for (let i = 0; i < allFields.length; i++) {
       let field = allFields[i];
       let fieldkey = field.name.replace('edit-', '');
+      console.log(fieldkey)
       if (content[fieldkey]) {
         field.value = content[fieldkey]
       }
