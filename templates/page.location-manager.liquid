@@ -145,7 +145,7 @@
           <div class="location-item">
             <div class="location-image--outer">
               <div class="location-image--wrap{% unless location.hero_image != blank %} placeholder-image{% endunless %}">
-                {% if location.image != blank %}
+                {% if location.hero_image != blank %}
                   <img src="{{ location.hero_image }}">
                 {% else %}
                   <h3 class="Heading u-h2 mt0 mb0 centerContents">Click Edit Upload Your Image...</h3>
