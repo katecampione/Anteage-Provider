@@ -1128,7 +1128,6 @@
   }
 
   function populateEditForm(content) {
-    console.log(content)
     let editLocationModal = document.querySelector('.edit-location-modal');
     let form = editLocationModal.querySelector('form');
     let allFields = [];
@@ -1146,6 +1145,12 @@
         field.value = content[fieldkey]
       }
     }
+    let serviceOptions = form.querySelectorAll('input[type="checkbox"]');
+    serviceOptions.forEach(option => {
+      if (content.services.includes(option.value)) {
+        option.checked = true
+      }
+    })
   }
 
   function showEditModal() {
