@@ -42,7 +42,7 @@
           </div>
         </div>
         
-        <div class="form-item">
+        <div class="form-item" data-type="image-upload-group">
           <label class="headUp" for="logo">Practice Logo</label>
             <div class="location-logo--preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
               <div data-option-control="logo-replace" class="location-logo--preview">
@@ -1109,6 +1109,10 @@
         field.classList.remove('placeholder-shown')
       })
     })
+  }
+
+  function initImageUploaders() {
+    let imageUploaders = document.querySelectorAll('input[type="file"][accept="*/image"]')
   }
 
   function initFormValidation() {
