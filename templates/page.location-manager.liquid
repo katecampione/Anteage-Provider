@@ -1,5 +1,3 @@
-<script src="{{ 'simple-image.js' | asset_url }}"></script>
-
 {% assign has_practice_data = false %}
 {% if customer.metafields.practice.name != blank and customer.metafields.practice.type != blank and customer.metafields.practice.short_description != blank and customer.metafields.practice.full_description != blank and customer.metafields.practice.website != blank %}
   {% assign has_practice_data = true %}
@@ -47,10 +45,10 @@
         <div class="form-item" data-type="image-upload-group">
           <label class="headUp" for="logo">Practice Logo</label>
             <div class="location-logo--preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
-              <canvas data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
+              <div data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
                 <div class="location-logo-replace--overlay">Replace Image...</div>
                 <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
-              </canvas>
+              </div>
               <button data-option-control="logo-replace" class="Button Button--primary">Replace Image</button>
             </div>
             <input data-option-control="logo-upload" type="file" name="logo" id="logo" accept="*/image" >
@@ -1114,11 +1112,7 @@
   }
 
   function displayImagePreview() {
-    console.log(this)
-    let image = new SimpleImage(this.value);
-    let parent = this.closest('[data-type="image-upload-group"]');
-    let canvas = parent.querySelector('[data-type="image-preview"]')
-    image.drawTo(canvas)
+    console.log('finish me!')
   }
 
   function initImageUploaders() {
