@@ -1,4 +1,4 @@
-<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+<script src="{{ 'simple-image.js' | asset_url }}"></script>
 
 {% assign has_practice_data = false %}
 {% if customer.metafields.practice.name != blank and customer.metafields.practice.type != blank and customer.metafields.practice.short_description != blank and customer.metafields.practice.full_description != blank and customer.metafields.practice.website != blank %}
