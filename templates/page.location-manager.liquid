@@ -44,7 +44,7 @@
         
         <div class="form-item">
           {% if customer.metafields.practice.logo != blank %}
-            <img src="{{ customer.metafields.practice.logo.image }}" width=200 >
+            <img src="{{ customer.metafields.practice.logo.value | img_url: '200x' }}" width=200 >
           {% else %}
           <label class="headUp" for="logo">Practice Logo</label>
           <input type="file" name="logo" id="logo" accept="*/image" >
