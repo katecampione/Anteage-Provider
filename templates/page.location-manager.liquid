@@ -1118,7 +1118,13 @@
   function initImageUploaders() {
     let imageUploaders = document.querySelectorAll('input[type="file"][accept="*/image"]');
     imageUploaders.forEach(imageInput => {
-      imageInput.addEventListener('change', displayImagePreview)
+      imageInput.addEventListener('change', function(event) {
+        let image = event.target.files[0];
+        let imageUrl = URL.createObjectURL(image);
+        let parent = this.closest('[data-type="image-upload-group"]')
+        let canvas = parent.querySelector('img');
+        canvas.src = imageUrl
+      })
     })
   }
 
