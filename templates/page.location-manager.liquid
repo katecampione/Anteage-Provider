@@ -46,9 +46,9 @@
           <label class="headUp" for="logo">Practice Logo</label>
             <div class="location-logo--preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
               <div data-option-control="logo-replace" class="location-logo--preview">
+                <div class="location-logo-replace--overlay">Replace Image...</div>
                 <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
               </div>
-              <div class="location-logo-replace--overlay">Replace Image...</div>
               <button data-option-control="logo-replace" class="Button Button--primary">Replace Image</button>
             </div>
             <input data-option-control="logo-upload" type="file" name="logo" id="logo"{% if customer.metafields.practice.logo != blank %} class="hidden"{% endif %}accept="*/image" >
