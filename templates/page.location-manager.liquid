@@ -1115,7 +1115,7 @@
     let image = new SimpleImage(this);
     let parent = this.closest('[data-type="image-upload-group"]');
     let canvas = parent.querySelector('[data-type="image-preview"]')
-    image.drawTo(thi)
+    image.drawTo(canvas)
   }
 
   function initImageUploaders() {
@@ -1127,6 +1127,7 @@
 
   function initFormValidation() {
     initRichTextInputs()
+    initImageUploaders()
     let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
       let fields = getFormFields(form);
