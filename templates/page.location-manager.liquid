@@ -1113,7 +1113,7 @@
 
   function displayImagePreview() {
     console.log(this)
-    let image = new SimpleImage(this);
+    let image = new SimpleImage(this.value);
     let parent = this.closest('[data-type="image-upload-group"]');
     let canvas = parent.querySelector('[data-type="image-preview"]')
     image.drawTo(canvas)
