@@ -44,7 +44,7 @@
         
         <div class="form-item" data-type="image-upload-group">
           <label class="headUp" for="logo">Practice Logo</label>
-            <div class="location-logo--preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
+            <div class="image-preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
               <div data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
                 <div class="location-logo-replace--overlay">Replace Image...</div>
                 <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
@@ -1121,9 +1121,10 @@
       imageInput.addEventListener('change', function(event) {
         let image = event.target.files[0];
         let imageUrl = URL.createObjectURL(image);
-        let parent = this.closest('[data-type="image-upload-group"]')
+        let parent = this.closest('[data-type="image-upload-group"]');
         let canvas = parent.querySelector('img');
-        canvas.src = imageUrl
+        canvas.src = imageUrl;
+        parent.querySelector('.image-preview--wrapper').classList.remove('hidden');
       })
     })
   }
