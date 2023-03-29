@@ -44,8 +44,10 @@
         
         <div class="form-item">
           <label class="headUp" for="logo">Practice Logo</label>
-            <div data-option-control="logo-upload" class="location-logo--preview{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
-              <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
+            <div class="location-logo--preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
+              <div data-option-control="logo-replace" class="location-logo--preview">
+                <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
+              </div>
             </div>
             <input data-option-control="logo-upload" type="file" name="logo" id="logo"{% if customer.metafields.practice.logo != blank %} class="hidden"{% endif %}accept="*/image" >
         </div>
