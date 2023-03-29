@@ -47,6 +47,7 @@
             <div class="location-logo--preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
               <div data-option-control="logo-replace" class="location-logo--preview">
                 <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
+                <button data-option-control="logo-replace" class="Btn Btn--primary">Replace Image</button>
               </div>
             </div>
             <input data-option-control="logo-upload" type="file" name="logo" id="logo"{% if customer.metafields.practice.logo != blank %} class="hidden"{% endif %}accept="*/image" >
