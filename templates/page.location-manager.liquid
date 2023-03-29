@@ -43,14 +43,11 @@
         </div>
         
         <div class="form-item">
-          {% if customer.metafields.practice.logo != blank %}
-            <div class="location-logo--preview">
+          <label class="headUp" for="logo">Practice Logo</label>
+            <div data-option-control="logo-upload" class="location-logo--preview{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
               <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
             </div>
-          {% else %}
-          <label class="headUp" for="logo">Practice Logo</label>
-          <input type="file" name="logo" id="logo" accept="*/image" >
-          {% endif %}
+            <input data-option-control="logo-upload" type="file" name="logo" id="logo"{% unless customer.metafields.practice.logo != blank %} class="hidden"{% endunless %}accept="*/image" >
         </div>
     
         <div class="form-item">
