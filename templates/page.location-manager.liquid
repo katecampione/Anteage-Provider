@@ -45,7 +45,7 @@
         <div class="form-item">
           {% if customer.metafields.practice.logo != blank %}
             <div class="location-logo--preview">
-              <img src="{{ customer.metafields.practice.logo.value | img_url: '400x' }}" width=200 >
+              <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
             </div>
           {% else %}
           <label class="headUp" for="logo">Practice Logo</label>
