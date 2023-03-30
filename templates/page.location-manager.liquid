@@ -1114,6 +1114,11 @@
     })
   }
 
+  function changeEvent(target) {
+    let changeEvent = new Event('change');
+    target.dispatchEvent(changeEvent)
+  }
+
   function initImageUploaders() {
     let imageUploaders = document.querySelectorAll('input[type="file"][accept="*/image"]');
     imageUploaders.forEach(imageInput => {
@@ -1127,7 +1132,10 @@
         canvas.src = imageUrl;
         parent.querySelector('.image-preview--wrapper').classList.remove('hidden');
         let removeButton = parent.querySelector('button[data-option-control="logo-remove"]');
-        removeButton.classList.remove('hidden')
+        removeButton.classList.remove('hidden');
+        let removeImageInput = parent.querySelector('input[type="checkbox"]');
+        removeImageInput.checked = false;
+        changeEvent(removeImageInput)
       })
     })
   }
@@ -1143,8 +1151,7 @@
     evt.target.classList.add('hidden');
     let removeImageInput = parent.querySelector('input[type="checkbox"]');
     removeImageInput.checked = true;
-    let changeEvent = new Event('change');
-    removeImageInput.dispatchEvent(changeEvent)
+    changeEvent(removeImageInput)
   }
 
   function initImageRemovers() {
