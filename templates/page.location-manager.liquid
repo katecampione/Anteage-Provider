@@ -1262,7 +1262,9 @@
       notice.innerHTML = `<h2 class="Heading u-h2 mt0">Error</h2><p class="mt1 mb0">The system ran into an issue applying your updates, please reload this page and try again.</p>`
     }
     document.querySelector('body').appendChild(notice);
-    notice.classList.add('display-snackbar')
+    setTimeout(function() {
+      notice.classList.add('display-snackbar')
+    }, 50)
   }
 
   function formSuccess(target) {
