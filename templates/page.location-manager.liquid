@@ -20,13 +20,13 @@
       <form id="locator-practice" data-form-validate="true">
         <div class="form-group--line">
           <div class="form-item">
-            <label class="headUp" for="company-name">Practice Name*</label>
-            <input name="company-name" id="company-name" type="text" class="Form__Input" placeholder="Practice Name"{% if customer.metafields.practice.name != blank %} value="{{ customer.metafields.practice.name }}"{% endif %}required>
+            <label class="headUp" for="name">Practice Name*</label>
+            <input name="name" id="name" type="text" class="Form__Input" placeholder="Practice Name"{% if customer.metafields.practice.name != blank %} value="{{ customer.metafields.practice.name }}"{% endif %}required>
           </div>
           
           <div class="form-item">
-            <label class="headUp" for="type-of-provider">Practice Type*</label>
-            <select id="type-of-provider" name="type-of-provider" class="Form__Input" required>
+            <label class="headUp" for="type">Practice Type*</label>
+            <select id="type" name="type" class="Form__Input" required>
               <option value=""{% if customer.metafields.practice.type == blank %} selected{% endif %} disabled>Select one...</option>
               <option value="Acupuncturist"{% if customer.metafields.practice.type == "Acupuncturist" %} selected{% endif %}>Acupuncturist</option>
               <option value="Chiropractor"{% if customer.metafields.practice.type == "Chiropractor" %} selected{% endif %}>Chiropractor</option>
@@ -83,9 +83,9 @@
             {% assign description_rte = description_cap %}
           {% endif %}
 
-          <label class="headUp" for="description">Full Description*</label>
-          <textarea class="Form__Input hidden" name="description" id="description" placeholder="Enter your description here..." required {% if customer.metafields.practice.full_description %} value="{{ description_rte | strip | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}"{% endif %}>{% if customer.metafields.practice.full_description %}{{ description_rte | strip | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}{% endif %}</textarea>
-          <div contenteditable="true" class="Form__Input{% unless description_rte %} placeholder-shown{% endunless %}" data-input-controller="description" name="description-editor" id="description-editor">
+          <label class="headUp" for="full_description">Full Description*</label>
+          <textarea class="Form__Input hidden" name="full_description" id="full_description" placeholder="Enter your description here..." required {% if customer.metafields.practice.full_description %} value="{{ description_rte | strip | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}"{% endif %}>{% if customer.metafields.practice.full_description %}{{ description_rte | strip | replace: '<div class="metafield-rich_text_field">', '' | replace: '</div>', '' }}{% endif %}</textarea>
+          <div contenteditable="true" class="Form__Input{% unless description_rte %} placeholder-shown{% endunless %}" data-input-controller="full_description" name="description-editor" id="description-editor">
             {% if description_rte %}
               {{ description_rte }}
             {% else %}
@@ -101,8 +101,8 @@
           </div>
 
           <div class="form-item">
-            <label class="headUp" for="online-sales-link" data-validation-type="url">Link To Online Store</label>
-            <input name="online-sales-link" id="online-sales-link" type="text" class="Form__Input" placeholder="https://website.com/shop"{% if customer.metafields.practice.online_sales_link != blank %} value="{{ customer.metafields.practice.online_sales_link }}"{% endif %}>
+            <label class="headUp" for="online_sales_link" data-validation-type="url">Link To Online Store</label>
+            <input name="online_sales_link" id="online_sales_link" type="text" class="Form__Input" placeholder="https://website.com/shop"{% if customer.metafields.practice.online_sales_link != blank %} value="{{ customer.metafields.practice.online_sales_link }}"{% endif %}>
           </div>
         </div>
       
