@@ -1145,7 +1145,10 @@
   function initImageRemovers() {
     let imageRemovers = document.querySelectorAll('button[data-option-control="logo-remove"]');
     imageRemovers.forEach(remover => {
-      remover.addEventListener('click', removeImage)
+      remover.addEventListener('click', function(event) {
+        event.preventDefault();
+        removeImage();
+      })
     })
   }
 
