@@ -1252,8 +1252,9 @@
 
   document.addEventListener('DOMContentLoaded', initModalFunctionality)
 
-  function formSuccess(data) {
-    console.log(data)
+  function formSuccess(target) {
+    let button = target.querySelector('button[type="submit"]');
+    button.textContent = 'Save Updates';
   }
 
   function formError(data) {
@@ -1283,7 +1284,7 @@
     let endpoint = 'https://en4jhrdwzz30916.m.pipedream.net';
 
     await fetch(endpoint, params)
-      .then(response => formSuccess(response))
+      .then(response => formSuccess(form))
       .catch(error => formFail(error));
 
   }
