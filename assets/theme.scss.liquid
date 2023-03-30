@@ -13490,6 +13490,34 @@ div.Form__Input.placeholder-shown {
   opacity: 1;
 }
 
+/* Snackbars */
+
+.snackbar-main {
+  position: fixed;
+  width: 400px;
+  max-width: calc(100vw - 40px);
+  padding: 20px;
+  top: 20px;
+  right: 20px;
+  border: 3px solid $button-background;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out,;
+}
+
+.snackbar-main.status--error {
+  border-color: red;
+}
+
+.snackbar-main.status--error h2 {
+  color: red !important;
+}
+
+.snackbar-main.display-snackbar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 // Related Collateral PDP
 
 .related-collateral--title {
