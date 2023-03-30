@@ -1255,6 +1255,7 @@
   function createNotice(type) {
     let notice = document.createElement('div');
     notice.classList.add('snackbar-main');
+    notice.setAttribute('data-content-type', 'snackbar')
     if (type === 'success') {
       notice.innerHTML = `<h2 class="Heading u-h2 mt0">Success</h2><p class="mt1 mb0">Your updates have been saved successfully.</p>`
     } else {
@@ -1265,6 +1266,13 @@
     setTimeout(function() {
       notice.classList.add('display-snackbar')
     }, 50)
+    setTimeout(function() {
+      let displayedNotice = document.querySelector('[data-content-type="snackbar"]');
+      displayedNotice.classList.remove('display-snackbar');
+      setTimeout(function() {
+        displayedNotice.remove();
+      }, 250)
+    }, 4000)
   }
 
   function formSuccess(target) {
