@@ -1279,6 +1279,7 @@
   }
 
   function formSuccess(target) {
+    destroyNotice()
     let button = target.querySelector('button[type="submit"]');
     button.textContent = 'Save Updates';
     createNotice('success')
@@ -1286,6 +1287,7 @@
   }
 
   function formError(data) {
+    destroyNotice()
     let button = target.querySelector('button[type="submit"]');
     button.textContent = 'Save Updates';
     createNotice('error')
