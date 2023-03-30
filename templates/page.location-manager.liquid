@@ -53,7 +53,7 @@
             <label for="logo" class="Button Button--stroke">{% unless customer.metafields.practice.logo != blank %}Select{% else %}Replace{% endunless %}</label>
             <button class="Button Button--stroke Button--delete{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}" data-option-control="logo-remove">Remove Logo</button>
             <input data-option-control="logo-upload" type="file" name="logo" id="logo" class="hidden" accept="*/image" >
-            <input type="checkbox" name="remove_logo" id="remove_logo" data-option-for="remove_image">
+            <input type="checkbox" name="remove_logo" id="remove_logo" class="hidden" data-option-for="remove_image">
         </div>
     
         <div class="form-item">
@@ -1274,7 +1274,7 @@
     } else {
       formData.append('remove_image', false)
     }
-    
+
     let params = {
       method: 'POST',
       body: formData
