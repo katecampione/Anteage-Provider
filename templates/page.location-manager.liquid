@@ -1141,6 +1141,8 @@
     evt.target.classList.add('hidden');
     let removeImageInput = parent.querySelector('input[type="checkbox"]');
     removeImageInput.checked = true;
+    let changeEvent = new Event('change');
+    removeImageInput.dispatchEvent(changeEvent)
   }
 
   function initImageRemovers() {
