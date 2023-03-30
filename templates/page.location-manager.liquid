@@ -1252,6 +1252,14 @@
 
   document.addEventListener('DOMContentLoaded', initModalFunctionality)
 
+  function destroyNotice() {
+    let displayedNotice = document.querySelector('[data-content-type="snackbar"]');
+    displayedNotice.classList.remove('display-snackbar');
+    setTimeout(function() {
+      displayedNotice.remove();
+    }, 250)
+  }
+
   function createNotice(type) {
     let notice = document.createElement('div');
     notice.classList.add('snackbar-main');
@@ -1268,13 +1276,6 @@
     setTimeout(function() {
       notice.classList.add('display-snackbar')
     }, 50)
-    setTimeout(function() {
-      let displayedNotice = document.querySelector('[data-content-type="snackbar"]');
-      displayedNotice.classList.remove('display-snackbar');
-      setTimeout(function() {
-        displayedNotice.remove();
-      }, 250)
-    }, 3000)
   }
 
   function formSuccess(target) {
@@ -1284,13 +1285,16 @@
   }
 
   function formError(data) {
-    console.log(data)
+    let button = target.querySelector('button[type="submit"]');
+    button.textContent = 'Save Updates';
+    createNotice('error')
   }
 
   async function submitPracticeForm(form) {
     let submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
-    submitButton.textContent = 'Please Wait';    
+    submitButton.textContent = 'Please Wait';   
+    createNotice('updating') 
 
     let formData = new FormData(form);
     formData.append('customer_id', '{{ customer.id }}')
@@ -1311,9 +1315,7 @@
 
     await fetch(endpoint, params)
       .then(response => formSuccess(form))
-      .catch(error => formSuccess(form));
-      // .catch(error => formFail(error));
-
+      .catch(error => formError(form));
   }
 
   function initPracticeListener() {
