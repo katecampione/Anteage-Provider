@@ -44,7 +44,7 @@
         
         <div class="form-item" data-type="image-upload-group">
           <label class="headUp" for="logo">Practice Logo</label>
-            <div class="image-preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
+            <div for="logo" class="image-preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
               <div data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
                 <div class="location-logo-replace--overlay">Replace Image...</div>
                 <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
