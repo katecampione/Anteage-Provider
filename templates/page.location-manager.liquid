@@ -1258,9 +1258,11 @@
     notice.setAttribute('data-content-type', 'snackbar')
     if (type === 'success') {
       notice.innerHTML = `<h2 class="Heading u-h2 mt0">Success</h2><p class="mt1 mb0">Your updates have been saved successfully.</p>`
-    } else {
+    } else if (type === 'error') {
       notice.classList.add('status--error')
       notice.innerHTML = `<h2 class="Heading u-h2 mt0">Error</h2><p class="mt1 mb0">The system ran into an issue applying your updates, please reload this page and try again.</p>`
+    } else {
+      notice.innerHTML = `<h2 class="Heading u-h2 mt0">Updating Your Profile</h2><p class="mt1 mb0">Please wait while we update your profile...</p>`
     }
     document.querySelector('body').appendChild(notice);
     setTimeout(function() {
