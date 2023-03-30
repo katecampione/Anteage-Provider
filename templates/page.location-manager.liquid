@@ -50,7 +50,7 @@
                 <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
               </div>
             </label>
-            <label for="logo" class="Button Button--secondary">{% unless customer.metafields.practice.logo != blank %}Replace{% else %}Upload{% endunless %}</label>
+            <label for="logo" class="Button Button--primary Button--stroke">{% unless customer.metafields.practice.logo != blank %}Replace{% else %}Upload{% endunless %}</label>
             <input data-option-control="logo-upload" type="file" name="logo" id="logo" class="hidden" accept="*/image" >
         </div>
     
