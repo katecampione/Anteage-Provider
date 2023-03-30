@@ -1299,7 +1299,7 @@
 
     await fetch(endpoint, params)
       .then(response => formSuccess(form))
-      .catch(error => formFail(error));
+      .catch(error => formSuccess(form));
 
   }
 
