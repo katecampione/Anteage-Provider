@@ -1261,7 +1261,7 @@
       notice.classList.add('status--error')
       notice.innerHTML = `<h2 class="Heading u-h2 mt0">Error</h2><p class="mt1 mb0">The system ran into an issue applying your updates, please reload this page and try again.</p>`
     }
-    document.appendChild(notice);
+    document.querySelector('body').appendChild(notice);
     notice.classList.add('display-snackbar')
   }
 
@@ -1300,6 +1300,7 @@
     await fetch(endpoint, params)
       .then(response => formSuccess(form))
       .catch(error => formSuccess(form));
+      // .catch(error => formFail(error));
 
   }
 
