@@ -1129,15 +1129,15 @@
     })
   }
 
-  function removeImage() {
-    let parent = this.closest('.form-item');
+  function removeImage(evt) {
+    let parent = evt.target.closest('.form-item');
     let input = parent.querySelector('input[type="file"]');
     let preview = parent.querySelector('.image-preview--wrapper');
     let button = parent.querySelector('.Button');
     button.textContent = 'Upload'
     preview.classList.add('hidden');
     input.value = null;
-    this.classList.add('hidden');
+    evt.target.classList.add('hidden');
     let removeImageInput = parent.querySelector('input[type="checkbox"]');
     removeImageInput.checked = true;
   }
@@ -1147,7 +1147,7 @@
     imageRemovers.forEach(remover => {
       remover.addEventListener('click', function(event) {
         event.preventDefault();
-        removeImage();
+        removeImage(event);
       })
     })
   }
