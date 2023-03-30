@@ -1282,12 +1282,14 @@
     let button = target.querySelector('button[type="submit"]');
     button.textContent = 'Save Updates';
     createNotice('success')
+    setTimeout(destroyNotice, 3000)
   }
 
   function formError(data) {
     let button = target.querySelector('button[type="submit"]');
     button.textContent = 'Save Updates';
     createNotice('error')
+    setTimeout(destroyNotice, 4000)
   }
 
   async function submitPracticeForm(form) {
