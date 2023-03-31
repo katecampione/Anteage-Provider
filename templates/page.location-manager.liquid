@@ -1139,21 +1139,35 @@
   }
 
   async function submitPracticeForm(form) {
+    // Set the endpoint based on which form was submitted
+    let endpointObject = endpoints.find(option => option.form_id === form.id);
+    if (!endpointObject) {
+      return
+    }
+    endpoint = endpointObject.url
+
+    // Update the submit button
     let submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
     submitButton.textContent = 'Please Wait';   
+
+    // Create snackbar notification
     createNotice('updating') 
 
+    // Prepare the form data
     let formData = new FormData(form);
     formData.append('customer_id', '{{ customer.id }}')
     formData.append('customer_email', '{{ customer.email }}')
     let imageCheckbox = form.querySelector('[data-option-for="remove_image"]')
-    if (imageCheckbox.checked) {
-      formData.append('remove_image', true)
-    } else {
-      formData.append('remove_image', false)
+    if (imageCheckbox) {
+      if (imageCheckbox.checked) {
+        formData.append('remove_image', true)
+      } else {
+        formData.append('remove_image', false)
+      }
     }
 
+    // Continued preparation - ensure proper formatting of urls for url type metafields
     if (form.id === 'locator-practice') {
       let websiteInput = formData.get('website');
       if (websiteInput) {
@@ -1169,17 +1183,13 @@
       }
     }
 
+    // Set post data
     let params = {
       method: 'POST',
       body: formData
     }
 
-    let endpointObject = endpoints.find(option => option.form_id === form.id);
-    if (!endpointObject) {
-      return
-    }
-    endpoint = endpointObject.url
-
+    // Make the call
     await fetch(endpoint, params)
       .then(response => formSuccess(form))
       .catch(error => formError(form));
