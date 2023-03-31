@@ -1124,6 +1124,9 @@
   }
 
   async function submitPracticeForm(form) {
+
+    console.log(form.id)
+
     let submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
     submitButton.textContent = 'Please Wait';   
@@ -1138,6 +1141,8 @@
     } else {
       formData.append('remove_image', false)
     }
+
+    {% comment %} if (formData.get) {% endcomment %}
 
     let params = {
       method: 'POST',
