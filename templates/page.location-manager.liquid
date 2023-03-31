@@ -558,5 +558,35 @@
     })
   }
 
+  function deleteLocation() {
+    let locationId = this.getAttribute('data-location-id');
+    createNotice('updating');
+
+    let endpoint = 'https://en29my2nm3bfav.m.pipedream.net'
+
+    let data = {
+      'location_id': locationId,
+      'customer_id': '{{ customer.id }}',
+      'customer_email': '{{ customer.email }}'
+    }
+
+    // Set post data
+    let params = {
+      method: 'POST',
+      body: data
+    }
+
+    // Make the call
+    await fetch(endpoint, params)
+      .then(response => formSuccess(form))
+      .catch(error => formError(form));
+
+  }
+
+  function initDeleteConfirmation() {
+    let deleteConfirmationTrigger = document.querySelector('[data-action="confirm-location-delete"]')
+    ?.addEventListener('click', deleteLocation)
+  }
+
   document.addEventListener('DOMContentLoaded', initDeleteButtons)
 </script>
