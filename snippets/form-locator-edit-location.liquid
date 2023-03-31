@@ -1,0 +1,156 @@
+<form id="locator-location-edit" data-form-type="locator-update" class="locator-location">
+    
+      <div class="form-item">
+        <label class="headUp" for="edit-country">Country:</label>
+        <input type="text" id="edit-country" list="edit-country-list" name="edit-country" placeholder="Country" class="Form__Input" data-controller-type="country" disabled required>
+      </div>
+    
+      <div class="form-group--line">
+        <div class="form-item">
+          <label class="headUp" for="edit-address_1">Address 1</label>
+          <input name="edit-address_1" id="edit-address_1" type="text" class="Form__Input" disabled required>
+        </div>
+        
+        <div class="form-item">
+          <label class="headUp" for="edit-address_2">Address 2</label>
+          <input name="edit-address_2" id="edit-address_2" type="text" class="Form__Input" disabled>
+        </div>
+      </div>
+      
+      <div class="form-group--line">
+        <div class="form-item">
+          <label class="headUp" for="edit-city">City</label>
+          <input name="edit-city" id="edit-city" type="text" class="Form__Input" disabled required>
+        </div>
+        
+        <div class="form-item">
+          <label class="headUp" for="edit-state">State</label>
+          <input name="edit-state" id="edit-state" type="text" class="Form__Input" data-item-type="state" disabled>
+          <datalist data-controller-type="state-options"></datalist>
+        </div>
+        
+        <div class="form-item">
+          <label class="headUp" for="edit-zip">Zip Code</label>
+          <input name="edit-zip" id="edit-zip" type="text" class="Form__Input" disabled>
+        </div>
+      </div>
+      
+      <div class="form-group--line">
+        <div class="form-item">
+          <label class="headUp" for="edit-email">Email</label>
+          <input name="edit-email" id="edit-email" type="text" class="Form__Input">
+        </div>
+        
+        <div class="form-item">
+          <label class="headUp" for="edit-phone">Phone</label>
+          <input name="edit-phone" id="edit-phone" type="text" class="Form__Input">
+        </div>
+      </div>
+      
+      <div class="form-group--line">
+        <div class="form-item">
+          <label class="headUp" for="edit-hours">Hours</label>
+          <textarea name="edit-hours" id="edit-hours" class="Form__Input"></textarea>
+        </div>
+        
+        <div class="form-item" data-type="image-upload-group">
+          <label class="headUp" for="edit-hero_image">Hero Image</label>
+          <label for="edit-hero_image" class="image-preview--wrapper">
+            <div data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
+              <div class="location-logo-replace--overlay">Replace Image...</div>
+              <img loading="lazy" src="#" width=200 >
+            </div>
+          </label>
+          <label for="edit-hero_image" class="Button Button--stroke">Select</label>
+          <button class="Button Button--stroke Button--delete hidden" data-option-control="logo-remove">Remove Logo</button>
+          <input data-option-control="logo-upload" type="file" name="edit-hero_image" id="edit-hero_image" class="hidden" accept="*/image" >
+          <input type="checkbox" name="edit-remove_hero" id="edit-remove_hero" class="hidden" data-option-for="remove_image">
+        </div>
+      </div>
+      
+      <div class="form-item">
+        <fieldset>
+          <legend>
+            What services does this location offer?
+          </legend>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Body Contouring" id="edit-body_contouring">
+            <label for="edit-body_contouring">Body Contouring</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Chemical Peels" id="edit-chemical_peels">
+            <label for="edit-chemical_peels">Chemical Peels</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="CO2" id="edit-co2">
+            <label for="edit-co2">CO2</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Cosmetic Surgery" id="edit-cosmetic_surgery">
+            <label for="edit-cosmetic_surgery">Cosmetic Surgery</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Dermaplaning" id="edit-dermaplaning">
+            <label for="edit-dermaplaning">Dermaplaning</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Dermatology" id="edit-dermatology">
+            <label for="edit-dermatology">Dermatology</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Exosomes" id="edit-exosomes">
+            <label for="edit-exosomes">Exosomes</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Fillers" id="edit-fillers">
+            <label for="edit-fillers">Fillers</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="General Skincare" id="edit-general_skincare">
+            <label for="edit-general_skincare">General Skincare</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Hair Treatments" id="edit-hair_treatments">
+            <label for="edit-hair_treatments">Hair Treatments</label>
+          </div>        
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="IPL" id="edit-ipl">
+            <label for="edit-ipl">IPL</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Laser" id="edit-laser">
+            <label for="edit-laser">Laser</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Laser Hair Removal" id="edit-laser_hair_removal">
+            <label for="edit-laser_hair_removal">Laser Hair Removal</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Microneedling" id="edit-microneedling">
+            <label for="edit-microneedling">Microneedling</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Neurotoxins" id="edit-neurotoxins">
+            <label for="edit-neurotoxins">Neurotoxins</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Radiofrequency" id="edit-radiofrequency">
+            <label for="edit-radiofrequency">Radiofrequency</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Tattoo Removal" id="edit-tattoo_removal">
+            <label for="edit-tattoo_removal">Tattoo Removal</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Vaginal Rejuvenation" id="edit-vaginal_rejuvenation">
+            <label for="edit-vaginal_rejuvenation">Vaginal Rejuvenation</label>
+          </div>
+          <div class="service-item">
+            <input type="checkbox" name="edit-location_services" value="Other" id="edit-other">
+            <label for="edit-other">Other</label>
+          </div>        
+        </fieldset>
+      </div>
+      
+      <input type="submit" value="Submit">
+</form>
