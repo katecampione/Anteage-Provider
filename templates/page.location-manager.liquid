@@ -455,8 +455,10 @@
 
   function formSuccess(target) {
     destroyNotice()
-    let button = target.querySelector('button[type="submit"]');
-    button.textContent = 'Save Updates';
+    if (target) {
+      let button = target.querySelector('button[type="submit"]');
+      button.textContent = 'Save Updates';
+    }
     createNotice('success')
     // Reload the page to refresh data
     setTimeout(function() {
