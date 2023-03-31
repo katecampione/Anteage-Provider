@@ -1255,9 +1255,9 @@
       for (let i = 0; i < stateLists[key].length; i++) {
         if (i === 0) {
           let placeholderOption = document.createElement('option');
-          dataOption.innerHTML = 'Choose one...';
-          dataOption.disabled = true
-          stateSelect.appendChild(dataOption)
+          placeholderOption.innerHTML = 'Choose one...';
+          placeholderOption.disabled = true
+          stateSelect.appendChild(placeholderOption)
         }
         let dataOption = document.createElement('option');
         dataOption.value = stateLists[key][i];
