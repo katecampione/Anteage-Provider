@@ -1248,6 +1248,7 @@
     if (stateList) {
       let stateSelect = document.createElement('select');
       stateSelect.id = itemId;
+      stateSelect.name = itemId;
       stateSelect.setAttribute('data-item-type', 'state');
       stateSelect.classList.add('Form__Input');
       stateInput.required = true
@@ -1269,6 +1270,8 @@
     } else {
       let stateInput = document.createElement('input');
       stateInput.type = "text"
+      stateInput.id = itemId;
+      stateInput.name = itemId;
       stateInput.classList.add('Form__Input');
       stateInput.setAttribute('data-item-type', 'state');
       label.textContent = "State"
