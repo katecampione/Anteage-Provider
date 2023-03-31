@@ -1239,7 +1239,7 @@
   function updateStateOptions() {
     let form = this.closest('form');
     let stateInput = form.querySelector('[data-item-type="state"]');
-    let stateParent = stateInput.closest('form-item');
+    let stateParent = stateInput.closest('.form-item');
     let label = stateParent.querySelector('label');
     stateInput.required = false
     stateInput.value = null;
