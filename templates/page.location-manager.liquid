@@ -983,9 +983,14 @@
       let field = allFields[i];
       let fieldkey = field.name.replace('edit-', '');
       if (content[fieldkey]) {
-        console.log(content[fieldkey])
         field.value = content[fieldkey]
       }
+    }
+    if (content['hero_image']) {
+      let parent = form.querySelector('[data-type="image-upload-group"]');
+      console.log(content['hero_image'])
+    } else {
+    
     }
     let serviceOptions = form.querySelectorAll('input[type="checkbox"]');
     serviceOptions.forEach(option => {
