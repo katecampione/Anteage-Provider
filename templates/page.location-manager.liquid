@@ -580,8 +580,8 @@
 
     // Make the call
     await fetch(endpoint, params)
-      .then(response => formSuccess(form))
-      .catch(error => formError(form));
+      .then(response => formSuccess())
+      .catch(error => formError());
 
   }
 
