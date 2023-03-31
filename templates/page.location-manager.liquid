@@ -17,7 +17,7 @@
       <h2 class="SectionHeader__Heading Heading u-h1">Practice Information</h2>
       <hr class="mt2 mb2">
 
-      <form id="locator-practice" data-form-validate="true">
+      <form id="locator-practice" data-form-type="locator-update" data-form-validate="true">
         <div class="form-group--line">
           <div class="form-item">
             <label class="headUp" for="name">Practice Name*</label>
@@ -208,7 +208,7 @@
       Add A Location
     </h2>
     <hr class="mt2 mb2">
-    <form id="locator-location-add" class="locator-location">
+    <form id="locator-location-add" data-form-type="locator-update" class="locator-location">
       <div class="form-item">
         <label class="headUp" for="country">Country:</label>
         <select id="country" list="country-list" name="country" placeholder="Country" class="Form__Input"  data-controller-type="country" required>
@@ -631,7 +631,7 @@
     </h2>
     <p class="mt0">Note: You cannot edit an address the location has been created. If you have moved or closed this location, please select the option below to <strong>Delete</strong> the location.</p>
     <hr class="mt2 mb2">
-    <form id="locator-location-edit" class="locator-location">
+    <form id="locator-location-edit" data-form-type="locator-update" class="locator-location">
     
       <div class="form-item">
         <label class="headUp" for="edit-country">Country:</label>
@@ -1195,13 +1195,15 @@
       .catch(error => formError(form));
   }
 
-  function initPracticeListener() {
-    let form = document.getElementById('locator-practice');
-    form.addEventListener('submit', function() {
-      event.preventDefault();
-      submitPracticeForm(this)
+  function initSubmitListeners() {
+    let forms = document.querySelectorAll('form[data-form-type="locator-update"]');
+    forms.forEach(form => {
+      form.addEventListener('submit', function() {
+        event.preventDefault();
+        submitPracticeForm(this)
+      })
     })
   }
 
-  document.addEventListener('DOMContentLoaded', initPracticeListener)
+  document.addEventListener('DOMContentLoaded', initSubmitListeners)
 </script>
