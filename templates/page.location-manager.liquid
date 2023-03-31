@@ -504,6 +504,22 @@
         formData.append('remove_image', false)
       }
     }
+    if (form.id !== 'locator-practice') {
+      let queryName = 'location_services'
+      if (form.id === 'locator-location-edit') {
+        queryName = 'edit-' + queryName
+      }
+      let servicesString = '';
+      let checkedServices = form.querySelectorAll(`input[name=${queryName}]:checked`);
+      for (let i = 0; i < checkedServices.length; i++) {
+        let service = checkedServices[i];
+        servicesString += service.value;
+        if (i !== checkedServices.length - 1) {
+          servicesString += ';'
+        }
+      }
+      formData.set(queryName, servicesString)
+    }
 
     // Continued preparation - ensure proper formatting of urls for url type metafields
     if (form.id === 'locator-practice') {
