@@ -1267,7 +1267,8 @@
       }
       parent.appendChild(stateSelect)
     } else {
-      let stateInput = document.createElement('input[type="text"]');
+      let stateInput = document.createElement('input');
+      stateInput.type = "text"
       stateInput.classList.add('Form__Input');
       stateInput.setAttribute('data-item-type', 'state');
       label.textContent = "State"
