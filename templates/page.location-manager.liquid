@@ -102,6 +102,22 @@
 
 </div>
 
+<div class="modal-container delete--confirmation">
+  <button data-action="close-parent-modal">
+    Close
+  </button>
+  <div class="Container Container--narrow centerContents">
+    <h2 class="Heading u-h1 mb0">
+      Are you sure you'd like to delete this location?
+    </h2>
+    <p class="mt0">This action cannot be reversed.</p>
+    
+    <button class="Button Button--primary" data-action="close-parent-modal">Cancel</button>
+    <button class="Button Button--stroke" data-action="confirm-location-delete">Confirm</button>
+  </div>
+
+</div>
+
 <script>
 
   // PENDING TASKS:
@@ -520,4 +536,16 @@
   }
 
   document.addEventListener('DOMContentLoaded', initSubmitListeners)
+
+  function initDeleteConfirm() {
+    let locationId = this.getAttribute('data-location-id');
+    let 
+  }
+
+  function initDeleteButtons() {
+    let deleteTriggers = document.querySelectorAll('[data-action="delete-location"]');
+    deleteTriggers.forEach(trigger => {
+      trigger.addEventListener('click', initDeleteConfirm)
+    })
+  }
 </script>
