@@ -978,12 +978,12 @@
     fields.forEach(field => {
       allFields.push(field)
     })
-    console.log(fields)
     allFields.push(document.getElementById('edit-hours'));
     for (let i = 0; i < allFields.length; i++) {
       let field = allFields[i];
       let fieldkey = field.name.replace('edit-', '');
       if (content[fieldkey]) {
+        console.log(content[fieldkey])
         field.value = content[fieldkey]
       }
     }
