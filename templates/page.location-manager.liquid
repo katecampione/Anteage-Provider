@@ -625,7 +625,7 @@
     
       <div class="form-item">
         <label class="headUp" for="edit-country">Country:</label>
-        <select id="edit-country" list="edit-country-list" name="edit-country" placeholder="Country" class="Form__Input" data-controller-type="country" required>
+        <select id="edit-country" list="edit-country-list" name="edit-country" placeholder="Country" class="Form__Input" data-controller-type="country" disabled required>
           <option value="" disabled selected>Choose one...</option>
           <option value="United States">United States</option>
           <option value="Canada">Canada</option>
@@ -885,30 +885,30 @@
       <div class="form-group--line">
         <div class="form-item">
           <label class="headUp" for="edit-address_1">Address 1</label>
-          <input name="edit-address_1" id="edit-address_1" type="text" class="Form__Input">
+          <input name="edit-address_1" id="edit-address_1" type="text" class="Form__Input" disabled required>
         </div>
         
         <div class="form-item">
           <label class="headUp" for="edit-address_2">Address 2</label>
-          <input name="edit-address_2" id="edit-address_2" type="text" class="Form__Input">
+          <input name="edit-address_2" id="edit-address_2" type="text" class="Form__Input" disabled>
         </div>
       </div>
       
       <div class="form-group--line">
         <div class="form-item">
           <label class="headUp" for="edit-city">City</label>
-          <input name="edit-city" id="edit-city" type="text" class="Form__Input">
+          <input name="edit-city" id="edit-city" type="text" class="Form__Input" disabled required>
         </div>
         
         <div class="form-item">
           <label class="headUp" for="edit-state">State</label>
-          <input name="edit-state" id="edit-state" type="text" class="Form__Input" data-item-type="state">
+          <input name="edit-state" id="edit-state" type="text" class="Form__Input" data-item-type="state" disabled>
           <datalist data-controller-type="state-options"></datalist>
         </div>
         
         <div class="form-item">
           <label class="headUp" for="edit-zip">Zip Code</label>
-          <input name="edit-zip" id="edit-zip" type="text" class="Form__Input">
+          <input name="edit-zip" id="edit-zip" type="text" class="Form__Input" disabled>
         </div>
       </div>
       
@@ -1223,7 +1223,6 @@
     for (let i = 0; i < allFields.length; i++) {
       let field = allFields[i];
       let fieldkey = field.name.replace('edit-', '');
-      console.log(fieldkey)
       if (content[fieldkey]) {
         field.value = content[fieldkey]
       }
