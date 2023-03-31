@@ -552,7 +552,8 @@
     let deleteTriggers = document.querySelectorAll('[data-action="delete-location"]');
     deleteTriggers.forEach(trigger => {
       trigger.addEventListener('click', function(event) {
-        event.preventDefault(this);
+        event.preventDefault();
+        initDeleteConfirm(this)
       })
     })
   }
