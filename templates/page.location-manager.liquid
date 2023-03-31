@@ -324,6 +324,10 @@
     let editLocationModal = document.querySelector('.edit-location-modal');
     let form = editLocationModal.querySelector('form');
     let allFields = [];
+    let deleteButton = editLocationModal.querySelector('[data-action="delete-location"]');
+    if (deleteButton) {
+      deleteButton.setAttribute('data-location-id', content.location_id)
+    }
     let fields = form.querySelectorAll('input[type="text"]');
     fields.forEach(field => {
       allFields.push(field)
@@ -538,8 +542,11 @@
   document.addEventListener('DOMContentLoaded', initSubmitListeners)
 
   function initDeleteConfirm() {
-    let locationId = this.getAttribute('data-location-id');
-    let 
+    let deleteConfirmation = document.querySelector('.delete--confirmation');
+    let contentId = this.getAttribute('data-edit-target');
+    let json = locationsJson.find(location => location.location_id === contentId);
+    populateEditForm(json)
+    editLocationModal.classList.add('visible');
   }
 
   function initDeleteButtons() {
