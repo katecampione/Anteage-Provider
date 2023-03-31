@@ -40,12 +40,12 @@
               <div class="location-address--details">{{ location.address_1 }}{% if location.address_2 %} {{ location.address_2 }}{% endif %}</div>
               <div class="location-address--details">{{ location.city }}, {{ location.state }} {{ location.zip }}</div>
               <div class="location-address--details">{{ location.country }}</div>
-              {% if location.location_id and location.location_id != '' %}
+              {% if location.location_id and location.location_id != 'pending' %}
                 <button class="location-edit mt1" data-edit-target="{{ location.location_id }}">
                   Edit
                 </button>
               {% else %}
-                <p>This location is still processing, you will be able to make edits to this location once processing has completed (this typically only takes a minute or two).</p>
+                <p>This location is still processing. You will be able to make edits to this location once processing has completed (this typically only takes a minute or two).</p>
               {% endif %}
             </div>
           </div>
