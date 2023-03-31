@@ -516,9 +516,19 @@
           <textarea name="hours" id="hours" class="Form__Input"></textarea>
         </div>
         
-        <div class="form-item">
+        <div class="form-item" data-type="image-upload-group">
           <label class="headUp" for="hero_image">Hero Image</label>
-          <input type="file" name="hero_image" id="hero_image" accept="*/image">
+          <label for="hero_image" class="image-preview--wrapper hidden">
+            <div data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
+              <div class="location-logo-replace--overlay">Replace Image...</div>
+              <img loading="lazy" src="#" width=200 >
+            </div>
+          </label>
+          <label for="hero_image" class="Button Button--stroke">Select</label>
+          <button class="Button Button--stroke Button--delete hidden" data-option-control="logo-remove">Remove Logo</button>
+          <input data-option-control="logo-upload" type="file" name="hero_image" id="hero_image" class="hidden" accept="*/image" >
+          <input type="checkbox" name="remove_hero" id="remove_hero" class="hidden" data-option-for="remove_image">
+
         </div>
       </div>
       
