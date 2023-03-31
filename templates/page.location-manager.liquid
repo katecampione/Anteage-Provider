@@ -988,9 +988,12 @@
     }
     if (content['hero_image']) {
       let parent = form.querySelector('[data-type="image-upload-group"]');
-      console.log(content['hero_image'])
+      let image = parent.querySelector('img');
+      image.src = content['hero_image'];
     } else {
-    
+      let parent = form.querySelector('[data-type="image-upload-group"]');
+      let preview = parent.querySelector('.image-preview--wrapper');
+      preview.classList.add('hidden')
     }
     let serviceOptions = form.querySelectorAll('input[type="checkbox"]');
     serviceOptions.forEach(option => {
