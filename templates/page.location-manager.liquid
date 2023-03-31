@@ -1239,27 +1239,37 @@
   function updateStateOptions() {
     let form = this.closest('form');
     let stateInput = form.querySelector('[data-item-type="state"]');
-    let stateParent = stateInput.closest('.form-item');
-    let label = stateParent.querySelector('label');
-    stateInput.required = false
-    stateInput.value = null;
-    let datalist = form.querySelector('[data-controller-type="state-options"]');
-    let dataOptions = datalist.querySelectorAll('option');
-    label.textContent = 'State'
-    dataOptions.forEach(state => {
-        state.remove();
-    })
+    let parent = stateInput.closest('.form-item')
+    let label = parent.querySelector('label');
+    let itemId = stateInput.id
+    stateInput.remove();
     let key = this.value.toLowerCase().replaceAll(' ', '_');
     let stateList = stateLists[key];
     if (stateList) {
-        for (let i = 0; i < stateLists[key].length; i++) {
-            let dataOption = document.createElement('option');
-            dataOption.value = stateLists[key][i];
-            dataOption.innerHTML = stateLists[key][i];
-            datalist.appendChild(dataOption)
+      let stateSelect = document.createElement('select');
+      stateSelect.id = itemId;
+      stateSelect.setAttribute('data-item-type', 'state');
+      stateSelect.classList.add('Form__Input');
+      stateInput.required = true
+      label.textContent = 'State*'
+      for (let i = 0; i < stateLists[key].length; i++) {
+        if (i === 0) {
+          let placeholderOption = document.createElement('option');
+          dataOption.innerHTML = 'Choose one...';
+          dataOption.disabled = true
+          stateSelect.appendChild(dataOption)
         }
-        stateInput.required = true
-        label.textContent = 'State*'
+        let dataOption = document.createElement('option');
+        dataOption.value = stateLists[key][i];
+        dataOption.innerHTML = stateLists[key][i];
+        stateSelect.appendChild(dataOption)
+      }
+      parent.appendChild(stateSelect)
+    } else {
+      let stateInput = document.createElement('input[type="text"]');
+      stateInput.classList.add('Form__Input');
+      stateInput.setAttribute('data-item-type', 'state');
+      label.textContent = "State"
     }
   }
 
