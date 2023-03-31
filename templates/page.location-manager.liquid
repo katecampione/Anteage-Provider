@@ -211,7 +211,7 @@
     <form id="locator-location-add" class="locator-location">
       <div class="form-item">
         <label class="headUp" for="country">Country:</label>
-        <input type="text" id="country" list="country-list" name="country" placeholder="Country" class="Form__Input" required>
+        <input type="text" id="country" list="country-list" name="country" placeholder="Country" class="Form__Input"  data-controller-type="country" required>
         <datalist id="country-list">
           <option value="Afghanistan">Afghanistan</option>
           <option value="Aland Islands">Åland Islands</option>
@@ -488,7 +488,7 @@
         
         <div class="form-item">
           <label class="headUp" for="state">State</label>
-          <input name="state" id="state" type="text" class="Form__Input">
+          <input name="state" id="state" type="text" class="Form__Input" data-item-type="state">
         </div>
         
         <div class="form-item">
@@ -624,7 +624,7 @@
     
       <div class="form-item">
         <label class="headUp" for="edit-country">Country:</label>
-        <input type="text" id="edit-country" list="edit-country-list" name="edit-country" placeholder="Country" class="Form__Input" required>
+        <input type="text" id="edit-country" list="edit-country-list" name="edit-country" placeholder="Country" class="Form__Input" data-controller-type="country" required>
         <datalist id="edit-country-list">
           <option value="Afghanistan">Afghanistan</option>
           <option value="Aland Islands">Åland Islands</option>
@@ -901,7 +901,8 @@
         
         <div class="form-item">
           <label class="headUp" for="edit-state">State</label>
-          <input name="edit-state" id="edit-state" type="text" class="Form__Input">
+          <input name="edit-state" id="edit-state" type="text" class="Form__Input" data-item-type="state">
+          <datalist data-controller-type="state-options"></datalist>
         </div>
         
         <div class="form-item">
@@ -1031,6 +1032,11 @@
 
 
   let locationsJson = JSON.parse(`{{ customer.metafields.practice.locations_json }}`);
+
+  let stateLists = {
+    united_states: ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'District of Columbia', 'Florida', 'Georgia', 'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Minor Outlying Islands', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Puerto Rico', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'U.S. Virgin Islands', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'],
+    canada: ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Northwest Territories', 'Nunavut', 'Yukon']
+  }
 
   // Form Validation
   function getRequiredFields(formItem) {
@@ -1230,12 +1236,40 @@
     })
   }
 
+  function updateStateOptions() {
+    let form = this.closest('form');
+    let stateInput = form.querySelector('[data-item-type="state"]');
+    let stateParent = stateInput.closest('form-item');
+    let label = stateParent.querySelector('label');
+    stateInput.required = false
+    stateInput.value = null;
+    let datalist = form.querySelector('[data-controller-type="state-options"]');
+    let dataOptions = datalist.querySelectorAll('option');
+    label.textContent = 'State'
+    dataOptions.forEach(state => {
+        state.remove();
+    })
+    let key = this.value.toLowerCase().replaceAll(' ', '_');
+    let stateList = stateLists[key];
+    if (stateList) {
+        for (let i = 0; i < stateLists[key].length; i++) {
+            let dataOption = document.createElement('option');
+            dataOption.value = stateLists[key][i];
+            dataOption.innerHTML = stateLists[key][i];
+            datalist.appendChild(dataOption)
+        }
+        stateInput.required = true
+        label.textContent = 'State*'
+    }
+  }
+
   function initModalFunctionality() {
     let triggerAddLocation = document.querySelector('.new-location');
     let addLocationForm = document.querySelector('.add-location-modal');
     let editLocationForm = document.querySelector('.edit-location-modal');
     let locationItems = getLocations();
     let modalCloseTriggers = getCloseButtons();
+    let countrySelectors = document.querySelectorAll('[data-controller-type="country"]')
 
     locationItems.forEach(item => {
       item.addEventListener('click', showEditModal)
@@ -1247,6 +1281,10 @@
     
     modalCloseTriggers.forEach(button => {
       button.addEventListener('click', closeFormModal);
+    })
+
+    countrySelectors.forEach(input => {
+      input.addEventListener('change', updateStateOptions)
     })
   }
 
