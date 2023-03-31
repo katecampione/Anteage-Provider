@@ -541,7 +541,8 @@
 
   document.addEventListener('DOMContentLoaded', initSubmitListeners)
 
-  function initDeleteConfirm() {
+  function initDeleteConfirm(evt) {
+    evt.preventDefault();
     let deleteConfirmation = document.querySelector('.delete--confirmation');
     let confirmButton = deleteConfirmation.querySelector('[data-action="confirm-location-delete"]')
     confirmButton.setAttribute('data-location-id', this.getAttribute('data-location-id'));
@@ -551,7 +552,7 @@
   function initDeleteButtons() {
     let deleteTriggers = document.querySelectorAll('[data-action="delete-location"]');
     deleteTriggers.forEach(trigger => {
-      trigger.addEventListener('click', initDeleteConfirm)
+      trigger.addEventListener('click', initDeleteConfirm(event))
     })
   }
 
