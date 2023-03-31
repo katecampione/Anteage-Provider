@@ -1124,9 +1124,6 @@
   }
 
   async function submitPracticeForm(form) {
-
-    console.log(form.id)
-
     let submitButton = form.querySelector('button[type="submit"]');
     submitButton.disabled = true;
     submitButton.textContent = 'Please Wait';   
@@ -1142,14 +1139,36 @@
       formData.append('remove_image', false)
     }
 
-    {% comment %} if (formData.get) {% endcomment %}
+    if (form.id === 'locator-practice') {
+      let websiteInput = formData.get('website');
+      if (websiteInput) {
+        if (!/^https?:\/\//i.test(websiteInput)) {
+          formData.set('website', `https://${websiteInput}`);
+        }
+      }
+      let onlineSalesInput = formData.get('online_sales_link');
+      if (onlineSalesInput) {
+        if (!/^https?:\/\//i.test(onlineSalesInput)) {
+          formData.set('online_sales_link', `https://${onlineSalesInput}`);
+        }
+      }
+    }
 
     let params = {
       method: 'POST',
       body: formData
     }
 
-    let endpoint = 'https://en4jhrdwzz30916.m.pipedream.net';
+    let endpoint;
+    if (form.id === 'locator-practice') {
+      endpoint = 'https://en4jhrdwzz30916.m.pipedream.net';
+    } else if (form.id === 'locator-location-edit') {
+      endpoint = 'https://en6olnofr3qyio0.m.pipedream.net'
+    } else if (form.id === 'locator-location-add') {
+      endpoint = 'https://enzc0td4r99cahp.m.pipedream.net'
+    } else {
+      return
+    }
 
     await fetch(endpoint, params)
       .then(response => formSuccess(form))
