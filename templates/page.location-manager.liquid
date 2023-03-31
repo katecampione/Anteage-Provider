@@ -186,6 +186,7 @@
   }
 
   function validateInputs() {
+    console.log('validation')
     let form = this.closest('form');
     let requiredFields = getRequiredFields(form);
     let submitButton = form.querySelector('button[type="submit"]');
