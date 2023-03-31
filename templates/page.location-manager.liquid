@@ -1123,12 +1123,17 @@
   }
 
   function formSuccess(target) {
-    console.log(target.id)
     destroyNotice()
     let button = target.querySelector('button[type="submit"]');
     button.textContent = 'Save Updates';
     createNotice('success')
-    setTimeout(destroyNotice, 3000)
+    if (target.id !== 'locator-location-add') {
+      setTimeout(destroyNotice, 3000)
+    } else {
+      setTimeout(function() {
+        window.location.reload(true);
+      }, 1500)
+    }
   }
 
   function formError(data) {
