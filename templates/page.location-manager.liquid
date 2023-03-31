@@ -1123,6 +1123,7 @@
   }
 
   function formSuccess(target) {
+    console.log(target.id)
     destroyNotice()
     let button = target.querySelector('button[type="submit"]');
     button.textContent = 'Save Updates';
