@@ -808,6 +808,21 @@
     canada: ['Alberta', 'British Columbia', 'Manitoba', 'New Brunswick', 'Newfoundland and Labrador', 'Nova Scotia', 'Ontario', 'Prince Edward Island', 'Quebec', 'Saskatchewan', 'Northwest Territories', 'Nunavut', 'Yukon']
   }
 
+  let endpoints = [
+    {
+      'form_id': 'locator-practice',
+      'url': 'https://en4jhrdwzz30916.m.pipedream.net'
+    },
+    {
+      'form_id': 'locator-location-edit',
+      'url': 'https://en6olnofr3qyio0.m.pipedream.net'
+    },
+    {
+      'form_id': 'locator-location-add',
+      'url': 'https://enzc0td4r99cahp.m.pipedream.net'
+    }
+  ]
+
   // Form Validation
   function getRequiredFields(formItem) {
     let requiredFields = [];
@@ -1159,16 +1174,11 @@
       body: formData
     }
 
-    let endpoint;
-    if (form.id === 'locator-practice') {
-      endpoint = 'https://en4jhrdwzz30916.m.pipedream.net';
-    } else if (form.id === 'locator-location-edit') {
-      endpoint = 'https://en6olnofr3qyio0.m.pipedream.net'
-    } else if (form.id === 'locator-location-add') {
-      endpoint = 'https://enzc0td4r99cahp.m.pipedream.net'
-    } else {
+    let endpointObject = endpoints.find(option => option.form_id === form.id);
+    if (!endpointObject) {
       return
     }
+    endpoint = endpointObject.url
 
     await fetch(endpoint, params)
       .then(response => formSuccess(form))
