@@ -211,8 +211,8 @@
     <form id="locator-location-add" class="locator-location">
       <div class="form-item">
         <label class="headUp" for="country">Country:</label>
-        <input type="text" id="country" list="country-list" name="country" placeholder="Country" class="Form__Input"  data-controller-type="country" required>
-        <datalist id="country-list">
+        <select id="country" list="country-list" name="country" placeholder="Country" class="Form__Input"  data-controller-type="country" required>
+          <option value="" disabled selected>Choose one...</option>
           <option value="Afghanistan">Afghanistan</option>
           <option value="Aland Islands">Åland Islands</option>
           <option value="Albania">Albania</option>
@@ -465,7 +465,7 @@
           <option value="Yemen">Yemen</option>
           <option value="Zambia">Zambia</option>
           <option value="Zimbabwe">Zimbabwe</option>
-        </datalist>
+        </select>
       </div>
     
       <div class="form-group--line">
