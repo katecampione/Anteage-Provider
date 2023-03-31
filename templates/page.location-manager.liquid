@@ -543,10 +543,9 @@
 
   function initDeleteConfirm() {
     let deleteConfirmation = document.querySelector('.delete--confirmation');
-    let contentId = this.getAttribute('data-edit-target');
-    let json = locationsJson.find(location => location.location_id === contentId);
-    populateEditForm(json)
-    editLocationModal.classList.add('visible');
+    let confirmButton = deleteConfirmation.querySelector('[data-action="confirm-location-delete"]')
+    confirmButton.setAttribute('data-location-id', this.getAttribute('data-location-id'));
+    deleteConfirmation.classList.add('visible')
   }
 
   function initDeleteButtons() {
@@ -555,4 +554,6 @@
       trigger.addEventListener('click', initDeleteConfirm)
     })
   }
+
+  document.addEventListener('DOMContentLoaded', initDeleteButtons)
 </script>
