@@ -528,7 +528,6 @@
           <button class="Button Button--stroke Button--delete hidden" data-option-control="logo-remove">Remove Logo</button>
           <input data-option-control="logo-upload" type="file" name="hero_image" id="hero_image" class="hidden" accept="*/image" >
           <input type="checkbox" name="remove_hero" id="remove_hero" class="hidden" data-option-for="remove_image">
-
         </div>
       </div>
       
@@ -687,9 +686,18 @@
           <textarea name="edit-hours" id="edit-hours" class="Form__Input"></textarea>
         </div>
         
-        <div class="form-item">
+        <div class="form-item" data-type="image-upload-group">
           <label class="headUp" for="edit-hero_image">Hero Image</label>
-          <input type="file" name="edit-hero_image" id="edit-hero_image" accept="*/image">
+          <label for="edit-hero_image" class="image-preview--wrapper">
+            <div data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
+              <div class="location-logo-replace--overlay">Replace Image...</div>
+              <img loading="lazy" src="#" width=200 >
+            </div>
+          </label>
+          <label for="edit-hero_image" class="Button Button--stroke">Select</label>
+          <button class="Button Button--stroke Button--delete hidden" data-option-control="logo-remove">Remove Logo</button>
+          <input data-option-control="logo-upload" type="file" name="edit-hero_image" id="edit-hero_image" class="hidden" accept="*/image" >
+          <input type="checkbox" name="edit-remove_hero" id="edit-remove_hero" class="hidden" data-option-for="remove_image">
         </div>
       </div>
       
@@ -970,8 +978,7 @@
     fields.forEach(field => {
       allFields.push(field)
     })
-    // NEED SOLUTION FOR IMAGE / FILE HANDLING
-    // allFields.push(form.querySelector('input[type="file"]'));
+    console.log(fields)
     allFields.push(document.getElementById('edit-hours'));
     for (let i = 0; i < allFields.length; i++) {
       let field = allFields[i];
