@@ -41,11 +41,11 @@
               <div class="location-address--details">{{ location.city }}, {{ location.state }} {{ location.zip }}</div>
               <div class="location-address--details">{{ location.country }}</div>
               {% if location.location_id and location.location_id != 'pending' %}
-                <button class="location-edit mt1" data-edit-target="{{ location.location_id }}">
+                <button class="Button Button--primary location-edit mt1" data-edit-target="{{ location.location_id }}">
                   Edit
                 </button>
               {% else %}
-                <div class="Button Button--primary mt1">
+                <div class="Button Button--stroke mt1">
                   Location Processing
                 </div>
               {% endif %}
