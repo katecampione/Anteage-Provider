@@ -158,7 +158,6 @@
 
   // Form Validation
   function getRequiredFields(formItem) {
-    console.log('getting required')
     let requiredFields = [];
     let requiredInputs = formItem.querySelectorAll('input:required');
     requiredInputs.forEach(input => {
@@ -193,7 +192,6 @@
   }
 
   function validateInputs() {
-    console.log('validation')
     let form = this.closest('form');
     let requiredFields = getRequiredFields(form);
     let submitButton = form.querySelector('button[type="submit"]');
@@ -546,8 +544,6 @@
     if (form.id === 'locator-location-edit') {
       formData.set('location_id', form.querySelector('[name="edit-location_id"]').value);
     }
-
-    console.log(formData)
 
     // Set post data
     let params = {
