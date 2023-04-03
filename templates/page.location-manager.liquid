@@ -543,6 +543,10 @@
       }
     }
 
+    if (form.id === 'locator-location-edit') {
+      formData.set('location_id', form.querySelector('[name="edit-location_id"]').value);
+    }
+
     console.log(formData)
 
     // Set post data
