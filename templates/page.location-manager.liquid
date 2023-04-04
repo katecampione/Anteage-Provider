@@ -284,12 +284,12 @@
     })
   }
 
-  function validatePhone(e) {
+  function validatePhone(event) {
     const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
     const allowedChars = /[0-9()-\s+]/;
   
-    if (!allowedKeys.includes(e.key) && !allowedChars.test(e.key)) {
-      e.preventDefault();
+    if (!allowedKeys.includes(event.key) && !allowedChars.test(event.key)) {
+      event.preventDefault();
     }
   }
 
