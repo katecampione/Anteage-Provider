@@ -13452,8 +13452,16 @@ margin-bottom: 0px !important;
 }
 
 .service-item {
-  display: inline-block;
-  width: 40%;
+  display: inline-flex;
+  align-items: center;
+  width: 33.33%;
+}
+
+@media screen and (max-width: 640px) {
+  .service-item {
+    display: flex;
+    width: 100%;
+  }
 }
 
 .service-item input {
