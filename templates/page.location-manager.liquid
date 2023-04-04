@@ -116,9 +116,6 @@
     // URL VALIDATION FOR WEBSITE / SHOP ONLINE
     // EMAIL VALIDATION
     // PHONE VALIDATION
-    // MODAL FORM STYLING
-    // CREATE / EDIT ENDPOINTS
-    // HUBSPOT DATA EXCHANGE
 
   let locationsJson = JSON.parse(`{{ customer.metafields.practice.locations_json }}`);
 
@@ -141,6 +138,14 @@
       'url': 'https://enzc0td4r99cahp.m.pipedream.net'
     }
   ]
+
+  // Inline functions
+  function phoneValidation(e) {
+    const currentValue = e.target.value;
+    const allowedChars = /[0-9\s\-\(\)\+]/g;
+    const sanitizedValue = currentValue.match(allowedChars).join('');
+    e.target.value = sanitizedValue;
+  }
 
   // Form Validation
   function getRequiredFields(formItem) {
@@ -183,6 +188,8 @@
     let submitButton = form.querySelector('button[type="submit"]');
     let validCount = 0;
     for (let i = 0; i < requiredFields.length; i++) {
+      let valid; 
+      if ()
       if (!requiredFields[i].value) {
         break
       } else {
