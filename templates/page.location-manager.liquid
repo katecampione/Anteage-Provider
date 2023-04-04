@@ -315,9 +315,11 @@
   function closeFormModal() {
     let parent = this.closest('.modal-container')
     parent.classList.remove('visible')
+    document.querySelector('html').classList.remove('no-scroll');
   }
 
   function showEditModal() {
+    document.querySelector('html').classList.add('no-scroll');
     let editLocationModal = document.querySelector('.edit-location-modal');
     let contentId = this.getAttribute('data-edit-target');
     let json = locationsJson.find(location => location.location_id === contentId);
@@ -420,6 +422,7 @@
     
     triggerAddLocation.addEventListener('click', function() {
       addLocationForm.classList.add('visible')
+      document.querySelector('html').classList.add('no-scroll');
     })
     
     modalCloseTriggers.forEach(button => {
