@@ -140,11 +140,11 @@
   ]
 
   // Inline functions
-  function phoneValidation(et) {
-    const currentValue = et.target.value;
+  function phoneValidation(inputEvent) {
+    const currentValue = inputEvent.target.value;
     const allowedChars = /[0-9\s\-\(\)\+]/g;
     const sanitizedValue = currentValue.match(allowedChars).join('');
-    et.target.value = sanitizedValue;
+    einputEventt.target.value = sanitizedValue;
   }
 
   // Form Validation
