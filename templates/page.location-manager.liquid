@@ -285,7 +285,6 @@
   }
 
   function validatePhone(event) {
-    console.log('pressed')
     const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
     const allowedChars = /[0-9()-\s+]/;
   
@@ -297,8 +296,7 @@
   function initPhoneValidation() {
     let phoneInputs = document.querySelectorAll('[data-validation-type="phone"]');
     phoneInputs.forEach(input => {
-      console.log('phone')
-      input.addEventListener('keyup', validatePhone)
+      input.addEventListener('input', validatePhone)
     })
   }
 
