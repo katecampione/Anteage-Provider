@@ -144,7 +144,7 @@
     const currentValue = inputEvent.target.value;
     const allowedChars = /[0-9\s\-\(\)\+]/g;
     const sanitizedValue = currentValue.match(allowedChars).join('');
-    einputEventt.target.value = sanitizedValue;
+    inputEvent.target.value = sanitizedValue;
   }
 
   // Form Validation
