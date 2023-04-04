@@ -242,23 +242,37 @@
     target.dispatchEvent(changeEvent)
   }
 
+  function checkImageSize(image) {
+    if (image.size > 2000000) {
+      return false
+    } else {
+      return true
+    }
+  }
+
   function initImageUploaders() {
     let imageUploaders = document.querySelectorAll('input[type="file"][accept="*/image"]');
     imageUploaders.forEach(imageInput => {
       imageInput.addEventListener('change', function(event) {
-        let image = event.target.files[0];
-        let imageUrl = URL.createObjectURL(image);
-        let parent = this.closest('[data-type="image-upload-group"]');
-        let canvas = parent.querySelector('img');
-        let button = parent.querySelector('.Button');
-        button.textContent = "Replace";
-        canvas.src = imageUrl;
-        parent.querySelector('.image-preview--wrapper').classList.remove('hidden');
-        let removeButton = parent.querySelector('button[data-option-control="logo-remove"]');
-        removeButton.classList.remove('hidden');
-        let removeImageInput = parent.querySelector('input[type="checkbox"]');
-        removeImageInput.checked = false;
-        changeEvent(removeImageInput)
+        let valid = checkImageSize(event.target.files[0]);
+        if (valid) {
+          let image = event.target.files[0];
+          let imageUrl = URL.createObjectURL(image);
+          let parent = this.closest('[data-type="image-upload-group"]');
+          let canvas = parent.querySelector('img');
+          let button = parent.querySelector('.Button');
+          button.textContent = "Replace";
+          canvas.src = imageUrl;
+          parent.querySelector('.image-preview--wrapper').classList.remove('hidden');
+          let removeButton = parent.querySelector('button[data-option-control="logo-remove"]');
+          removeButton.classList.remove('hidden');
+          let removeImageInput = parent.querySelector('input[type="checkbox"]');
+          removeImageInput.checked = false;
+          changeEvent(removeImageInput)
+        } else {
+          alert("Please select a file that is 2MB or smaller.");
+          imageInput.value = ''
+        }
       })
     })
   }
