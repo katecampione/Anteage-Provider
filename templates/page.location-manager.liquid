@@ -4,22 +4,23 @@
 {% endif %}
 
 <div class="Container Container--narrow locator-details">
-    <header class="PageHeader mb0">
-      <a href="/account/" class="PageHeader__Back Heading Text--subdued Link Link--primary u-h7">Back to account</a>
-  
-      <div class="SectionHeader mb0">
-        <h1 class="SectionHeader__Heading Heading u-h1">Provider Locator Information</h1>
-      </div>
-    </header>
-    <p class="mt1 mb2">{{ page.content }}</p>
+  <header class="PageHeader mb0">
+    <a href="/account/" class="PageHeader__Back Heading Text--subdued Link Link--primary u-h7">Back to account</a>
 
-    <div class="details-panel mt4">
-      <h2 class="SectionHeader__Heading Heading u-h1">Practice Information</h2>
-      <hr class="mt2 mb2">
-
-      {% render 'form-locator-practice' %}
+    <div class="SectionHeader mb0">
+      <h1 class="SectionHeader__Heading Heading u-h1">Provider Locator Information</h1>
     </div>
+  </header>
+  <p class="mt1 mb2">{{ page.content }}</p>
 
+  <div class="details-panel mt4">
+    <h2 class="SectionHeader__Heading Heading u-h1">Practice Information</h2>
+    <hr class="mt2 mb2">
+
+    {% render 'form-locator-practice' %}
+  </div>
+
+  {% if has_practice_data %}
     <div class="details-panel">
       <h2 class="SectionHeader__Heading Heading u-h1">Locations</h2>
       <hr class="mt2 mb2">
@@ -53,29 +54,14 @@
           </div>
         
         {% endfor %}
-        {% comment %} <div class="location-item">
-          <div class="location-image--outer">
-            <div class="location-image--wrap">
-              <img src="https://7051882.fs1.hubspotusercontent-na1.net/hubfs/7051882/Provider%20Locator%20-%20Provider%20Assets/Salt-Lake-City-900x730-1.png">
-            </div>
-          </div>
-          <div class="mt1">
-            <h3 class="Heading u-h2 mb0">Location Title</h3>
-            <div class="location-address--details">123 Main Street</div>
-            <div class="location-address--details">City, State 10110</div>
-            <div class="location-address--details">Country</div>
-            <button class="location-edit mt1">
-              Edit
-            </button>
-          </div>
-        </div> {% endcomment %}
 
         <div class="location-item new-location">
           <h3 class="Heading u-h1">+<br>Add A Location</h3>
         </div>
 
       </div>
-  </div>
+    </div>
+  {% endif %}
 </div> 
 
 <div class="add-location-modal modal-container">
