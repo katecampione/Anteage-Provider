@@ -287,9 +287,15 @@
   function validatePhone(event) {
     const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
     const allowedChars = /[0-9()-\s+]/;
-  
+    
+    // Check if the pressed key is allowed or not
     if (!allowedKeys.includes(event.key) && !allowedChars.test(event.key)) {
       event.preventDefault();
+    } else {
+      // Remove any invalid characters from the input value
+      const input = event.target;
+      const newValue = input.value.replace(/[^0-9()-\s+]/g, '');
+      input.value = newValue;
     }
   }
 
