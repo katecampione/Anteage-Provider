@@ -68,9 +68,6 @@
   <div class="Popover__Close Icon-Wrapper--clickable" data-action="close-parent-modal">
     {%- render 'icon' with 'close' -%}
   </div>
-  {% comment %} <button data-action="close-parent-modal">
-    Close
-  </button> {% endcomment %}
 
   <div class="Container Container--narrow">
     <h2 class="Heading u-h1">
@@ -86,9 +83,6 @@
   <div class="Popover__Close Icon-Wrapper--clickable" data-action="close-parent-modal">
     {%- render 'icon' with 'close' -%}
   </div>
-  {% comment %} <button data-action="close-parent-modal">
-    Close
-  </button> {% endcomment %}
   <div class="Container Container--narrow">
     <h2 class="Heading u-h1 mb0">
       Edit Location
@@ -101,9 +95,9 @@
 </div>
 
 <div class="modal-container delete--confirmation">
-  <button data-action="close-parent-modal">
-    Close
-  </button>
+  <div class="Popover__Close Icon-Wrapper--clickable" data-action="close-parent-modal">
+    {%- render 'icon' with 'close' -%}
+  </div>
   <div class="Container Container--narrow centerContents">
     <h2 class="Heading u-h1 mb0">
       Are you sure you'd like to delete this location?
