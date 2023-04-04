@@ -27,12 +27,12 @@
       <label class="headUp" for="logo">Practice Logo</label>
         {% assign has_logo = false %}
         {% assign logo_src = '' %}
-        {% if customer.metafields.practice.logo != blank or customer.metafields.practice_logo_link != blank %}
+        {% if customer.metafields.practice.logo != blank or customer.metafields.practice.logo_link != blank %}
           {% assign has_logo = true %}
           {% if customer.metafields.practice.logo != blank %}
             {% assign logo_src = customer.metafields.practice.logo.value | img_url: '400x400' %}
           {% else %}
-            {% assign logo_src = customer.metafields.practice_logo_link %}
+            {% assign logo_src = customer.metafields.practice.logo_link %}
           {% endif %}
         {% endif %}
         <label for="logo" class="image-preview--wrapper{% unless has_logo %} hidden{% endunless %}">
