@@ -65,9 +65,12 @@
 </div> 
 
 <div class="add-location-modal modal-container">
-  <button data-action="close-parent-modal">
+  <div class="Drawer__Close" data-action="close-parent-modal">
+    {%- render 'icon' with 'search' -%}
+  </div>
+  {% comment %} <button data-action="close-parent-modal">
     Close
-  </button>
+  </button> {% endcomment %}
 
   <div class="Container Container--narrow">
     <h2 class="Heading u-h1">
