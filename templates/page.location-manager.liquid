@@ -284,7 +284,7 @@
     })
   }
 
-  {% comment %} function validatePhone(event) {
+  function validatePhone(event) {
     const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
     const allowedChars = /[0-9()-\s+]/;
   
@@ -298,14 +298,13 @@
     phoneInputs.forEach(input => {
       input.addEventListener('keydown', validatePhone)
     })
-  } {% endcomment %}
+  }
 
   function initFormValidation() {
     initRichTextInputs()
     initImageUploaders()
     initImageRemovers()
-    console.log('helllooo')
-    {% comment %} initPhoneValidation() {% endcomment %}
+    initPhoneValidation()
     let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
       let fields = getFormFields(form);
