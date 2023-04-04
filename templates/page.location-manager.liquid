@@ -420,10 +420,12 @@
       item.addEventListener('click', showEditModal)
     })
     
-    triggerAddLocation.addEventListener('click', function() {
-      addLocationForm.classList.add('visible')
-      document.querySelector('html').classList.add('no-scroll');
-    })
+    if (triggerAddLocation) {
+      triggerAddLocation.addEventListener('click', function() {
+        addLocationForm.classList.add('visible')
+        document.querySelector('html').classList.add('no-scroll');
+      })
+    }
     
     modalCloseTriggers.forEach(button => {
       button.addEventListener('click', closeFormModal);
