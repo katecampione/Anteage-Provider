@@ -284,33 +284,10 @@
     })
   }
 
-  function validatePhone(evt) {
-    const allowedKeys = ['Backspace', 'Tab', 'ArrowLeft', 'ArrowRight', 'Delete', 'Home', 'End'];
-    const allowedChars = /[0-9()-\s+]/;
-    
-    // Check if the pressed key is allowed or not
-    if (!allowedKeys.includes(evt.key) && !allowedChars.test(evt.key)) {
-      evt.preventDefault();
-    } else {
-      // Remove any invalid characters from the input value
-      const input = evt.target;
-      const newValue = input.value.replace(/[^0-9()-\s+]/g, '');
-      input.value = newValue;
-    }
-  }
-
-  function initPhoneValidation() {
-    let phoneInputs = document.querySelectorAll('[data-validation-type="phone"]');
-    phoneInputs.forEach(input => {
-      input.addEventListener('keydown', validatePhone(event))
-    })
-  }
-
   function initFormValidation() {
     initRichTextInputs()
     initImageUploaders()
     initImageRemovers()
-    initPhoneValidation()
     let forms = document.querySelectorAll('form[data-form-validate="true"]');
     forms.forEach(form => {
       let fields = getFormFields(form);
