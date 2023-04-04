@@ -297,6 +297,7 @@
   function initPhoneValidation() {
     let phoneInputs = document.querySelectorAll('[data-validation-type="phone"]');
     phoneInputs.forEach(input => {
+      console.log('phone')
       input.addEventListener('keyup', validatePhone)
     })
   }
