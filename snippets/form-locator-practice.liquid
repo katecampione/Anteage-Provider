@@ -25,10 +25,20 @@
     
     <div class="form-item" data-type="image-upload-group">
       <label class="headUp" for="logo">Practice Logo</label>
-        <label for="logo" class="image-preview--wrapper{% unless customer.metafields.practice.logo != blank %} hidden{% endunless %}">
+        {% assign has_logo = false %}
+        {% assign logo_src = '' %}
+        {% if customer.metafields.practice.logo != blank or customer.metafields.practice_logo_link != blank %}
+          {% assign has_logo = true %}
+          {% if customer.metafields.practice.logo != blank %}
+            {% assign logo_src = customer.metafields.practice.logo.value | img_url: '400x400' %}
+          {% else %}
+            {% assign logo_src = customer.metafields.practice_logo_link %}
+          {% endif %}
+        {% endif %}
+        <label for="logo" class="image-preview--wrapper{% unless has_logo %} hidden{% endunless %}">
           <div data-option-control="logo-replace" data-type="image-preview" class="location-logo--preview">
             <div class="location-logo-replace--overlay">Replace Image...</div>
-            <img loading="lazy" src="{{ customer.metafields.practice.logo.value | img_url: '400x400' }}" width=200 >
+            <img loading="lazy" src="{{ logo_src }}" width="200" >
           </div>
         </label>
         <label for="logo" class="Button Button--stroke">{% unless customer.metafields.practice.logo != blank %}Select{% else %}Replace{% endunless %}</label>
