@@ -37,7 +37,7 @@
           </div>
         </div>
       {%- else -%}
-        {%- paginate customer.orders by 25 -%}
+        {%- paginate customer.orders by 10 -%}
         {%- if customer.tags contains 'MD Staff' -%}
           <h2 class="Segment__Title Heading u-h4">Orders:</h2>
         {%- endif -%}
