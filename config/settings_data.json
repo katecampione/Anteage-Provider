@@ -348,7 +348,7 @@
           "title": "Brand Assets",
           "button_link": "",
           "button_text": "",
-          "bg_color": "rgba(0,0,0,0)"
+          "bg_color": "#ffffff"
         }
       },
       "1579837534009": {
@@ -369,7 +369,7 @@
           "title": "Whitepapers",
           "button_link": "shopify:\/\/blogs\/whitepapers",
           "button_text": "Browse All Whitepapers",
-          "bg_color": "#efefef"
+          "bg_color": "#ffffff"
         }
       },
       "blog-template-social": {
@@ -379,6 +379,7 @@
       },
       "1579894416518": {
         "type": "index-social",
+        "disabled": true,
         "blocks": {
           "1579894416518-0": {
             "type": "blog",
