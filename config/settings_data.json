@@ -615,12 +615,33 @@
               "button_2_text": "",
               "button_2_link": ""
             }
+          },
+          "b35927e9-a866-466b-b0d9-fe63df61accf": {
+            "type": "image",
+            "settings": {
+              "content_type": "pro_wholesale",
+              "image": "shopify:\/\/shop_images\/2020_05_01_AnteAGE_MD_MothersDay_Hero-Desk_0dafb50f-147f-4976-b6b3-69764f060c72.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/2020_05_01_AnteAGE_MD_MothersDay_Hero-Phone.jpg",
+              "apply_overlay": false,
+              "add_padding": false,
+              "add_bg": false,
+              "h_position": "left",
+              "text_align": "left",
+              "subheading": "Spring Savings",
+              "title": "Buy 10 AnteAGE Systems– Get 2 Free",
+              "content": "",
+              "button_1_text": "Order Now",
+              "button_1_link": "shopify:\/\/products\/anteage-system-bundle",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
           }
         },
         "block_order": [
           "04c302a4-94d5-402f-b439-74ba903e5a57",
           "16b47faa-6ed3-494e-8a45-332c9161376a",
-          "8414ea57-5ef2-4dea-9ab6-177b1f24c84a"
+          "8414ea57-5ef2-4dea-9ab6-177b1f24c84a",
+          "b35927e9-a866-466b-b0d9-fe63df61accf"
         ],
         "custom_css": [
 
@@ -631,8 +652,8 @@
           "autoplay": true,
           "cycle_speed": 8,
           "text_color": "#454545",
-          "button_color": "#454545",
-          "button_background": "#ffffff"
+          "button_color": "#ffffff",
+          "button_background": "#454545"
         }
       },
       "1592422385052": {
@@ -680,6 +701,26 @@
               "button_2_link": ""
             }
           },
+          "d67130ad-1b0b-4c70-a0ba-1e1e04220ccc": {
+            "type": "image",
+            "settings": {
+              "content_type": "md_wholesale",
+              "image": "shopify:\/\/shop_images\/2023_Spring_Promo_Desktop_MD.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/2023_Spring_Promo_Mobile_MD.jpg",
+              "apply_overlay": false,
+              "add_padding": false,
+              "add_bg": false,
+              "h_position": "left",
+              "text_align": "left",
+              "subheading": "Spring Savings",
+              "title": "Buy 10 AnteAGE MD Systems– Get 2 Free",
+              "content": "",
+              "button_1_text": "Order Now",
+              "button_1_link": "shopify:\/\/products\/anteage-md-system-bundle",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
+          },
           "c6a67528-2df9-44e5-b82f-4413f8caafdb": {
             "type": "image",
             "settings": {
@@ -704,6 +745,7 @@
         "block_order": [
           "1fe6fe1c-1f5e-4cb8-8793-0f109fa8a35b",
           "9196a0c1-f257-4260-b380-5e7e9c22aaf2",
+          "d67130ad-1b0b-4c70-a0ba-1e1e04220ccc",
           "c6a67528-2df9-44e5-b82f-4413f8caafdb"
         ],
         "settings": {
