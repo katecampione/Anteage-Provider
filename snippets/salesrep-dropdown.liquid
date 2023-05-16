@@ -3,8 +3,8 @@
 <p id="sales_representative_title"><label for="sales_representative_id">Who helped you?</label></p>
 
 <select id="sales_representative_id" name="attributes[{{ attribute }}]" required="required">
-  {% for i in (1..26) %}
-    {% capture option %}{% cycle "", "No Sales Rep.", "Adam Yoder", "Alley Hampton", "Amanda Butler", "Audrey Shaffer", "Barbara Williamson", "Debora Masten", "Heidi Espey", "Jacquilyn Campbell", "Kelly Caffee", "Kimberly Stutzman", "Laura Cowell", "Lauren Baker", "Lisa Ferris", "Meg McPherson Padilla", "Megan Rohde", "Melissa Walker", "Michelle Noyola", "Monica Mackover", "Monika Brooks-Duncan", "Natalie Ruelle", "Nate Connolly", "Sarah Tracy", "Terri Welty", "Zeenaz Zakaria" %}{% endcapture %}
+  {% for i in (1..25) %}
+    {% capture option %}{% cycle "", "No Sales Rep.", "Adam Yoder", "Alley Hampton", "Amanda Butler", "Audrey Shaffer", "Barbara Williamson", "Debora Masten", "Heidi Espey", "Jacquilyn Campbell", "Kelly Caffee", "Kimberly Stutzman", "Laura Cowell", "Lauren Baker", "Lisa Ferris", "Meg McPherson Padilla", "Megan Rohde", "Melissa Walker", "Michelle Noyola", "Monica Mackover", "Monika Brooks-Duncan", "Nate Connolly", "Sarah Tracy", "Terri Welty", "Zeenaz Zakaria" %}{% endcapture %}
     <option value="{{ option }}"{% if cart.attributes[attribute] == option %} selected="selected"{% endif %}>{{ option }}</option>
   {% endfor %}
 </select>
