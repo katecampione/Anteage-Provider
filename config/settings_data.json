@@ -153,7 +153,8 @@
           "enable_transparent_header": true,
           "enable_transparent_header_collection": false,
           "show_transparent_header_border": false,
-          "transparent_text_color": "#454545"
+          "transparent_text_color": "#ffffff",
+          "transparent_logo": "shopify:\/\/shop_images\/ANTEAGE-MD-LOGO-WHITE_f854ae0c-716d-49a7-86c8-ca5e35c76ad4.png"
         }
       },
       "footer": {
@@ -727,17 +728,17 @@
             "type": "image",
             "settings": {
               "content_type": "md_wholesale",
-              "image": "shopify:\/\/shop_images\/Exosome_Treatment_Angle_Lineup-Added_Exosomes.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/Exosome_Treatment_Angle_Lineup_Mobile-Added_Exosomes.jpg",
+              "image": "shopify:\/\/shop_images\/Exosome_Hero_Banner.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Exosome_Hero_Banner-Mobile2.jpg",
               "apply_overlay": false,
               "add_padding": false,
               "add_bg": false,
-              "h_position": "right",
-              "text_align": "left",
-              "subheading": "Exosomes coming soon",
-              "title": "The Laws of Aging Needed a Rewrite.",
-              "content": "Get on the interest list and be the first to hear about availability, launch dates, and more.",
-              "button_1_text": "Join Waitlist",
+              "h_position": "left",
+              "text_align": "center",
+              "subheading": "AnteAGE MDX®",
+              "title": "Your Patients Deserve the Best",
+              "content": "Exosome Solution is now available– order now and experience the difference.",
+              "button_1_text": "Order Now",
               "button_1_link": "https:\/\/anteage.com\/pages\/exosomes-coming-soon",
               "button_2_text": "",
               "button_2_link": ""
@@ -758,9 +759,9 @@
           "show_arrow": false,
           "autoplay": true,
           "cycle_speed": 8,
-          "text_color": "#454545",
+          "text_color": "#ffffff",
           "button_color": "#ffffff",
-          "button_background": "#4b858e"
+          "button_background": "#ea9910"
         }
       },
       "blog-template-academy": {
@@ -1302,7 +1303,7 @@
         "settings": {
           "subheading": "",
           "title": "",
-          "html": "<style>@media screen and (max-width: 640px) { #Slided67130ad-1b0b-4c70-a0ba-1e1e04220ccc >.ss-justify--left, #Slideb35927e9-a866-466b-b0d9-fe63df61accf >.ss-justify--left {\n  justify-content: flex-start !important;\npadding-top: 70px;\n}\n.SectionHeader__SubHeading {\nmargin-bottom: 0 !important;\n}\n}\n#shopify-section-5e2b4de7-0a4f-42fb-a696-3ea8a5833ea5 {\ndisplay: none !important;\n}\n<\/style>"
+          "html": "<style>@media screen and (max-width: 640px) { #Slidec6a67528-2df9-44e5-b82f-4413f8caafdb >.ss-justify--left {\n  justify-content: flex-start !important;\npadding-top: 70px;\n}\n.SectionHeader__SubHeading {\nmargin-bottom: 0 !important;\n}\n}\n#shopify-section-5e2b4de7-0a4f-42fb-a696-3ea8a5833ea5 {\ndisplay: none !important;\n}\n<\/style>"
         }
       }
     },
