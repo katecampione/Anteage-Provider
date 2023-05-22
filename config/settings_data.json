@@ -150,11 +150,10 @@
           "pro_navigation_menu": "pro-menu-2020_01",
           "navigation_style": "inline",
           "show_icons": false,
-          "enable_transparent_header": true,
+          "enable_transparent_header": false,
           "enable_transparent_header_collection": false,
           "show_transparent_header_border": false,
-          "transparent_text_color": "#ffffff",
-          "transparent_logo": "shopify:\/\/shop_images\/ANTEAGE-MD-LOGO-WHITE_f854ae0c-716d-49a7-86c8-ca5e35c76ad4.png"
+          "transparent_text_color": "#ffffff"
         }
       },
       "footer": {
