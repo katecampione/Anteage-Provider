@@ -742,16 +742,40 @@
               "button_2_text": "Stock Up & Save",
               "button_2_link": "shopify:\/\/collections\/exosome-solution-bundles"
             }
+          },
+          "e8f06560-8a32-4d5e-a92d-6237ed6031db": {
+            "type": "image",
+            "settings": {
+              "content_type": "md_wholesale",
+              "image": "shopify:\/\/shop_images\/2021_01_25_Home_Hair_Hero_Desktop.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/2021_01_25_Home_Hair_Hero_Mobile.jpg",
+              "apply_overlay": false,
+              "add_padding": false,
+              "add_bg": false,
+              "h_position": "left",
+              "text_align": "left",
+              "subheading": "",
+              "title": "Show Dad the Love",
+              "content": "Stock up on skin and hair care essentials this Father's Day and save with these exclusive Father's Day bundles.",
+              "button_1_text": "Shop Now",
+              "button_1_link": "shopify:\/\/collections\/anteage-md-fathers-day",
+              "button_2_text": "",
+              "button_2_link": ""
+            }
           }
         },
         "block_order": [
           "1fe6fe1c-1f5e-4cb8-8793-0f109fa8a35b",
           "9196a0c1-f257-4260-b380-5e7e9c22aaf2",
           "d67130ad-1b0b-4c70-a0ba-1e1e04220ccc",
-          "c6a67528-2df9-44e5-b82f-4413f8caafdb"
+          "c6a67528-2df9-44e5-b82f-4413f8caafdb",
+          "e8f06560-8a32-4d5e-a92d-6237ed6031db"
         ],
         "custom_css": [
-
+          "#Slidee8f06560-8a32-4d5e-a92d-6237ed6031db .SectionHeader__Heading {color: #454545 !important;}",
+          "#Slidee8f06560-8a32-4d5e-a92d-6237ed6031db p.slideshow-content_main {color: #757575 !important;}",
+          "#Slidee8f06560-8a32-4d5e-a92d-6237ed6031db .ButtonGroup__Item.Button {border-color: #24565d !important;}",
+          "#Slidee8f06560-8a32-4d5e-a92d-6237ed6031db .ButtonGroup__Item.Button::before {background-color: #24565d !important;}"
         ],
         "settings": {
           "show_fullscreen": false,
