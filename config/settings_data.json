@@ -621,18 +621,18 @@
             "type": "image",
             "settings": {
               "content_type": "pro_wholesale",
-              "image": "shopify:\/\/shop_images\/2021_05_Pro_Fathers_Day.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/2021_05_Pro_Fathers_Day-M.jpg",
+              "image": "shopify:\/\/shop_images\/2021_06_MN_Deal_Pro_D.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/2021_06_MN_Deal_Pro_M.jpg",
               "apply_overlay": false,
               "add_padding": true,
               "add_bg": false,
-              "h_position": "right",
+              "h_position": "left",
               "text_align": "left",
               "subheading": "",
-              "title": "Father's Day Bundles",
-              "content": "Keep dad looking his best– stock up on skincare essentials.",
-              "button_1_text": "Shop Now",
-              "button_1_link": "shopify:\/\/collections\/fathers-day-bundles",
+              "title": "You could needle without it, but why would you?",
+              "content": "Deliver next-level results by microneedling with our Growth Factor packed Microneedling Solution",
+              "button_1_text": "Order Now",
+              "button_1_link": "shopify:\/\/products\/anteage-pro-microneedling-solution-box-5",
               "button_2_text": "",
               "button_2_link": ""
             }
@@ -745,6 +745,7 @@
           },
           "e8f06560-8a32-4d5e-a92d-6237ed6031db": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "content_type": "md_wholesale",
               "image": "shopify:\/\/shop_images\/2021_01_25_Home_Hair_Hero_Desktop.jpg",
