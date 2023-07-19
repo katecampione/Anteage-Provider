@@ -159,7 +159,9 @@
       {%- endif -%}
 
       <div class="PageContainer">
-        {% section 'announcement' %}
+        {% unless customer.tags contains 'Account Disabled'%}
+          {% section 'announcement' %}
+        {% endunless %}
         {% section 'header' %}
 
         <main id="main" role="main">
