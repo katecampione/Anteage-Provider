@@ -140,7 +140,7 @@ HEADER CONTENT
         {%- else -%}
           {%- assign main_menu_handle = section.settings.navigation_menu | default: 'main-menu' -%}
         {%- endif -%}
-      {%- assign main_menu = linklists[main_menu_handle] -%}
+        {%- assign main_menu = linklists[main_menu_handle] -%}
 
         {%- assign mega_menu_names = '' -%}
 
