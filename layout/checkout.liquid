@@ -77,9 +77,11 @@
     
   </body>
 
+  {% comment %} Remove Logout Link {% endcomment %}
   <script>
     let logoutParent = document.querySelector('.logged-in-customer-information__paragraph');
     let logoutLink = logoutParent.querySelector('a');
     logoutLink.remove();
   </script>
+  {% comment %} Remove Logout Link End {% endcomment %}
 </html>
