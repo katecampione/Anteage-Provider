@@ -100,6 +100,14 @@
       }
     }
     removeLogoutLink();
+    function lockEmailInput() {
+      let emailInput = document.getElementById('checkout_email');
+      if (emailInput && emailInput.value) {
+        emailInput.disabled = true
+        removeAttempts = 11
+      }
+    }
+    lockEmailInput();
   </script>
   {% comment %} Remove Logout Link End {% endcomment %}
 </html>
