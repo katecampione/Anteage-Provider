@@ -79,9 +79,27 @@
 
   {% comment %} Remove Logout Link {% endcomment %}
   <script>
-    let logoutParent = document.querySelector('.logged-in-customer-information__paragraph');
-    let logoutLink = logoutParent.querySelector('a');
-    logoutLink.remove();
+    let removeAttempts = 0;
+    function removeLogoutLink() {
+      let logoutParent = document.querySelector('.logged-in-customer-information__paragraph');
+      if (logoutParent) {
+        let logoutLink = logoutParent.querySelector('a');
+        if (logoutLink) {
+          logoutLink.remove(); 
+        } else {
+          removeAttempts += 1
+          if (removeAttempts <= 10) {
+            setTimeout(removeLogoutLink, 500)
+          }
+        }
+      } else {
+        removeAttempts += 1
+        if (removeAttempts <= 10) {
+          setTimeout(removeLogoutLink, 500)
+        }
+      }
+    }
+    removeLogoutLink();
   </script>
   {% comment %} Remove Logout Link End {% endcomment %}
 </html>
