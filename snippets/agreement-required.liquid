@@ -184,7 +184,7 @@
             hideContent('agreement-form');
             showContent('waiting');
 
-            const response = await fetch("https://enow0i3pr6cbpea.m.pipedream.net", {
+            const response = await fetch("https://api.retool.com/v1/workflows/0a8f54c7-47f5-4823-9b1b-dc9e796e195a/startTrigger?workflowApiKey=retool_wk_be6ba4b9694f48bfb27481f2787c25ad", {
                 method: "POST",
                 body: JSON.stringify(data)
             }).then(async function(response) {
