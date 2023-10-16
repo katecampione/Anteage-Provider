@@ -191,14 +191,7 @@
         <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7051882.js"></script>
       <!-- End of HubSpot Embed Code -->
       
-      <!--Gorgias Chat Widget Start-->
-      <script id="gorgias-chat-widget-install-v3" 
-          src="https://config.gorgias.chat/bundle-loader/01GYCC45EAASA6RVS65AZZXRGB?source=shopify1click">
-      </script>
-      <script id="gorgias-chat-shopify-install">!function(_){_.SHOPIFY_PERMANENT_DOMAIN="{{shop.permanent_domain}}",_.SHOPIFY_CUSTOMER_ID="{{customer.id}}",_.SHOPIFY_CUSTOMER_EMAIL="{{customer.email}}"}(window||{});
-      </script>
-      <!--Gorgias Chat Widget End-->
-    {% else %}
+          {% else %}
       {% render 'agreement-required' %}
     {% endunless %}
   </body>
